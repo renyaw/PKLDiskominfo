@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Verifikasi SKTM</title>
+        <title>Masuk</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         </head>
     <body>
@@ -12,51 +12,108 @@
     @extends('navbar.navbaradmin')
     <!-- Navbar End -->
 
-    <!-- Content -->
+    <!-- Context -->
     @section('container')
-    <div class="container mt-4 d-flex justify-content-start">
-        <div class="form-group">
-            <select class="form-select " name="tampilan" id="tampilan">
-                <option value="0">Tampilkan Berdasarkan</option>
-                <option value="1">Selesai</option>
-                <option value="2">Belum Selesai</option>
-            </select>
+    <div class="container">
+        <div class="judul">
+            <h4 class="text-center mt-3">Surat Keterangan Tidak Mampu</h4>
         </div>
-        <br>
-    </div>
-    <section id="Verifikasi">
-        <div class="container mt-5">
-            <div class="row text-center">
-            </div>
-            <div class="row text-center">
-                <div class="col">
-                <table class="table table-hover table-striped table-info table-bordered">
-                    <tr>
-                        <th>No</th>
-                        <th>NIK</th>
-                        <th>Nama</th>
-                        <th>Alamat</th>
-                        <th>Status</th>
-                        <th>Action</th>
+        <div class="konten">
+            <form action="" method="POST" autocomplete="on" name="form">
+                <div class="row mt-4">
+                     <!-- Left -->
+                    <div class="col-6">
+                        <div class="form-group">
+                            <!-- Default diambil dari daftar -->
+                            <label for="nama">Nama</label>
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Default" >
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <!-- Default diambil dari daftar -->
+                            <label for="kecamatan">Kecamatan</label>
+                            <input type="text" class="form-control" id="kecamatan" name="kecamatan" placeholder="Default" >
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="pengantarKel">Surat Pengantar Kelurahan</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2">
+                                <button class="btn btn-secondary" type="button" id="button-addon2">Unduh</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="KTP">Kartu Tanda Penduduk</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2">
+                                <button class="btn btn-secondary" type="button" id="button-addon2">Unduh</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="Berkas Lain">Berkas Lainnya</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2">
+                                <button class="btn btn-secondary" type="button" id="button-addon2">Unduh</button>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    <!-- End Left -->
 
+                    <!-- Right -->
+                    <div class="col-6">
+                        <div class="form-group">
+                            <!-- Default diambil dari daftar -->
+                            <label for="nik">NIK</label>
+                            <input type="text" class="form-control" id="nik" name="nik" placeholder="Default" >
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <!-- Default diambil dari daftar -->
+                            <label for="kelurahan">Kelurahan</label>
+                            <input type="text" class="form-control" id="kelurahan" name="kelurahan" placeholder="Default" >
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="tdkmampu">Surat Pernyataan Tidak Mampu</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2">
+                                <button class="btn btn-secondary" type="button" id="button-addon2">Unduh</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="kk">Kartu Keluarga</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2">
+                                <button class="btn btn-secondary" type="button" id="button-addon2">Unduh</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="kk">Tujuan Pembuatan SKTM</label>
+                            <div class="input-group">
+                            <textarea class="form-control" aria-label="With textarea" placeholder="Default"></textarea>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
 
-                    </tr>
-                    @foreach($query as $data)
-                    <td>{{$data->id_sktm}}</td>
-                    {{-- <td>{{$data->akun->nik}}</td> --}}
-                    {{-- <td>{{$data->akun->nik}}</td> --}}
-                    <td>{{$data->pengajuan_sktm->masyarakat->nik}}</td>
-                    <td>{{$data->pengajuan_sktm->masyarakat->nama}}</td>
-                    <td>{{$data->pengajuan_sktm->masyarakat->alamat}}</td>
-                    <td>{{$data->sktm_status->proses}}</td>
-
-                    @endforeach
                 </div>
-            </div>
+                <div class="col-auto d-grid gap-2 d-flex justify-content-end">
+                        <button type="submit" name="submit" value="submit" class="btn btn-outline-success">Terima</button>
+                        <button type="submit" name="submit" value="submit" class="btn btn-outline-danger">Tolak</button>
+                        <button type="submit" name="submit" value="submit" class="btn btn-outline-primary">Kembali</button>
+                </div>
+                <!-- End Right -->
+            </form>
         </div>
-    </section>
-    @endsection
-    <!-- Content End-->
+
+    </div>
+    @end section
+    <!-- Context End -->
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     </body>
