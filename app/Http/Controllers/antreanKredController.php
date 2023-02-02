@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\antreanKredModel;
+
 class antreanKredController extends Controller
 {
     /**
@@ -13,7 +15,9 @@ class antreanKredController extends Controller
      */
     public function index()
     {
-        //
+        $query = antreanKredModel::all();
+
+        return view('kelurahan/antreanKred',compact('query'));
     }
 
     /**

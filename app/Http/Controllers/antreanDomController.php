@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\antreanDomModel;
+
 class antreanDomController extends Controller
 {
     /**
@@ -13,7 +15,9 @@ class antreanDomController extends Controller
      */
     public function index()
     {
-        //
+        $query = antreanDomModel::all();
+
+        return view('kelurahan/antreanDom',compact('query'));
     }
 
     /**
