@@ -36,6 +36,7 @@
                         <th>NIK</th>
                         <th>Nama</th>
                         <th>Alamat</th>
+                        <th>No Telp</th>
                         <th>Status</th>
                         <th>Action</th>
 
