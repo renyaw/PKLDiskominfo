@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_user');
             $table->string('nik')->unique();
             $table->string('nama');
             $table->date('tgl_lahir');
@@ -25,14 +25,18 @@ return new class extends Migration
             $table->string('kecamatan');
             $table->string('username')->unique();
             $table->string('password');
+            $table->unsignedBigInteger('fk_id_kel');
+            $table->unsignedBigInteger('fk_id_kec');
             $table->rememberToken();
             $table->timestamps();
         });
+
         Schema::create('kelurahan', function (Blueprint $table) {
             $table->id('id_kel');
             $table->string('nama_kel');
             $table->string('notelp_kel');
             $table->string('alamat_kel');
+            $table->unsignedBigInteger('fk_id_kec');
             $table->timestamps();
         });
 
@@ -47,6 +51,8 @@ return new class extends Migration
             $table->string('ktp_dom');
             $table->string('lain_dom');
             $table->date('tgl_antre_dom');
+            $table->unsignedBigInteger('fk_id_user');
+            $table->unsignedBigInteger('fk_status');
             $table->timestamps();
         });
         Schema::create('antrean_kred', function (Blueprint $table) {
@@ -56,6 +62,8 @@ return new class extends Migration
             $table->string('kk_kred');
             $table->string('lain_kred');
             $table->date('tgl_antre_kred');
+            $table->unsignedBigInteger('fk_id_user');
+            $table->unsignedBigInteger('fk_status');
             $table->timestamps();
         });
         Schema::create('antrean_sktm', function (Blueprint $table) {
@@ -67,6 +75,8 @@ return new class extends Migration
             $table->string('ktp_sktm');
             $table->string('tujuan');
             $table->date('tgl_antre_sktm');
+            $table->unsignedBigInteger('fk_id_user');
+            $table->unsignedBigInteger('fk_status');
             $table->timestamps();
         });
         Schema::create('status', function (Blueprint $table) {
@@ -77,18 +87,51 @@ return new class extends Migration
         Schema::create('domisili', function (Blueprint $table) {
             $table->id('noreg_dom');
             $table->date('tgl_dom');
+            $table->unsignedBigInteger('fk_id_dom');
             $table->timestamps();
         });
         Schema::create('kredit', function (Blueprint $table) {
             $table->id('noreg_kred');
             $table->date('tgl_kred');
+            $table->unsignedBigInteger('fk_id_kred');
             $table->timestamps();
         });
         Schema::create('sktm', function (Blueprint $table) {
             $table->id('noreg_sktm');
             $table->date('tgl_sktm');
+            $table->unsignedBigInteger('fk_id_sktm');
             $table->timestamps();
         });
+        // Foreign Key
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreign('fk_id_kel')->references('id_kel')->on('kelurahan');
+            $table->foreign('fk_id_kec')->references('id_kec')->on('kecamatan');
+        });
+        Schema::table('kelurahan', function (Blueprint $table) {
+            $table->foreign('fk_id_kec')->references('id_kec')->on('kecamatan');
+        });
+        Schema::table('antrean_dom', function (Blueprint $table) {
+            $table->foreign('fk_id_user')->references('id_user')->on('users');
+            $table->foreign('fk_status')->references('id_status')->on('status');
+        });
+        Schema::table('antrean_kred', function (Blueprint $table) {
+            $table->foreign('fk_id_user')->references('id_user')->on('users');
+            $table->foreign('fk_status')->references('id_status')->on('status');
+        });
+        Schema::table('antrean_sktm', function (Blueprint $table) {
+            $table->foreign('fk_id_user')->references('id_user')->on('users');
+            $table->foreign('fk_status')->references('id_status')->on('status');
+        });
+        Schema::table('domisili', function (Blueprint $table) {
+            $table->foreign('fk_id_dom')->references('id_dom')->on('antrean_dom');
+        });
+        Schema::table('kredit', function (Blueprint $table) {
+            $table->foreign('fk_id_kred')->references('id_kred')->on('antrean_kred');
+        });
+        Schema::table('sktm', function (Blueprint $table) {
+            $table->foreign('fk_id_sktm')->references('id_sktm')->on('antrean_sktm');
+        });
+
     }
 
     /**
