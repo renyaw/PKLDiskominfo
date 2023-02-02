@@ -56,7 +56,7 @@ use App\Http\Controllers\dashKec2Controller;
 Route::resource('daftar', buatAkunController::class);
 Route::resource('login', loginController::class);
 //Guest
-Route::resource('/', berandaGuestController::class);
+Route::resource('', berandaGuestController::class);
 
 //Kecamatan
 Route::resource('dashKec', dashKecController::class);
@@ -80,10 +80,15 @@ Route::resource('formSKTM1', formSKTM1Controller::class);
 Route::resource('formSKTM2', formSKTM2Controller::class);
 Route::resource('kumpulanBerkas', kumpulanBerkasController::class);
 Route::resource('profile', profileController::class);
-Route::resource('riwayat', riwayatController::class);
+// Route::resource('riwayat', riwayatController::class);
 Route::resource('riwayatSKTM', riwayatSKTMController::class);
 Route::resource('riwayatDom', riwayatDomController::class);
 Route::resource('riwayatKred', riwayatKredController::class);
+
+// Try
+Route::get('riwayat', function () {
+    return view('masyarakat/riwayat');
+});
 
 
 
