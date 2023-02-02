@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class antreanDomModel extends Model
 {
     use HasFactory;
+    protected $table = 'antrean_dom';
+    protected $guarded = [];
 
     public function permohonan_dom()
     {

@@ -44,12 +44,13 @@
                     </tr>
                     @foreach($query as $data)
                     <td>{{$data->id_sktm}}</td>
-                    {{-- <td>{{$data->akun->nik}}</td> --}}
-                    {{-- <td>{{$data->akun->nik}}</td> --}}
-                    <td>{{$data->pengajuan_sktm->masyarakat->nik}}</td>
-                    <td>{{$data->pengajuan_sktm->masyarakat->nama}}</td>
-                    <td>{{$data->pengajuan_sktm->masyarakat->alamat}}</td>
-                    <td>{{$data->sktm_status->proses}}</td>
+                    <td>{{$data->permohonan_sktm->nik}}</td>
+                    <td>{{$data->permohonan_sktm->nama}}</td>
+                    <td>{{$data->permohonan_sktm->alamat}}</td>
+                    <td>{{$data->permohonan_sktm->no_telp}}</td>
+                    <td>{{$data->antre_stat_sktm->proses}}</td>
+                    <td></td>
+
 
                     @endforeach
                 </div>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\antreanSKTMModel;
+
 class antreanSKTMController extends Controller
 {
     /**
@@ -13,7 +15,9 @@ class antreanSKTMController extends Controller
      */
     public function index()
     {
-        //
+        $query = antreanSKTMModel::all();
+
+        return view('kelurahan/antreanSKTM',compact('query'));
     }
 
     /**

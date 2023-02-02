@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class antreanSKTMModel extends Model
 {
     use HasFactory;
+    protected $table = 'antrean_sktm';
+    protected $guarded = [];
 
     public function permohonan_sktm()
     {

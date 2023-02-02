@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id('id_user');
+            $table->id('id_user')->autoIncrement();
             $table->string('nik')->unique();
             $table->string('nama');
             $table->date('tgl_lahir');
@@ -46,7 +46,7 @@ return new class extends Migration
             $table->timestamps();
         });
         Schema::create('antrean_dom', function (Blueprint $table) {
-            $table->id('id_dom');
+            $table->id('id_dom')->autoIncrement();
             $table->string('sp_kel_dom)');
             $table->string('ktp_dom');
             $table->string('lain_dom');
@@ -56,7 +56,7 @@ return new class extends Migration
             $table->timestamps();
         });
         Schema::create('antrean_kred', function (Blueprint $table) {
-            $table->id('id_kred');
+            $table->id('id_kred')->autoIncrement();
             $table->string('sp_kel_kred');
             $table->string('ktp_kred');
             $table->string('kk_kred');
@@ -67,7 +67,7 @@ return new class extends Migration
             $table->timestamps();
         });
         Schema::create('antrean_sktm', function (Blueprint $table) {
-            $table->id('id_sktm');
+            $table->id('id_sktm')->autoIncrement();
             $table->string('sp_kel_sktm');
             $table->string('sp_tdkmampu');
             $table->string('lain_sktm');
@@ -85,19 +85,19 @@ return new class extends Migration
             $table->timestamps();
         });
         Schema::create('domisili', function (Blueprint $table) {
-            $table->id('noreg_dom');
+            $table->id('noreg_dom')->autoIncrement();
             $table->date('tgl_dom');
             $table->unsignedBigInteger('fk_id_dom');
             $table->timestamps();
         });
         Schema::create('kredit', function (Blueprint $table) {
-            $table->id('noreg_kred');
+            $table->id('noreg_kred')->autoIncrement();
             $table->date('tgl_kred');
             $table->unsignedBigInteger('fk_id_kred');
             $table->timestamps();
         });
         Schema::create('sktm', function (Blueprint $table) {
-            $table->id('noreg_sktm');
+            $table->id('noreg_sktm')->autoIncrement();
             $table->date('tgl_sktm');
             $table->unsignedBigInteger('fk_id_sktm');
             $table->timestamps();

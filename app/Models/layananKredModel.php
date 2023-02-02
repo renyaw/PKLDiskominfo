@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class layananKredModel extends Model
 {
     use HasFactory;
+    protected $table = 'kredit';
+    protected $guarded = [];
 
     public function kred_antre()
     {

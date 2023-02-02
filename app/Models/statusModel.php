@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class statusModel extends Model
 {
     use HasFactory;
+    protected $table = 'status';
+    protected $guarded = [];
     //Antrean
     public function antre_sktm()
     {
@@ -21,5 +23,5 @@ class statusModel extends Model
     {
         return $this->hasMany(kredDomModel::class, 'fk_status', 'id_status');
     }
-    
+
 }
