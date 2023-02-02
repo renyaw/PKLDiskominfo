@@ -42,12 +42,12 @@
 
 
                     </tr>
-                    @foreach($query as $data)
-                    <td>{{$data->id_dom}}</td>
-                    <td>{{$data->pengajuan_domisili->masyarakat->nik}}</td>
-                    <td>{{$data->pengajuan_domisili->masyarakat->nama}}</td>
-                    <td>{{$data->pengajuan_domisili->masyarakat->alamat}}</td>
-                    <td>{{$data->dom_status->proses}}</td>
+                    @foreach($query as)
+                    <td>{{}}</td>
+                    <td>{{}}</td>
+                    <td>{{}}</td>
+                    <td>{{}}</td>
+                    <td>{{}}</td>
                     @endforeach
                 </div>
             </div>
