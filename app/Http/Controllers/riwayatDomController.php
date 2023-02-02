@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\antreanDomModel;
+
 class riwayatDomController extends Controller
 {
     /**
@@ -13,7 +15,9 @@ class riwayatDomController extends Controller
      */
     public function index()
     {
-        //
+        $query = antreanDomModel::all();
+
+        return view('masyarakat/riwayatDom',compact('query'));
     }
 
     /**
