@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\usersModel;
+use App\Models\kecamatanModel;
+use App\Models\kelurahanModel;
+
+
+
 class buatAkunController extends Controller
 {
     /**
@@ -13,7 +19,10 @@ class buatAkunController extends Controller
      */
     public function index()
     {
-        //
+        $query = kelurahanModel::all();
+        $data = kecamatanModel::all();
+        $isi = userModel::all();
+        return view('buatAkun',compact('query','data'));
     }
 
     /**
@@ -34,7 +43,15 @@ class buatAkunController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nik' => ['required', 'min:16', 'max:16'],
+            'nama' => ['required', 'min:3', 'max:255'],
+            'tgl' => ['required'],
+            'ibu' => ['required', 'min:3', 'max:255'],
+
+        ]
+
+        );
     }
 
     /**

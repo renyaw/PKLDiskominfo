@@ -54,8 +54,8 @@
           <div class="">
             <div class="card" style="border-radius: 1rem; border-color:#87CEFA; border-width: 2px;">
                 <div class="card-body">
-                  <form method="POST" autocomplete="on" name="form" onsubmit="return cekDaftar()" action="{{url('signup')}}">
-                    {{ csrf_token() }}
+                  <form method="POST" autocomplete="on" name="form" onsubmit="" action="/buatAkun">
+                    @csrf
                     <div class="form-group">
                           <label for="nik">NIK</label>
                           <input type="text" class="form-control" id="nik" name="nik" placeholder="Masukkan NIK" >
@@ -83,10 +83,18 @@
                     </div>
                     <br>
 
+
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="text" class="form-control" id="email" name="email" placeholder="Masukkan Email">
-                        <small class="form-text text-danger" id="email_error"></small>
+                        <label for="kecamatan">Kecamatan</label>
+                        <select class="form-control" name="kecamatan" id="kecamatan">
+                            <option value="0">-- Pilih Kecamatan --</option>
+                            {{
+                                $result = $data->get('kecamatan');
+
+                                while ($db = $result->fetch_object());
+                            }}
+                            <option value="{{$db->}}"></option>
+                        </select>
                     </div>
                     <br>
 
@@ -101,13 +109,6 @@
                     </div>
                     <br>
 
-                    <div class="form-group">
-                        <label for="kecamatan">Kecamatan</label>
-                        <select class="form-control" name="kecamatan" id="kecamatan">
-                        <option value="0">-- Pilih Kecamatan --</option>
-                        </select>
-                    </div>
-                    <br>
 
                     <div class="form-group">
                         <label for="alamat">Alamat Lengkap</label>
