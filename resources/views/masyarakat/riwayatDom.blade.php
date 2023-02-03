@@ -17,11 +17,12 @@
     @section('container')
 
         <div class="container mt-4">
+
         @foreach($query as $data)
             <div class="card p-2">
-                <h4 class="card-header">Permohonan Surat Keterangan Tidak Mampu</h4>
+                <h4 class="card-header">Permohonan Surat Keterangan Domisili</h4>
                 <div class="card-body">
-                    <h5 class="card-title">Diajukan Pada Tanggal {{$data->permohonan_dom->tgl_antre_dom}}</h5>
+                    <h5 class="card-title">Diajukan Pada Tanggal {{$data->tgl_antre_dom}}</h5>
                 </div>
                 <div class="card-footer">
                     <div class="row">
