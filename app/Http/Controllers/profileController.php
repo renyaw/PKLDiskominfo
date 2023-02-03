@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\userModel;
+
 class profileController extends Controller
 {
     /**
@@ -13,7 +15,10 @@ class profileController extends Controller
      */
     public function index()
     {
-        //
+        $query = userModel::all();
+        // return $query;
+
+        return view('masyarakat/profile',compact('query'));
     }
 
     /**

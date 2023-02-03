@@ -32,25 +32,6 @@ use App\Http\Controllers\dashKecController;
 use App\Http\Controllers\dashKec2Controller;
 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
-// Route::get('/signin', function () {
-//     return view('signin');
-// });
-
-// Route::get('/', function () {https://drive.google.com/drive/u/0/folders/1o9fY_8y0e5w20aezfzSjXKbyqBQJW1dC
-//     return view('guest/berandaguest');
-// });
 
 //All
 Route::resource('daftar', buatAkunController::class);
@@ -86,8 +67,8 @@ Route::resource('riwayatDom', riwayatDomController::class);
 Route::resource('riwayatKred', riwayatKredController::class);
 
 // Try
-// Route::get('riwayat', function () {
-//     return view('masyarakat/riwayat');
+// Route::get('profile', function () {
+//     return view('masyarakat/profile');
 // });
 
 

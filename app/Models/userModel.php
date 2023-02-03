@@ -12,7 +12,7 @@ class userModel extends Model
     protected $table = 'users';
     protected $guarded = [];
 
-    //Kelurahan
+    //Kelurahan 
     public function user_kel()
     {
         return $this->belongsTo(kelurahanModel::class, 'fk_id_kel', 'id_kel');
