@@ -16,7 +16,7 @@ class riwayatKredController extends Controller
     public function index()
     {
         $query = antreanKredModel::all();
-
+if
         return view('masyarakat/riwayatKred',compact('query'));
     }
 
