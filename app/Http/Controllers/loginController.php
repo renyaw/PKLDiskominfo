@@ -13,7 +13,9 @@ class loginController extends Controller
      */
     public function index()
     {
-        //
+        return view('login.login', [
+            'title' => "Login" 
+        ]);
     }
 
     /**
@@ -21,6 +23,11 @@ class loginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function login()
+    {
+
+    }
     public function create()
     {
         //

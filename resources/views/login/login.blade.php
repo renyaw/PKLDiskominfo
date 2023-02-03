@@ -47,7 +47,8 @@
             <div class="container">
               <div class="form-control bg-color=white shadow-lg" style="border-radius: 1rem; border-color:#87CEFA; border-width: 2px;">
                 <br />
-                <form name="form" method="POST" autocomplete="off" action="cek_login.php">
+                <form name="form" method="POST" autocomplete="off" action="/masyarakat/dashMasy">
+                  {{ csrf_token() }}
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">
                         <b>Username</b>
