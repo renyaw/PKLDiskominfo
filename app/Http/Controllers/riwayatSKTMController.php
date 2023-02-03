@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\antreanSKTMModel;
+
 class riwayatSKTMController extends Controller
 {
     /**
@@ -13,7 +15,10 @@ class riwayatSKTMController extends Controller
      */
     public function index()
     {
-        //
+        $query = antreanSKTMModel::all();
+        // return $query;
+
+        return view('masyarakat/riwayatSKTM',compact('query'));
     }
 
     /**
