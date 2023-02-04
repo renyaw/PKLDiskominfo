@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\usersModel;
+use App\Models\userModel;
 use App\Models\kecamatanModel;
 use App\Models\kelurahanModel;
 

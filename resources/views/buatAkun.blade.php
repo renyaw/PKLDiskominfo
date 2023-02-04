@@ -88,12 +88,12 @@
                         <label for="kecamatan">Kecamatan</label>
                         <select class="form-control" name="kecamatan" id="kecamatan">
                             <option value="0">-- Pilih Kecamatan --</option>
-                            {{
+                            <?
                                 $result = $data->get('kecamatan');
 
-                                while ($db = $result->fetch_object());
-                            }}
-                            <option value="{{$db->}}"></option>
+                                while ($db = $result->fetch_object()):
+                            ?>
+                            <option value="{{$db->id_kec}}">{{$db->nama_kec}}</option>
                         </select>
                     </div>
                     <br>
