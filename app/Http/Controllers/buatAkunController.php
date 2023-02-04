@@ -19,10 +19,19 @@ class buatAkunController extends Controller
      */
     public function index()
     {
-        $query = kelurahanModel::all();
         $data = kecamatanModel::all();
         $isi = userModel::all();
-        return view('buatAkun',compact('query','data'));
+        return view('buatAkun',compact('data', 'isi'));
+    }
+
+    public function getKelurahan(request $request){
+        $id_kec = $request->id_kec;
+
+        $kelurahans = kelurahanModel::where('fk_id_kec', $id_kec)->get();
+
+        foreach ($kelurahans as $kel){
+            echo "<option value='$kel->id_kel'>$kel->nama_kel</option>";
+        }
     }
 
     /**

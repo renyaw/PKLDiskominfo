@@ -66,10 +66,8 @@ Route::resource('riwayatSKTM', riwayatSKTMController::class);
 Route::resource('riwayatDom', riwayatDomController::class);
 Route::resource('riwayatKred', riwayatKredController::class);
 
-// Try
-// Route::get('profile', function () {
-//     return view('masyarakat/profile');
-// });
+// Ajax
+Route::post('/getKelurahan', [buatAkunController::class, 'getKelurahan'])->name('getKelurahan');
 
 
 
