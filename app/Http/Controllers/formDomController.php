@@ -38,18 +38,17 @@ class formDomController extends Controller
     {
         $berkas = $request->store([]);
 
-        $sp_kel_dom = $request->file('sp_kel_dom')->store('sp_kel_dom');
-        $ktp_dom = $request->file('ktp_dom')->store('ktp_dom');
-        $kk_dom = $request->file('kk_dom')->store('kk_dom');
-        $lain_dom = $request->file('lain_dom')->store('lain_dom');
+        $request->file('sp_kel_dom')->store('sp_kel_dom');
+        $request->file('ktp_dom')->store('ktp_dom');
+        $request->file('kk_dom')->store('kk_dom');
+        $request->file('lain_dom')->store('lain_dom');
 
-        $request->antreanDomModel()->store([
-            'sp_kel_dom' => $sp_kel_dom,
-            'kk_dom' => $kk_dom,
-            'ktp_dom' => $ktp_dom,
-            'lain_dom' => $lain_dom
-        ]);
-
+        // $request->store()->antreanDomModel([
+        //     'sp_kel_dom' => $sp_kel_dom,
+        //     'kk_dom' => $kk_dom,
+        //     'ktp_dom' => $ktp_dom,
+        //     'lain_dom' => $lain_dom
+        // ]);
         return redirect('/dashMasy')->with('berhasil', 'Berkas Berhasil diinput! Silahkan Cek Melalui Riwayat');
     }
 
