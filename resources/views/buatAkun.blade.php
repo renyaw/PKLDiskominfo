@@ -204,7 +204,7 @@
                 $(function (){
                     $('#kecamatan').on('change',function(){
                         let id_kec = $('#kecamatan').val();
-                        console.log(id_kec);
+                        // console.log(id_kec);
 
                         $.ajax({
                             type: 'POST',
