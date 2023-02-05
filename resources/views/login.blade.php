@@ -52,18 +52,27 @@
               <h3><b>MASUK</b></h3>
             </div>
             <br />
+            
+    <!--FORM LOGIN-->
             <div class="container">
+                @if(session()->has('loginError'))
+                  <div>  class="alert alert-danger alert-dismissible fade show p-4" role="alert">
+                  {{session('loginError')}}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                @endif
+
               <div class="form-control bg-color=white shadow-lg" style="border-radius: 1rem; border-color:#87CEFA; border-width: 2px;">
                 <br />
-                <form name="form" method="POST" autocomplete="off" action="/masyarakat/dashMasy">
+                <form name="form login" method="POST" autocomplete="off" action="/login">
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">
                         <b>Username</b>
                     </label>
-                    <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" />
+                    <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" autofocus required/>
                   </div>
                   <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">
+                    <label for="exampleInputPassword1" class="form-label" required>
                         <b>Kata Sandi</b>
                     </label>
                     <input type="password" class="form-control" id="password" name="password"/>
