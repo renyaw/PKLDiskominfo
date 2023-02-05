@@ -34,6 +34,9 @@ class buatAkunController extends Controller
         }
     }
 
+    public function register(request $request){
+        dd(request()->all());
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -52,15 +55,23 @@ class buatAkunController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nik' => ['required', 'min:16', 'max:16'],
-            'nama' => ['required', 'min:3', 'max:255'],
-            'tgl' => ['required'],
-            'ibu' => ['required', 'min:3', 'max:255'],
 
-        ]
+        // Validate
+        $validated = $request->validate([
+            'nik' => 'required|unique:users|max:16|min:16',
+            'nama' => 'required|max:255',
+            'tgl_lahir' => 'required|date',
+            'no_telp' => 'required',
+            'nama_ibu' => 'required|max:255',
+            'kecamatan' => 'required',
+            'kelurahan' => 'required',
+            'alamat' => 'required',
+            'username' => 'required|unique:users|min:5',
+            'password' => 'min:6|confirmed|max:255',
+        ]);
 
-        );
+        // $validated['password'] = Hash::make($validated['password']);
+        userModel::create($validated);
     }
 
     /**

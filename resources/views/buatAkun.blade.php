@@ -55,81 +55,119 @@
           <div class="">
             <div class="card" style="border-radius: 1rem; border-color:#87CEFA; border-width: 2px;">
                 <div class="card-body">
-                  <form method="POST" autocomplete="on" name="form" onsubmit="" action="/buatAkun">
+                  <form method="POST" autocomplete="on" name="form" onsubmit="" action="/daftar">
+                    @csrf
                     <div class="form-group">
                           <label for="nik">NIK</label>
-                          <input type="text" class="form-control" id="nik" name="nik" placeholder="Masukkan NIK" >
-                          <small class="form-text text-danger" id="nik_error"></small>
+                          <input type="text" class="form-control @error('nik')
+                          is-invalid @enderror" id="nik" name="nik" placeholder="Masukkan NIK" value="{{old('nik')}}" >
+                          @error('nik')
+                            <div class="invalid-feedback">{{$message}}</div>
+                          @enderror
                     </div>
                     <br>
 
                     <div class="form-group">
                         <label for="nama">Nama Lengkap</label>
-                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Lengkap" >
-                        <small class="form-text text-danger" id="nama_error"></small>
+                        <input type="text" class="form-control @error('nama')
+                        is-invalid @enderror" id="nama" name="nama" placeholder="Masukkan Nama Lengkap"value="{{old('nama')}}">
+                        @error('nama')
+                            <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
                     </div>
                     <br>
 
                     <div class="form-group">
-                        <label for="tgl">Tanggal Lahir</label>
-                        <input type="date" class="form-control" id="tgl" name="tgl" placeholder="Masukkan Tanggal Lahir" >
-                        <small class="form-text text-danger" id="tgl_error"></small>
+                        <label for="tgl_lahir">Tanggal Lahir</label>
+                        <input type="date" class="form-control @error('tgl_lahir')
+                        is-invalid @enderror" id="tgl_lahir" name="tgl_lahir" placeholder="Masukkan Tanggal Lahir" value="{{old('tgl_lahir')}}">
+                        @error('tgl_lahir')
+                            <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
                     </div>
                     <br>
                     <div class="form-group">
-                        <label for="ibu">Nama Ibu</label>
-                        <input type="text" class="form-control" id="ibu" name="ibu" placeholder="Masukkan Nama Ibu" >
-                        <small class="form-text text-danger" id="ibu_error"></small>
+                        <label for="no_telp">Nomor Telepon (Terdaftar di Whatsapp)</label>
+                        <input type="text" class="form-control @error('no_telp')
+                        is-invalid @enderror" id="no_telp" name="no_telp" placeholder="Masukkan Nomor Telepon"value="{{old('no_telp')}}">
+                        @error('no_telp')
+                            <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="nama_ibu">Nama nama_ibu</label>
+                        <input type="text" class="form-control @error('nama_ibu')
+                        is-invalid @enderror" id="nama_ibu" name="nama_ibu" placeholder="Masukkan Nama nama_ibu" value="{{old('nama_ibu')}}">
+                        @error('nama_ibu')
+                            <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
                     </div>
                     <br>
 
 
                     <div class="form-group">
                         <label for="kecamatan">Kecamatan</label>
-                        <select class="form-control" name="kecamatan" id="kecamatan">
+                        <select class="form-control @error('kecamatan') is-invalid @enderror" name="kecamatan" id="kecamatan" value="{{old('kecamatan')}}">
                             <option value="0">-- Pilih Kecamatan --</option>
                             @foreach ($data as $kecamatan)
                                 <option value="{{$kecamatan->id_kec}}">{{$kecamatan->nama_kec}}</option>
                             @endforeach
                         </select>
+                        @error('kecamatan')
+                            <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
                     </div>
                     <br>
 
                     <div class="form-group">
                         <label for="kelurahan">Kelurahan</label>
-                        <select class="form-control" name="kelurahan" id="kelurahan">
+                        <select class="form-control @error('kelurahan') is-invalid @enderror" name="kelurahan" id="kelurahan" value="{{old('kelurahan')}}">
                         <option value="0">-- Pilih Kelurahan --</option>
                         </select>
+                        @error('kelurahan')
+                            <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
                     </div>
                     <br>
 
 
                     <div class="form-group">
                         <label for="alamat">Alamat Lengkap</label>
-                        <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Isi dengan alamat lengkap">
-                        <small class="form-text text-danger" id="alamat_error"></small>
+                        <input type="text" class="form-control @error('alamat')
+                        is-invalid @enderror" id="alamat" name="alamat" placeholder="Isi dengan alamat lengkap" value="{{old('alamat')}}">
+                        @error('alamat')
+                            <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
                     </div>
                     <br>
 
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input type="text" class="form-control" id="username" name="username" placeholder="Masukkan username">
-                        <small class="form-text text-danger" id="username_error"></small>
+                        <input type="text" class="form-control @error('username')
+                        is-invalid @enderror" id="username" name="username" placeholder="Masukkan username" value="{{old('username')}}">
+                        @error('username')
+                            <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
                         <small class="form-text text-success" id="username_success" style="display: none">Username tersedia</small>
                     </div>
                     <br>
 
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password"  placeholder="Masukkan Password">
-                        <small class="form-text text-danger" id="password_error"></small>
+                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password"  placeholder="Masukkan Password">
+                        @error('password')
+                            <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
                     </div>
                     <br>
 
                     <div class="form-group">
                         <label for="tipe">Confirm Password</label>
-                        <input type="password" class="form-control" id="conpass" name="conpass" placeholder="Masukkan Ulang Password" >
-                        <small class="form-text text-danger" id="conpass_error"></small>
+                        <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" id="password_confirmation" name="password_confirmation" placeholder="Masukkan Ulang Password" >
+                        @error('password_confirmation')
+                            <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
                     </div>
 
                     <br>

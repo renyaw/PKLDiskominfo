@@ -10,9 +10,9 @@ class userModel extends Model
     use HasFactory;
 
     protected $table = 'users';
-    protected $guarded = [];
+    protected $guarded = ['fk_id_kel'];
 
-    //Kelurahan 
+    //Kelurahan
     public function user_kel()
     {
         return $this->belongsTo(kelurahanModel::class, 'fk_id_kel', 'id_kel');

@@ -32,7 +32,6 @@ use App\Http\Controllers\dashKecController;
 use App\Http\Controllers\dashKec2Controller;
 
 
-
 //All
 Route::resource('daftar', buatAkunController::class);
 Route::resource('login', loginController::class);
@@ -70,5 +69,7 @@ Route::resource('riwayatKred', riwayatKredController::class);
 Route::post('/getKelurahan', [buatAkunController::class, 'getKelurahan'])->name('getKelurahan');
 
 
+//Register
+Route::post('/daftar', [buatAkunController::class, 'store']);
 
 

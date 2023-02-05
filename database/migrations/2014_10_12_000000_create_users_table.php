@@ -25,8 +25,8 @@ return new class extends Migration
             $table->string('kecamatan');
             $table->string('username')->unique();
             $table->string('password');
-            $table->unsignedBigInteger('fk_id_kel');
-            $table->unsignedBigInteger('fk_id_kec');
+            // $table->unsignedBigInteger('fk_id_kel');
+            // $table->unsignedBigInteger('fk_id_kec');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -47,7 +47,7 @@ return new class extends Migration
         });
         Schema::create('antrean_dom', function (Blueprint $table) {
             $table->id('id_dom')->autoIncrement();
-            $table->string('sp_kel_dom)');
+            $table->string('sp_kel_dom');
             $table->string('ktp_dom');
             $table->string('lain_dom');
             $table->date('tgl_antre_dom');
@@ -103,10 +103,10 @@ return new class extends Migration
             $table->timestamps();
         });
         // Foreign Key
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreign('fk_id_kel')->references('id_kel')->on('kelurahan');
-            $table->foreign('fk_id_kec')->references('id_kec')->on('kecamatan');
-        });
+        // Schema::table('users', function (Blueprint $table) {
+        //     $table->foreign('fk_id_kel')->references('id_kel')->on('kelurahan');
+        //     $table->foreign('fk_id_kec')->references('id_kec')->on('kecamatan');
+        // });
         Schema::table('kelurahan', function (Blueprint $table) {
             $table->foreign('fk_id_kec')->references('id_kec')->on('kecamatan');
         });
