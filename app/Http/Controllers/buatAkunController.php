@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Http\Request;
 
@@ -34,9 +35,6 @@ class buatAkunController extends Controller
         }
     }
 
-    public function register(request $request){
-        dd(request()->all());
-    }
     /**
      * Show the form for creating a new resource.
      *
@@ -70,8 +68,10 @@ class buatAkunController extends Controller
             'password' => 'min:6|confirmed|max:255',
         ]);
 
-        // $validated['password'] = Hash::make($validated['password']);
+        $validated['password'] = Hash::make($validated['password']);
         userModel::create($validated);
+
+        return redirect('/login');
     }
 
     /**
