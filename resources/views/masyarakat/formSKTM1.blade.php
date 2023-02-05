@@ -20,7 +20,7 @@
     <div class="container mt-3">
         <div class="form-group">
             <div class="tulisan">
-                <p class="textt">Keperluan (Silahkan Pilih Salah Satu Layanan untuk Melihat Persyaratan)</p>
+                <p class="text">Keperluan (Silahkan Pilih Salah Satu Layanan untuk Melihat Persyaratan)</p>
             </div>
             <br>
 

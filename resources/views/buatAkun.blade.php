@@ -96,9 +96,9 @@
                     </div>
                     <br>
                     <div class="form-group">
-                        <label for="nama_ibu">Nama nama_ibu</label>
+                        <label for="nama_ibu">Nama Ibu</label>
                         <input type="text" class="form-control @error('nama_ibu')
-                        is-invalid @enderror" id="nama_ibu" name="nama_ibu" placeholder="Masukkan Nama nama_ibu" value="{{old('nama_ibu')}}">
+                        is-invalid @enderror" id="nama_ibu" name="nama_ibu" placeholder="Masukkan Nama Ibu" value="{{old('nama_ibu')}}">
                         @error('nama_ibu')
                             <div class="invalid-feedback">{{$message}}</div>
                         @enderror

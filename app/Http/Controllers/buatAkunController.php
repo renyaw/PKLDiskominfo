@@ -71,8 +71,8 @@ class buatAkunController extends Controller
         $validated['password'] = Hash::make($validated['password']);
         userModel::create($validated);
 
-        $request->session()->flash('success', 'Akun Anda Berhasil Dibuat! Silahkan Melakukan Login!');
-        return redirect('/login');
+        // $request->session()->flash('status', 'Akun Anda Berhasil Dibuat! Silahkan Melakukan Login!');
+        return redirect('/login')->with('status', 'Akun Anda Berhasil Dibuat! Silahkan Melakukan Login!');
     }
 
     /**

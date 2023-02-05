@@ -33,6 +33,14 @@
 
     <!-- Context -->
     <div class="container h-100 pt-4" >
+        {{-- Alert from register --}}
+        @if(session()->has('status'))
+            <div class="alert alert-success alert-dismissible fade show p-4" role="alert">
+                {{session('status')}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+        @endif
+        {{-- end alert --}}
       <div class="row align-items-center h-100">
         <div class="col-6 mx-auto">
           <div class="card p-4 shadow-lg" style="border-radius: 1rem; border-color:#87CEFA; border-width: 3px;">
