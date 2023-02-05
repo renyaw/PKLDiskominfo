@@ -69,7 +69,9 @@ Route::resource('riwayatKred', riwayatKredController::class);
 Route::post('/getKelurahan', [buatAkunController::class, 'getKelurahan'])->name('getKelurahan');
 
 
-//Register
+//Input From User
 Route::post('/daftar', [buatAkunController::class, 'store']);
+Route::post('/formDom', [formDomController::class, 'store']);
+
 
 

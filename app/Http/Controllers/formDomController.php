@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\antreanDomModel;
+
 class formDomController extends Controller
 {
     /**
@@ -13,7 +15,7 @@ class formDomController extends Controller
      */
     public function index()
     {
-        //
+        return view('masyarakat/formDom');
     }
 
     /**
@@ -34,7 +36,21 @@ class formDomController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $berkas = $request->store([]);
+
+        $sp_kel_dom = $request->file('sp_kel_dom')->store('sp_kel_dom');
+        $ktp_dom = $request->file('ktp_dom')->store('ktp_dom');
+        $kk_dom = $request->file('kk_dom')->store('kk_dom');
+        $lain_dom = $request->file('lain_dom')->store('lain_dom');
+
+        $request->antreanDomModel()->antreanDomModel([
+            'sp_kel_dom' => $sp_kel_dom,
+            'kk_dom' => $kk_dom,
+            'ktp_dom' => $ktp_dom,
+            'lain_dom' => $lain_dom
+        ]);
+
+        return redirect('/dashMasy')->with('berhasil', 'Berkas Berhasil diinput! Silahkan Cek Melalui Riwayat');
     }
 
     /**

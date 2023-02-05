@@ -49,6 +49,7 @@ return new class extends Migration
             $table->id('id_dom')->autoIncrement();
             $table->string('sp_kel_dom');
             $table->string('ktp_dom');
+            $table->string('kk_dom');
             $table->string('lain_dom');
             $table->date('tgl_antre_dom');
             $table->unsignedBigInteger('fk_id_user');

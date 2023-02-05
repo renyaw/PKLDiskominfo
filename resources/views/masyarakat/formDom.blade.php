@@ -18,7 +18,8 @@
             <h4 class="text-center mt-3">Surat Pengantar Domisili</h4>
         </div>
         <div class="konten">
-            <form action="" method="POST" autocomplete="on" name="form">
+            <form action="/formDom" method="POST" autocomplete="on" name="form" enctype="multipart/form-data">
+                @csrf
                 <div class="row mt-4">
                      <!-- Left -->
                     <div class="col-6">
@@ -35,18 +36,18 @@
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="pengantarKel">Surat Pengantar Kelurahan <a href="">Unduh</a></label>
+                            <label for="sp_kel_dom">Surat Pengantar Kelurahan <a href="">Unduh</a></label>
                             <div class="input-group">
-                                <input type="file" class="form-control" id="inputGroupFile02" name="pengantarKel" placeholder="Input">
-                                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                <input type="file" class="form-control" id="sp_kel_dom" name="sp_kel_dom" placeholder="Input">
+                                <label class="input-group-text" for="sp_kel_dom">Upload</label>
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="KTP">Kartu Tanda Penduduk</label>
+                            <label for="ktp_dom">Kartu Tanda Penduduk</label>
                             <div class="input-group">
-                                <input type="file" class="form-control" id="inputGroupFile02" name="KTP" placeholder="Input">
-                                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                <input type="file" class="form-control" id="ktp_dom" name="ktp_dom" placeholder="Input">
+                                <label class="input-group-text" for="ktp_dom">Upload</label>
                             </div>
                         </div>
                         <br>
@@ -69,18 +70,18 @@
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="kk">Kartu Keluarga</label>
+                            <label for="kk_dom">Kartu Keluarga</label>
                             <div class="input-group">
-                                <input type="file" class="form-control" id="inputGroupFile02" name="kk">
-                                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                <input type="file" class="form-control" id="kk_dom" name="kk_dom">
+                                <label class="input-group-text" for="kk_dom">Upload</label>
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="lain">Berkas Lain</label>
+                            <label for="lain_dom">Berkas Lain</label>
                             <div class="input-group">
-                                <input type="file" class="form-control" id="inputGroupFile02" name="lain" placeholder="Input">
-                                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                <input type="file" class="form-control" id="lain_dom" name="lain_dom" placeholder="Input">
+                                <label class="input-group-text" for="lain_dom">Upload</label>
                             </div>
                         </div>
                         <br>
