@@ -43,7 +43,7 @@ class formDomController extends Controller
         $kk_dom = $request->file('kk_dom')->store('kk_dom');
         $lain_dom = $request->file('lain_dom')->store('lain_dom');
 
-        $request->antreanDomModel()->antreanDomModel([
+        $request->antreanDomModel()->store([
             'sp_kel_dom' => $sp_kel_dom,
             'kk_dom' => $kk_dom,
             'ktp_dom' => $ktp_dom,
