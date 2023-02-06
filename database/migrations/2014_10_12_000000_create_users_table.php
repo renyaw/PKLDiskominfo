@@ -112,15 +112,15 @@ return new class extends Migration
             $table->foreign('fk_id_kec')->references('id_kec')->on('kecamatan');
         });
         Schema::table('antrean_dom', function (Blueprint $table) {
-            $table->foreign('fk_id_user')->references('id_user')->on('users');
+            $table->foreign('fk_id_user')->references('id')->on('users');
             $table->foreign('fk_status')->references('id_status')->on('status');
         });
         Schema::table('antrean_kred', function (Blueprint $table) {
-            $table->foreign('fk_id_user')->references('id_user')->on('users');
+            $table->foreign('fk_id_user')->references('id')->on('users');
             $table->foreign('fk_status')->references('id_status')->on('status');
         });
         Schema::table('antrean_sktm', function (Blueprint $table) {
-            $table->foreign('fk_id_user')->references('id_user')->on('users');
+            $table->foreign('fk_id_user')->references('id')->on('users');
             $table->foreign('fk_status')->references('id_status')->on('status');
         });
         Schema::table('domisili', function (Blueprint $table) {
