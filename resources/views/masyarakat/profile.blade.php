@@ -22,7 +22,7 @@
                     <div class="row g-0">
                     <div class="col-md-6">
                         <div class="card-body">
-                        <p class="card-text border border-success p-2 mb-3 mt-3 rounded">NIK : @auth {{$query->nik}} @endauth</p>
+                        <p class="card-text border border-success p-2 mb-3 mt-3 rounded">NIK : {{$query->nik}} </p>
                         <p class="card-text border border-success p-2 mb-3 rounded">Nama Lengkap : </p>
                         <p class="card-text border border-success p-2 mb-3 rounded">Tanggal Lahir :</p>
                         <p class="card-text border border-success p-2 mb-3 rounded">Nama Ibu :</p>
@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="col-auto justify-content-md-end d-md-flex">
-                    <button type="submit" name="submit" value="submit" class="btn btn-info text-light">Edit Profile</button>
+                    <button type="submit" name="submit" value="submit" class="btn btn-info text-light" action="/editProfile">Edit Profile</button>
                 </div>
                 </div>
 

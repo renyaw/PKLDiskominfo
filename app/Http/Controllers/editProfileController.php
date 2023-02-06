@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\userModel;
+use Illuminate\Support\Facades\Auth;
+
 
 class editProfileController extends Controller
 {
@@ -13,7 +16,14 @@ class editProfileController extends Controller
      */
     public function index()
     {
-        //
+        $query = userModel::all();
+        // return $query;
+
+        return view('masyarakat/editProfile',compact('query'));
+    }
+    public function detail($id)
+    {
+        
     }
 
     /**
