@@ -22,15 +22,44 @@ class loginController extends Controller
         $credentials = $request->validate([
             'username' => 'required',
             'password' => 'required',
+        ], [
+            'username.required' => 'username wajib diisi',
+            'password.required' => 'password wajib diisi',
         ]);
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('dashMasy');
+            return redirect()->intended('/dashMasy');
         }
 
         return back()->with('loginError', 'Login Salah!');
     }
+
+    // public function logout
+
+    // public function login(Request $request)
+    // {
+    //     $request->validate([
+    //         'username' => 'required',
+    //         'password' => 'required',
+    //     ], [
+    //         'username.required' => 'username wajib diisi',
+    //         'password.required' => 'password wajib diisi'
+    //     ]);
+
+    //     $infologin = [
+    //         'username' => $request->username,
+    //         'password' => $request->password
+    //     ];
+
+    //     if(Auth::attempt($infologin)){
+    //         //sukses
+    //         return 'suskses';
+    //     }else{
+    //         //gagal
+    //         return 'gagal';
+    //     }
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -38,10 +67,10 @@ class loginController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function login()
-    {
+    // public function login()
+    // {
 
-    }
+    // }
     public function create()
     {
         //

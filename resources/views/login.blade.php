@@ -55,16 +55,19 @@
             
     <!--FORM LOGIN-->
             <div class="container">
+              {{-- Alert from login --}}
                 @if(session()->has('loginError'))
                   <div>  class="alert alert-danger alert-dismissible fade show p-4" role="alert">
                   {{session('loginError')}}
                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                   </div>
                 @endif
+              {{-- end alert --}}
 
               <div class="form-control bg-color=white shadow-lg" style="border-radius: 1rem; border-color:#87CEFA; border-width: 2px;">
                 <br />
-                <form name="form login" method="POST" autocomplete="off" action="/login">
+                <form name="form login" method="POST" autocomplete="off" action="/dashMasy">
+                  @csrf
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">
                         <b>Username</b>
@@ -81,7 +84,7 @@
                     <a href="#" >Lupa kata sandi?</a>
                   </div>
                   <div class="d-grid gap-2 mx-4" >
-                    <input type="submit" class="btn btn-primary" name="submit" id="submit" value="Masuk" />
+                    <input type="submit" class="btn btn-primary" name="submit" id="submit" value="Masuk"/>
                   </div>
                   <div class="d-grid gap-2 d-md-flex justify-content-md-center">
                   <a>Belum punya akun?</a>

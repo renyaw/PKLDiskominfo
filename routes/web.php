@@ -34,9 +34,9 @@ use App\Http\Controllers\dashKec2Controller;
 
 //All
 Route::resource('daftar', buatAkunController::class);
-Route::resource('login', loginController::class);
+Route::resource('login', loginController::class)->middleware('guest');
 //Guest
-Route::resource('/', berandaGuestController::class);
+Route::resource('/', berandaGuestController::class)->middleware('guest');
 
 //Kecamatan
 Route::resource('dashKec', dashKecController::class);

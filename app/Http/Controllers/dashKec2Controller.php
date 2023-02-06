@@ -13,7 +13,7 @@ class dashKec2Controller extends Controller
      */
     public function index()
     {
-        //
+        return view('/kecamatan/dashKec2');
     }
 
     /**
