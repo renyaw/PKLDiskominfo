@@ -36,7 +36,7 @@ class formDomController extends Controller
      */
     public function store(Request $request)
     {
-        $berkas = $request->store([]);
+        // $berkas = $request->store([]);
 
         $request->file('sp_kel_dom')->store('sp_kel_dom');
         $request->file('ktp_dom')->store('ktp_dom');
