@@ -13,7 +13,7 @@ class antreanSKTMModel extends Model
 
     public function permohonan_sktm()
     {
-        return $this->belongsTo(userModel::class, 'fk_id_user', 'id_user');
+        return $this->belongsTo(userModel::class, 'fk_id_user', 'id');
     }
 
     public function antre_stat_sktm()

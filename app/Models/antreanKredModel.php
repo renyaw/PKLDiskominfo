@@ -15,7 +15,7 @@ class antreanKredModel extends Model
 
     public function permohonan_kred()
     {
-        return $this->belongsTo(userModel::class, 'fk_id_user', 'id_user');
+        return $this->belongsTo(userModel::class, 'fk_id_user', 'id');
     }
 
     //Status

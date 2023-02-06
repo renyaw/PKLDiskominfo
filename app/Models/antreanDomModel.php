@@ -13,7 +13,7 @@ class antreanDomModel extends Model
 
     public function permohonan_dom()
     {
-        return $this->belongsTo(userModel::class, 'fk_id_user', 'id_user');
+        return $this->belongsTo(userModel::class, 'fk_id_user', 'id');
     }
 
     public function antre_stat_dom()
