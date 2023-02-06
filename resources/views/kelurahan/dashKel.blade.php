@@ -3,11 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Masuk</title>
+        <title>Dashboard</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         </head>
     <body>
-
     <!-- Navbar -->
     @extends('navbar.navbaradmin')
     <!-- Navbar End -->
@@ -20,7 +19,7 @@
                     <div class="container position-relative" style="width: 19rem; height: 19rem; background-color:#87CEFA; border-radius: 1rem;">  
                         <div class="position-absolute top-50 start-50 translate-middle">
                             <p class="fs-1 fw-bold text-light" >22</p>
-                            <p class="text-light" >Surat Pengantar Domisili Usaha</p>
+                            <p class="text-light" >Surat Keterangan Domisili</p>
                         </div>
                     </div>   
                 </div>
@@ -28,7 +27,7 @@
                     <div class="container position-relative" style="width: 19rem; height:19rem; background-color:#87CEFA; border-radius: 1rem;">
                         <div class="position-absolute top-50 start-50 translate-middle">
                             <p class="fs-1 fw-bold text-light ">22</p>
-                            <p class="text-light" >Surat Keterangan Tidak Mampu</p>
+                            <p class="text-light" >Surat Pengantar Kredit</p>
                         </div>    
                     </div>
                 </div>   
@@ -36,7 +35,7 @@
                     <div class="container position-relative" style="width: 19rem; height:19rem; background-color:#87CEFA; border-radius: 1rem;">
                         <div class="position-absolute top-50 start-50 translate-middle">
                             <p class="fs-1 fw-bold text-light">22</p>
-                            <p class="text-light" >Surat Pengantar Kredit</p>
+                            <p class="text-light" >Surat Keterangan Tidak Mampu</p>
                         </div>
                     </div>   
                 </div>

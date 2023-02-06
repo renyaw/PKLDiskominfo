@@ -13,7 +13,7 @@ class dashMasyController extends Controller
      */
     public function index()
     {
-        //
+        return view('/masyarakat/dashMasy');
     }
 
     /**
