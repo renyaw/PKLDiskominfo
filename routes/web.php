@@ -34,7 +34,10 @@ use App\Http\Controllers\dashKec2Controller;
 
 //All
 Route::resource('daftar', buatAkunController::class);
-Route::resource('login', loginController::class)->middleware('guest');
+// Route::resource('login', loginController::class, [
+//     'name' => 'login',
+// ])->middleware('guest');
+// Route::resource('login', loginController::class)->name('login')->middleware('guest');
 //Guest
 Route::resource('/', berandaGuestController::class)->middleware('guest');
 
@@ -52,7 +55,7 @@ Route::resource('verifKred', verifKredController::class);
 Route::resource('verifSKTM', verifSKTMController::class);
 
 //Masyarakat
-Route::resource('dashMasy', dashMasyController::class);
+Route::resource('dashMasy', dashMasyController::class)->middleware('auth');
 Route::resource('editProfile', editProfileController::class);
 Route::resource('formDom', formDomController::class);
 Route::resource('formKred', formKredController::class);
@@ -72,6 +75,11 @@ Route::post('/getKelurahan', [buatAkunController::class, 'getKelurahan'])->name(
 //Input From User
 Route::post('/daftar', [buatAkunController::class, 'store']);
 Route::post('/formDom', [formDomController::class, 'store']);
+
+//Login
+Route::get('login', [loginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('login', [loginController::class, 'store']);
+Route::post('logout', [loginController::class, 'logout']);
 
 
 

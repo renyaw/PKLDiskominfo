@@ -25,7 +25,7 @@
                         <a class="nav-link" href="/">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link border rounded-4" href="signin">Masuk</a>
+                        <a class="nav-link border rounded-4" href="login">Masuk</a>
                     </li>
                 </ul>
             </div>

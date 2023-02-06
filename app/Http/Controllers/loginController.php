@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\userModel;
 
 class loginController extends Controller
 {
@@ -17,25 +18,25 @@ class loginController extends Controller
         return view('/login');
     }
 
-    public function authenticate(Request $request)
-    {
-        $credentials = $request->validate([
-            'username' => 'required',
-            'password' => 'required',
-        ], [
-            'username.required' => 'username wajib diisi',
-            'password.required' => 'password wajib diisi',
-        ]);
+    // public function authenticate(Request $request)
+    // {
+    //     $credentials = $request->validate([
+    //         'username' => 'required',
+    //         'password' => 'required',
+    //     ], [
+    //         'username.required' => 'username wajib diisi',
+    //         'password.required' => 'password wajib diisi',
+    //     ]);
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->intended('/dashMasy');
-        }
+    //     if (Auth::attempt($credentials)) {
+    //         $request->session()->regenerate();
+    //         return redirect()->intended('/dashMasy');
+    //     }
 
-        return back()->with('loginError', 'Login Salah!');
-    }
+    //     return back()->with('loginError', 'Login Salah!');
+    // }
 
-    // public function logout
+
 
     // public function login(Request $request)
     // {
@@ -61,12 +62,6 @@ class loginController extends Controller
     //     }
     // }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
     // public function login()
     // {
 
@@ -74,6 +69,15 @@ class loginController extends Controller
     public function create()
     {
         //
+    }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 
     /**
@@ -84,7 +88,19 @@ class loginController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $credentials = $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('dashMasy');
+        }
+
+        return back()->with('Lerror', 'Tidak Berhasil Login!');
+
     }
 
     /**

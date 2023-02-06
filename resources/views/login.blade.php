@@ -23,7 +23,7 @@
                         <a class="nav-link" href="/">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link border rounded-4" href="signup">Daftar</a>
+                        <a class="nav-link border rounded-4" href="daftar">Daftar</a>
                     </li>
                 </ul>
             </div>
@@ -38,9 +38,18 @@
             <div class="alert alert-success alert-dismissible fade show p-4" role="alert">
                 {{session('status')}}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
+            </div>
         @endif
         {{-- end alert --}}
+
+         {{-- Alert from login --}}
+        @if(session()->has('Lerror'))
+            <div class="alert alert-danger alert-dismissible fade show p-4" role="alert">
+                {{session('Lerror')}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+         {{-- end alert --}}
       <div class="row align-items-center h-100">
         <div class="col-6 mx-auto">
           <div class="card p-4 shadow-lg" style="border-radius: 1rem; border-color:#87CEFA; border-width: 3px;">
@@ -52,30 +61,28 @@
               <h3><b>MASUK</b></h3>
             </div>
             <br />
-            
+
     <!--FORM LOGIN-->
             <div class="container">
-              {{-- Alert from login --}}
-                @if(session()->has('loginError'))
-                  <div>  class="alert alert-danger alert-dismissible fade show p-4" role="alert">
-                  {{session('loginError')}}
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  </div>
-                @endif
-              {{-- end alert --}}
+
 
               <div class="form-control bg-color=white shadow-lg" style="border-radius: 1rem; border-color:#87CEFA; border-width: 2px;">
                 <br />
-                <form name="form login" method="POST" autocomplete="off" action="/dashMasy">
+                <form name="login" method="POST" autocomplete="off" action="/login">
                   @csrf
                   <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">
+                    <label for="username" class="form-label">
                         <b>Username</b>
                     </label>
-                    <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" autofocus required/>
-                  </div>
+                    <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" autofocus>
+                @error('Username')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
+                </div>
                   <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label" required>
+                    <label for="password" class="form-label" required>
                         <b>Kata Sandi</b>
                     </label>
                     <input type="password" class="form-control" id="password" name="password"/>

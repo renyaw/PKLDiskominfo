@@ -22,7 +22,7 @@
                     <div class="row g-0">
                     <div class="col-md-6">
                         <div class="card-body">
-                        <p class="card-text border border-success p-2 mb-3 mt-3 rounded">NIK : </p>
+                        <p class="card-text border border-success p-2 mb-3 mt-3 rounded">NIK : @auth {{$query->nik}} @endauth</p>
                         <p class="card-text border border-success p-2 mb-3 rounded">Nama Lengkap : </p>
                         <p class="card-text border border-success p-2 mb-3 rounded">Tanggal Lahir :</p>
                         <p class="card-text border border-success p-2 mb-3 rounded">Nama Ibu :</p>

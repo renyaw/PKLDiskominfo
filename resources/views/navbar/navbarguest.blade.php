@@ -19,9 +19,9 @@
                             Layanan
                         </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="signin">Surat Keterangan Domisili Usaha</a></li>
-                        <li><a class="dropdown-item" href="signin">Surat Pengantar Kredit</a></li>
-                        <li><a class="dropdown-item" href="signin">Surat Keterangan Tidak Mampu</a></li>
+                        <li><a class="dropdown-item" href="login">Surat Keterangan Domisili Usaha</a></li>
+                        <li><a class="dropdown-item" href="login">Surat Pengantar Kredit</a></li>
+                        <li><a class="dropdown-item" href="login">Surat Keterangan Tidak Mampu</a></li>
                     </ul>
                     </li>
                     <li class="nav-item">
