@@ -55,7 +55,7 @@ Route::resource('verifKred', verifKredController::class);
 Route::resource('verifSKTM', verifSKTMController::class);
 
 //Masyarakat
-Route::resource('dashMasy', dashMasyController::class)->middleware('auth');
+Route::resource('dashMasy', dashMasyController::class);
 Route::resource('editProfile', editProfileController::class);
 Route::resource('formDom', formDomController::class);
 Route::resource('formKred', formKredController::class);
