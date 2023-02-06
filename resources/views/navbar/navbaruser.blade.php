@@ -35,10 +35,10 @@
                     </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard">Dashboard</a>
+                        <a class="nav-link" href="dashMasy">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="status">Status</a>
+                        <a class="nav-link" href="riwayat">Status</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link border rounded-4" href="/">Keluar</a>
