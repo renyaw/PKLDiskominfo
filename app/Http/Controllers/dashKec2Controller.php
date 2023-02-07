@@ -4,6 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\antreanDomModel;
+
+use App\Models\antreanSKTMModel;
+
+use App\Models\antreanKredModel;
+
+use DB;
+
 class dashKec2Controller extends Controller
 {
     /**
@@ -13,7 +21,33 @@ class dashKec2Controller extends Controller
      */
     public function index()
     {
-        return view('/kecamatan/dashKec2');
+        $querydom = \DB::table('antrean_dom')
+        ->select([
+            \DB::raw('count(*) as jumlahdom')
+        ])
+
+        ->get()
+        ;
+
+        $querykred = \DB::table('antrean_kred')
+        ->select([
+            \DB::raw('count(*) as jumlahkred')
+        ])
+
+        ->get()
+        ;
+
+        $querysktm = \DB::table('antrean_sktm')
+        ->select([
+            \DB::raw('count(*) as jumlahsktm')
+        ])
+
+        ->get()
+
+        ;
+
+        return view('/kelurahan/dashKel', compact('querydom','querykred','querysktm'));
+
     }
 
     /**
