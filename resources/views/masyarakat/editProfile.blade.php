@@ -25,13 +25,13 @@
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="nama">Nama</label>
-                            <input type="text" class="form-control" id="nama" name="nama" value="{{ $data->nama }}">
+                            <input type="text" class="form-control" id="nama" name="nama" value="{{ $query->nama }}">
                         </div>
                         <br>
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="ibu">Nama Ibu</label>
-                            <input type="text" class="form-control" id="ibu" name="ibu" value="{{ $data->nama_ibu }}">
+                            <input type="text" class="form-control" id="ibu" name="ibu" value="{{ $query->nama_ibu }}">
                         </div>
                         <br>
                         <div class="form-group">

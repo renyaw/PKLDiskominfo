@@ -15,7 +15,11 @@ class userModel extends Model
     //Kelurahan
     public function user_kel()
     {
-        return $this->belongsTo(kelurahanModel::class, 'fk_id_kel', 'id_kel');
+        return $this->belongsTo(kelurahanModel::class, 'kelurahan', 'id_kel');
+    }
+    public function user_kec()
+    {
+        return $this->belongsTo(kecamatanModel::class, 'kecamatan', 'id_kec');
     }
     //Antrean
     public function antrean_sktm()

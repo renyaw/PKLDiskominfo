@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\userModel;
+use App\Models\kecamatanModel;
+use App\Models\kelurahanModel;
 
-use Illuminate\Support\Facades\Auth;
 
 class profileController extends Controller
 {
@@ -17,10 +18,11 @@ class profileController extends Controller
      */
     public function index()
     {
-        $query = userModel::all();
-        // return $query;
-
-        return view('masyarakat/profile',compact('query'));
+        // return Auth::user();
+        $query = userModel::find(Auth::user()->id);
+        $data = kecamatanModel::all();
+        $path = kelurahanModel::all();
+        return view('masyarakat/profile',compact('query', 'data', 'path'));
     }
 
     /**

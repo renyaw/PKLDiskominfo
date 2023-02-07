@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('nama_ibu');
             $table->string('alamat');
             $table->string('no_telp');
-            $table->string('kelurahan');
-            $table->string('kecamatan');
+            $table->unsignedBigInteger('kelurahan');
+            $table->unsignedBigInteger('kecamatan');
             $table->string('username')->unique();
             $table->string('password');
             // $table->unsignedBigInteger('fk_id_kel');
@@ -104,10 +104,10 @@ return new class extends Migration
             $table->timestamps();
         });
         // Foreign Key
-        // Schema::table('users', function (Blueprint $table) {
-        //     $table->foreign('fk_id_kel')->references('id_kel')->on('kelurahan');
-        //     $table->foreign('fk_id_kec')->references('id_kec')->on('kecamatan');
-        // });
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreign('kelurahan')->references('id_kel')->on('kelurahan');
+            $table->foreign('kecamatan')->references('id_kec')->on('kecamatan');
+        });
         Schema::table('kelurahan', function (Blueprint $table) {
             $table->foreign('fk_id_kec')->references('id_kec')->on('kecamatan');
         });

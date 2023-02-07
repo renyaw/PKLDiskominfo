@@ -23,23 +23,23 @@
                     <div class="col-md-6">
                         <div class="card-body">
                         <p class="card-text border border-success p-2 mb-3 mt-3 rounded">NIK : {{$query->nik}} </p>
-                        <p class="card-text border border-success p-2 mb-3 rounded">Nama Lengkap : </p>
-                        <p class="card-text border border-success p-2 mb-3 rounded">Tanggal Lahir :</p>
-                        <p class="card-text border border-success p-2 mb-3 rounded">Nama Ibu :</p>
+                        <p class="card-text border border-success p-2 mb-3 rounded">Nama Lengkap : {{$query->nama}} </p>
+                        <p class="card-text border border-success p-2 mb-3 rounded">Tanggal Lahir : {{$query->tgl_lahir}} </p>
+                        <p class="card-text border border-success p-2 mb-3 rounded">Nama Ibu : {{$query->nama_ibu}} </p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
-                            <p class="card-text border border-success p-2 mb-3 mt-3 rounded">Email :</p>
-                            <p class="card-text border border-success p-2 mb-3 rounded">Kelurahan :</p>
-                            <p class="card-text border border-success p-2 mb-3 rounded">Kecamatan :</p>
-                            <p class="card-text border border-success p-2 mb-3 rounded">Alamat Lengkap :</p>
+                            </p>
+                            <p class="card-text border border-success p-2 mb-3 rounded">Kelurahan : {{$query->user_kel->nama_kel}}</p>
+                            <p class="card-text border border-success p-2 mb-3 rounded">Kecamatan : {{$query->user_kec->nama_kec}}</p>
+                            <p class="card-text border border-success p-2 mb-3 rounded">Alamat Lengkap : {{$query->alamat}}</p>
                         </div>
                     </div>
                     </div>
                 </div>
                 <div class="col-auto justify-content-md-end d-md-flex">
-                    <button type="submit" name="submit" value="submit" class="btn btn-info text-light" action="/editProfile">Edit Profile</button>
+                    <a href="editProfile" button type="submit" name="submit" value="submit" class="btn btn-info text-light">Edit Profile</a>
                 </div>
                 </div>
 

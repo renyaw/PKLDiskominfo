@@ -15,10 +15,10 @@ class kelurahanModel extends Model
     //Kecamatan
     public function kel_kec()
     {
-        return $this->belongsTo(kelurahanModel::class, 'fk_id_kec', 'id_kec');
+        return $this->belongsTo(kelurahanModel::class, 'kecamatan', 'id_kec');
     }
-    public function kec_user()
+    public function kel_user()
     {
-        return $this->hasMany(userModel::class, 'fk_id_kel', 'id_kel');
+        return $this->hasMany(userModel::class, 'kelurahan', 'id_kel');
     }
 }

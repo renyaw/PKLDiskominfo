@@ -15,6 +15,10 @@ class kecamatanModel extends Model
     //Kelurahan
     public function kec_kel()
     {
-        return $this->hasMany(kelurahanModel::class, 'fk_id_kec', 'id_kec');
+        return $this->hasMany(kelurahanModel::class, 'kecamatan', 'id_kec');
+    }
+    public function kec_user()
+    {
+        return $this->hasMany(kecamatanModel::class, 'user', 'id');
     }
 }
