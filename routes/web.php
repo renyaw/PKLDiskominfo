@@ -42,39 +42,39 @@ Route::resource('daftar', buatAkunController::class);
 Route::resource('/', berandaGuestController::class)->middleware('guest');
 
 //Kecamatan
-Route::resource('dashKec', dashKecController::class);
-Route::resource('dashKec2', dashKec2Controller::class);
+Route::resource('dashKec', dashKecController::class)->middleware('auth');
+Route::resource('dashKec2', dashKec2Controller::class)->middleware('auth');
 
 //Kelurahan
-Route::resource('antreanDom', antreanDomController::class);
-Route::resource('antreanKred', antreanKredController::class);
-Route::resource('antreanSKTM', antreanSKTMController::class);
-Route::resource('dashKel', dashKelController::class);
-Route::resource('verifDom', verifDomController::class);
-Route::resource('verifKred', verifKredController::class);
-Route::resource('verifSKTM', verifSKTMController::class);
+Route::resource('antreanDom', antreanDomController::class)->middleware('auth');
+Route::resource('antreanKred', antreanKredController::class)->middleware('auth');
+Route::resource('antreanSKTM', antreanSKTMController::class)->middleware('auth');
+Route::resource('dashKel', dashKelController::class)->middleware('auth');
+Route::resource('verifDom', verifDomController::class)->middleware('auth');
+Route::resource('verifKred', verifKredController::class)->middleware('auth');
+Route::resource('verifSKTM', verifSKTMController::class)->middleware('auth');
 
 //Masyarakat
-Route::resource('dashMasy', dashMasyController::class);
-Route::resource('editProfile', editProfileController::class);
-Route::resource('formDom', formDomController::class);
-Route::resource('formKred', formKredController::class);
-Route::resource('formSKTM1', formSKTM1Controller::class);
-Route::resource('formSKTM2', formSKTM2Controller::class);
+Route::resource('dashMasy', dashMasyController::class)->middleware('auth');
+Route::resource('editProfile', editProfileController::class)->middleware('auth');
+Route::resource('formDom', formDomController::class)->middleware('auth');
+Route::resource('formKred', formKredController::class)->middleware('auth');
+Route::resource('formSKTM1', formSKTM1Controller::class)->middleware('auth');
+Route::resource('formSKTM2', formSKTM2Controller::class)->middleware('auth');
 Route::resource('kumpulanBerkas', kumpulanBerkasController::class);
-Route::resource('profile', profileController::class);
-Route::resource('riwayat', riwayatController::class);
-Route::resource('riwayatSKTM', riwayatSKTMController::class);
-Route::resource('riwayatDom', riwayatDomController::class);
-Route::resource('riwayatKred', riwayatKredController::class);
+Route::resource('profile', profileController::class)->middleware('auth');
+Route::resource('riwayat', riwayatController::class)->middleware('auth');
+Route::resource('riwayatSKTM', riwayatSKTMController::class)->middleware('auth');
+Route::resource('riwayatDom', riwayatDomController::class)->middleware('auth');
+Route::resource('riwayatKred', riwayatKredController::class)->middleware('auth');
 
 // Ajax
 Route::post('/getKelurahan', [buatAkunController::class, 'getKelurahan'])->name('getKelurahan');
 
 
 //Input From User
-Route::post('/daftar', [buatAkunController::class, 'store']);
-Route::post('/formDom', [formDomController::class, 'store']);
+// Route::post('/daftar', [buatAkunController::class, 'store']);
+// Route::post('/formDom', [formDomController::class, 'store']);
 
 //Login
 Route::get('login', [loginController::class, 'index'])->name('login')->middleware('guest');
