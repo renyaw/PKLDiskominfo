@@ -39,10 +39,11 @@
                         <th>No Telp</th>
                         <th>Status</th>
                         <th>Action</th>
-
-
                     </tr>
+
+                    
                     @foreach($query as $data)
+                    <tr>
                     <td>{{$data->id_sktm}}</td>
                     <td>{{$data->permohonan_sktm->nik}}</td>
                     <td>{{$data->permohonan_sktm->nama}}</td>
@@ -50,9 +51,9 @@
                     <td>{{$data->permohonan_sktm->no_telp}}</td>
                     <td>{{$data->antre_stat_sktm->proses}}</td>
                     <td></td>
-
-
+                    </tr>
                     @endforeach
+
                 </div>
             </div>
         </div>
