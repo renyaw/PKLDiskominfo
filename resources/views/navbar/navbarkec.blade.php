@@ -22,11 +22,14 @@
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Dashboard</a>
+                        <a class="nav-link" href="dashKec">Dashboard</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link border rounded-4" href="#">Logout</a>
+                        <form action="/logout" method="post">
+                            @csrf
+                            <button type="submit" class="dropdown-item mt-2"> <i class="bi bi-box-arrow-right"></i>Keluar </button>
+                        </form>
                     </li>
                 </ul>
             </div>
