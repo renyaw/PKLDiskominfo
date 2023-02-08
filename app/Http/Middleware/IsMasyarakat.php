@@ -17,7 +17,11 @@ class IsMasyarakat
      */
     public function handle(Request $request, Closure $next)
     {
-        dd(Auth::user());
+        if (Auth::user()->role_id != 1) {
+            abort(404);
+        }
+
         return $next($request);
+
     }
 }

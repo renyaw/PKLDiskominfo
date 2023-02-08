@@ -64,7 +64,7 @@ Route::resource('formKred', formKredController::class)->middleware(['auth', 'IsM
 Route::resource('formSKTM1', formSKTM1Controller::class)->middleware(['auth', 'IsMasyarakat']);
 Route::resource('formSKTM2', formSKTM2Controller::class)->middleware(['auth', 'IsMasyarakat']);
 Route::resource('kumpulanBerkas', kumpulanBerkasController::class);
-Route::resource('profile', profileController::class)->middleware(['auth', 'IsMasyarakat']);
+Route::resource('profile', profileController::class)->middleware('auth');
 Route::resource('riwayat', riwayatController::class)->middleware(['auth', 'IsMasyarakat']);
 Route::resource('riwayatSKTM', riwayatSKTMController::class)->middleware(['auth', 'IsMasyarakat']);
 Route::resource('riwayatDom', riwayatDomController::class)->middleware(['auth', 'IsMasyarakat']);
