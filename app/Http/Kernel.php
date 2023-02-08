@@ -64,8 +64,8 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         //Middleware
-        'kecamatan' => \App\Http\Middleware\IsKecamatan::class,
-        'kelurahan' => \App\Http\Middleware\IsKelurahan::class,
-        'masyarakat' => \App\Http\Middleware\IsMasyarakat::class,
+        'IsKecamatan' => \App\Http\Middleware\IsKecamatan::class,
+        'IsKelurahan' => \App\Http\Middleware\IsKelurahan::class,
+        'IsMasyarakat' => \App\Http\Middleware\IsMasyarakat::class,
     ];
 }
