@@ -25,6 +25,7 @@ return new class extends Migration
             $table->unsignedBigInteger('kecamatan');
             $table->string('username')->unique();
             $table->string('password');
+            $table->unsignedBigInteger('role_id')->default(1);
             // $table->unsignedBigInteger('fk_id_kel');
             // $table->unsignedBigInteger('fk_id_kec');
             $table->rememberToken();
