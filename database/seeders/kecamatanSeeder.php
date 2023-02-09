@@ -25,7 +25,7 @@ class kecamatanSeeder extends Seeder
             'nama_kec'=>'Argomulyo'
         ]);
         DB:: table('kecamatan')->insert([
-            'nama_kec'=>'sidomukti'
+            'nama_kec'=>'Sidomukti'
         ]);
     }
 }
