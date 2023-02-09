@@ -17,11 +17,15 @@ class IsMasyarakat
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->role_id != 1) {
-            abort(404);
+        if (Auth::user()->role_id == 1) {
+            return $next($request);
+        }else if(Auth::user()->role_id == 2){
+            return redirect('dashKel');
+        }else{
+            return redirect('dashKec');
         }
 
-        return $next($request);
+
 
     }
 }
