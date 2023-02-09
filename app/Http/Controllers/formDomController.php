@@ -41,7 +41,7 @@ class formDomController extends Controller
 
         $path = Storage::putFile('sp_kel_dom', $request->file('sp_kel_dom'));
         dd($path);
-        // $request->file('sp_kel_dom')->store('sp_kel_dom');
+        $request->file('sp_kel_dom')->store('sp_kel_dom');
         // $request->file('ktp_dom')->store('ktp_dom');
         // $request->file('kk_dom')->store('kk_dom');
         // $request->file('lain_dom')->store('lain_dom');
