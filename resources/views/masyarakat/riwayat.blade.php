@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-5">
-                    <a href="verifikasi" type="button" class="btn btn-outline-success">Lihat Detail</a>
+                    <a href="riwayatDom" type="button" class="btn btn-outline-success">Lihat Detail</a>
                 </div>
             </div>
             <div class="col">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-5">
-                    <a href="verifikasi" type="button" class="btn btn-outline-success">Lihat Detail</a>
+                    <a href="riwayatSKTM" type="button" class="btn btn-outline-success">Lihat Detail</a>
                 </div>
             </div>
             <div class="col">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-5">
-                    <a href="verifikasi" type="button" class="btn btn-outline-success">Lihat Detail</a>
+                    <a href="riwayatKred" type="button" class="btn btn-outline-success">Lihat Detail</a>
                 </div>
             </div>
         </div>

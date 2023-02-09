@@ -30,10 +30,10 @@
                             <p class="card-text">Permohonan Anda {{$data->antre_stat_dom->proses}} </p>
                         </div>
                         <div class="col-4 d-flex justify-content-end">
-                            @if($data->antre_stat_dom == 0)
+                            @if($data->antre_stat_dom == 1)
                                 <a href="formDom" class="btn btn-outline-warning">Edit</a>
                             @endif
-                            @if($$data->antre_stat_dom == 1)
+                            @if($$data->antre_stat_dom == 2)
                                 <a href="#" class="btn btn-outline-warning">Download?</a>
                             @endif
                         </div>
