@@ -33,11 +33,11 @@ return new class extends Migration
         });
 
         Schema::create('kelurahan', function (Blueprint $table) {
+            $table->unsignedBigInteger('fk_id_kec');
             $table->id('id_kel');
             $table->string('nama_kel');
             $table->string('notelp_kel');
             $table->string('alamat_kel');
-            $table->unsignedBigInteger('fk_id_kec');
             $table->timestamps();
         });
 
