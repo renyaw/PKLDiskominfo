@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\antreanDomModel;
+use App\Models\userModel;
 
 class riwayatDomController extends Controller
 {
@@ -15,7 +17,7 @@ class riwayatDomController extends Controller
      */
     public function index()
     {
-        $query = antreanDomModel::all();
+        $query = userModel::find(Auth::user()->id);
 
         return view('masyarakat/riwayatDom',compact('query'));
     }
