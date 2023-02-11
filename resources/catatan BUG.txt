@@ -1,0 +1,5 @@
+CATATAN BUG (nada)
+1. dalem riwayat(riwayatDom)
+2. waktu form dia blm bisa ganti nama waktu diinput ke dalem database, jadi namanya masi random
+
+

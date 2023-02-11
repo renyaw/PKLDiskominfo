@@ -18,6 +18,7 @@ class riwayatDomController extends Controller
     public function index()
     {
         $query = userModel::find(Auth::user()->id);
+        $datas = antreanDomModel::all();
 
         return view('masyarakat/riwayatDom',compact('query'));
     }
