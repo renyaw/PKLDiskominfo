@@ -28,7 +28,15 @@
                             <p class="card-text">Permohonan Anda: {{$data->antre_stat_kred->proses}} </p>
                         </div>
                         <div class="col-4 d-flex justify-content-end">
-                            <a href="#" class="btn btn-outline-warning">Go somewhere</a>
+                            @if($data->antre_stat_kred->id_status == 1)
+                                <a href="formDom" class="btn btn-outline-warning">Edit</a>
+                            @endif
+                            @if($data->antre_stat_kred->id_status == 2)
+                                <a href="#" class="btn btn-outline-success">Download?</a>
+                            @endif
+                            @if($data->antre_stat_kred->id_status == 3)
+                                <a href="#" class="btn btn-danger disabled" role="button" aria-disabled="true">Ditolak</a>
+                            @endif
                         </div>
                     </div>
                 </div>

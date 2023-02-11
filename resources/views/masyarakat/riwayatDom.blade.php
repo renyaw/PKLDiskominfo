@@ -18,7 +18,7 @@
 
         <div class="container mt-4">
 
-        @foreach($datas as $data && $query as $querys)
+        @foreach($datas as $data)
             <div class="card p-2">
                 <h4 class="card-header">Permohonan Surat Keterangan Domisili</h4>
                 <div class="card-body">
@@ -30,14 +30,14 @@
                             <p class="card-text">Permohonan Anda {{$data->antre_stat_dom->proses}} </p>
                         </div>
                         <div class="col-4 d-flex justify-content-end">
-                            @if($querys->antre_stat_dom->id_status == 1)
+                            @if($data->antre_stat_dom->id_status == 1)
                                 <a href="formDom" class="btn btn-outline-warning">Edit</a>
                             @endif
-                            @if($querys->antre_stat_dom->id_status == 2)
-                                <a href="#" class="btn btn-outline-warning">Download?</a>
+                            @if($data->antre_stat_dom->id_status == 2)
+                                <a href="#" class="btn btn-outline-success">Download?</a>
                             @endif
-                            @if($querys->antre_stat_dom->id_status == 3)
-                                <a href="#" class="btn btn-outline-warning btn-close">Ditolak</a>
+                            @if($data->antre_stat_dom->id_status == 3)
+                                <a href="#" class="btn btn-danger disabled" role="button" aria-disabled="true">Ditolak</a>
                             @endif
                         </div>
                     </div>

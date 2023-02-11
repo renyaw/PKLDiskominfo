@@ -21,7 +21,7 @@
                 <div class="container position-relative" style="width: 19rem; height: 19rem; background-color:#87CEFA; border-radius: 1rem;">
                     <div class="position-absolute top-50 start-50 translate-middle">
                         <p class="fs-1 fw-bold text-light" >22</p>
-                        <p class="text-light" >Surat Pengantar Domisili Usaha</p>
+                        <p class="text-light" >Surat Pengantar Domisili</p>
                     </div>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-5">

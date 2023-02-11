@@ -20,7 +20,7 @@ class riwayatDomController extends Controller
         $query = userModel::find(Auth::user()->id);
         $datas = antreanDomModel::all();
 
-        return view('masyarakat/riwayatDom',compact('query'));
+        return view('masyarakat/riwayatDom',compact('query', 'datas'));
     }
 
     /**
