@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\antreanSKTMModel;
+use App\Models\userModel;
 
 class formSKTM2Controller extends Controller
 {
