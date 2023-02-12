@@ -1,5 +1,5 @@
 CATATAN BUG (nada)
-1. dalem riwayat(riwayatDom)
-2. waktu form dia blm bisa ganti nama waktu diinput ke dalem database, jadi namanya masi random
+1. udah bisa input ke database bagian form dom, cuma ada error bagian fk status, tanggal antre sama fk id
+yang mana itu harusnya diambil dari user dan otomatis, tp knp gabisa?
 
 

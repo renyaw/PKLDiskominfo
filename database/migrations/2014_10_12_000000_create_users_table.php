@@ -52,7 +52,7 @@ return new class extends Migration
             $table->string('ktp_dom');
             $table->string('kk_dom');
             $table->string('lain_dom');
-            $table->date('tgl_antre_dom');
+            $table->date('tgl_antre_dom')->useCurrent();
             $table->unsignedBigInteger('fk_id_user');
             $table->unsignedBigInteger('fk_status');
             $table->timestamps();

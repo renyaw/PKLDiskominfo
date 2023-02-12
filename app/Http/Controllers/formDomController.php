@@ -39,33 +39,41 @@ class formDomController extends Controller
     public function store(Request $request)
     {
         try {
-            $file = $request->file('sp_kel_dom');
-            $nama = $file->getClientOriginalName();
-            $extension = $file->getClientOriginalExtension();
-            $newNama = $nama.'.'.$extension;
-            $path = Storage::putFileAs('sp_kel_dom', $request->file('sp_kel_dom'), $newNama);
+            $sp_kel = $request->file('sp_kel_dom');
+            $ktp = $request->file('ktp_dom');
+            $kk = $request->file('kk_dom');
+            $lain = $request->file('lain_dom');
+            $nama_sp = $sp_kel->getClientOriginalName();
+            $nama_ktp = $ktp->getClientOriginalName();
+            $nama_kk = $kk->getClientOriginalName();
+            $nama_lain = $lain->getClientOriginalName();
+            $extension_sp = $sp_kel->getClientOriginalExtension();
+            $extension_ktp = $ktp->getClientOriginalExtension();
+            $extension_kk = $kk->getClientOriginalExtension();
+            $extension_lain = $lain->getClientOriginalExtension();
+            $newNama_sp = $nama_sp.'.'.$extension_sp;
+            $newNama_ktp = $nama_ktp.'.'.$extension_ktp;
+            $newNama_kk = $nama_kk.'.'.$extension_kk;
+            $newNama_lain = $nama_lain.'.'.$extension_lain;
+            $path_sp = Storage::putFileAs('sp_kel_dom', $request->file('sp_kel_dom'), $newNama_sp);
+            $path_ktp = Storage::putFileAs('ktp_dom', $request->file('ktp_dom'), $newNama_ktp);
+            $path_kk = Storage::putFileAs('kk_dom', $request->file('kk_dom'), $newNama_kk);
+            $path_lain = Storage::putFileAs('lain_dom', $request->file('lain_dom'), $newNama_lain);
             $data = [
-                'sp_kel_dom' => $path
+                'sp_kel_dom' => $path_sp,
+                'ktp_dom' => $path_ktp,
+                'kk_dom' => $path_kk,
+                'lain_dom' => $path_lain,
+                'tgl_antre_dom' => '2023-02-01',
+                'fk_id_user' => 1,
+                'fk_status' =>1
+
             ];
 
             return antreanDomModel::create($data);
         } catch (\Exception $e) {
             return $e->getMessage();
         }
-
-
-
-        // $request->file('sp_kel_dom')->store('sp_kel_dom');
-        // $request->file('ktp_dom')->store('ktp_dom');
-        // $request->file('kk_dom')->store('kk_dom');
-        // $request->file('lain_dom')->store('lain_dom');
-
-        // $request->store()->antreanDomModel([
-        //     'sp_kel_dom' => $sp_kel_dom,
-        //     'kk_dom' => $kk_dom,
-        //     'ktp_dom' => $ktp_dom,
-        //     'lain_dom' => $lain_dom
-        // ]);
         return redirect('/dashMasy')->with('berhasil', 'Berkas Berhasil diinput! Silahkan Cek Melalui Riwayat');
     }
 
