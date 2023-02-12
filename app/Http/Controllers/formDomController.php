@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\antreanDomModel;
 
 use Illuminate\Support\Facades\Storage;
+
 class formDomController extends Controller
 {
     /**
@@ -37,14 +38,27 @@ class formDomController extends Controller
      */
     public function store(Request $request)
     {
-        // $berkas = $request->store([]);
+        try {
+            $file = $request->file('sp_kel_dom');
+            $nama = $file->getClientOriginalName();
+            $extension = $file->getClientOriginalExtension();
+            $newNama = $nama.'.'.$extension;
+            $path = Storage::putFileAs('sp_kel_dom', $request->file('sp_kel_dom'), $newNama);
+            $data = [
+                'sp_kel_dom' => $path
+            ];
 
-        $path = Storage::putFile('sp_kel_dom', $request->file('sp_kel_dom'));
-        dd($path);
-        $request->file('sp_kel_dom')->store('sp_kel_dom');
-        $request->file('ktp_dom')->store('ktp_dom');
-        $request->file('kk_dom')->store('kk_dom');
-        $request->file('lain_dom')->store('lain_dom');
+            return antreanDomModel::create($data);
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+
+
+
+        // $request->file('sp_kel_dom')->store('sp_kel_dom');
+        // $request->file('ktp_dom')->store('ktp_dom');
+        // $request->file('kk_dom')->store('kk_dom');
+        // $request->file('lain_dom')->store('lain_dom');
 
         // $request->store()->antreanDomModel([
         //     'sp_kel_dom' => $sp_kel_dom,
