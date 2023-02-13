@@ -62,17 +62,16 @@ class formKredController extends Controller
                 'ktp_kred' => $path_ktp,
                 'kk_kred' => $path_kk,
                 'lain_kred' => $path_lain,
-                'tgl_antre_kred' => '2023-02-01',
-                'fk_id_user' => 1,
+                'fk_id_user' => Auth::user()->id,
                 'fk_status' =>1
 
             ];
 
-            return antreanKredModel::create($data);
+            antreanKredModel::create($data);
+            return redirect('/dashMasy')->with('berhasil', 'Berkas Berhasil diinput! Silahkan Cek Melalui Riwayat');
         } catch (\Exception $e) {
             return $e->getMessage();
         }
-        return redirect('/dashMasy')->with('berhasil', 'Berkas Berhasil diinput! Silahkan Cek Melalui Riwayat');
     }
 
     /**
