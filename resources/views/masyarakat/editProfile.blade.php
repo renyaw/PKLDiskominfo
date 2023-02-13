@@ -18,33 +18,37 @@
             <h4 class="text-center mt-3">Perbarui Data Diri</h4>
         </div>
         <div class="konten">
-            <form action="" method="POST" autocomplete="on" name="form">
+            <form action="/update" method="POST" autocomplete="on" name="form">
+                @method("put")
                 <div class="row mt-4">
                      <!-- Left -->
                     <div class="col-6">
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="nama">Nama</label>
-                            <input type="text" class="form-control" id="nama" name="nama" value="{{ $query->nama }}">
+                            <input type="text" class="form-control" id="nama" name="nama" value="{{ old('nama', Auth::user()->nama) }}">
                         </div>
                         <br>
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="ibu">Nama Ibu</label>
-                            <input type="text" class="form-control" id="ibu" name="ibu" value="{{ $query->nama_ibu }}">
+                            <input type="text" class="form-control" id="ibu" name="ibu" value="{{ old('nama_ibu', Auth::user()->nama_ibu) }}">
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="kecamatan">Kecamatan</label>
                             <select class="form-select" name="kecamatan" id="kecamatan">
-                                <option value="0">-- Pilih Kecamatan --</option>
+                                <option value="{{ old('id_kec', Auth::user()->id_kec) }}">-- Pilih Kecamatan --</option>
+                                @foreach ($data as $kecamatan)
+                                    <option value="{{$kecamatan->id_kec}}">{{$kecamatan->nama_kec}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <br>
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="alamat">Alamat Lengkap</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Default tp bisa diganti" >
+                            <input type="text" class="form-control" id="alamat" name="alamat" value="{{ old('alamat', Auth::user()->alamat) }}" >
                         </div>
                         <br>
                     </div>
@@ -55,19 +59,19 @@
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="nik">NIK</label>
-                            <input type="text" class="form-control" id="nik" name="nik" value="{{ $data->NIK }}">
+                            <input type="text" class="form-control" id="nik" name="nik" value="{{ old('nik', Auth::user()->nik) }}">
                         </div>
                         <br>
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="tgl">Tanggal Lahir</label>
-                            <input type="date" class="form-control" id="tgl" name="tgl" value="{{ $data->tgl_lahir }}">
+                            <input type="date" class="form-control" id="tgl" name="tgl" value="{{ old('tgl_lahir', Auth::user()->tgl_lahir) }}">
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="kelurahan">Kelurahan</label>
                             <select class="form-select" name="kelurahan" id="kelurahan">
-                                <option value="0">-- Pilih Kelurahan --</option>
+                                <option value="{{ old('id_kel', Auth::user()->id_kel) }}">-- Pilih Kelurahan --</option>
                             </select>
                         </div>
                         <br>
@@ -75,7 +79,7 @@
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="notelp">Nomor Telepon (WA)</label>
-                            <input type="text" class="form-control" id="nama" name="notelp" placeholder="Default tp bisa diganti" >
+                            <input type="text" class="form-control" id="nama" name="notelp" value="{{ old('no_telp', Auth::user()->no_telp) }}" >
                         </div>
                         <br>
                     </div>
@@ -83,7 +87,7 @@
                 </div>
                 <div class="col-auto d-grid gap-2 d-flex justify-content-end">
                         <button type="submit" name="submit" value="submit" class="btn btn-outline-success">Simpan</button>
-                        <button type="submit" name="submit" value="submit" class="btn btn-outline-success">Kembali</button>
+                        <a href= "profile" type="button"  class="btn btn-outline-success">Kembali</a>
                     </div>
                 <!-- End Right -->
             </form>

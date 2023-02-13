@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Models\userModel;
+use App\Models\kecamatanModel;
+use App\Models\kelurahanModel;
+
 use Illuminate\Support\Facades\Auth;
 
 
@@ -16,10 +20,12 @@ class editProfileController extends Controller
      */
     public function index()
     {
-        $query = userModel::all();
+        $query = userModel::find(Auth::user()->id);
+        $data = kecamatanModel::all();
+        $path = kelurahanModel::all();
         // return $query;
 
-        return view('masyarakat/editProfile',compact('query'));
+        return view('masyarakat/editProfile',compact('query', 'data', 'path'));
     }
     public function detail($id)
     {
@@ -78,7 +84,20 @@ class editProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //Validate
+        $validated = $request->validate([
+            'nik' => 'required|unique:users|max:16|min:16',
+            'nama' => 'required|max:255',
+            'tgl_lahir' => 'required|date',
+            'no_telp' => 'required',
+            'nama_ibu' => 'required|max:255',
+            'kecamatan' => 'required',
+            'kelurahan' => 'required',
+            'alamat' => 'required',
+        ]);
+
+        return redirect('/profile')->with('status', 'Profil anda berhasil diedit!');
+
     }
 
     /**

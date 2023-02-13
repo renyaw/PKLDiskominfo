@@ -83,5 +83,6 @@ Route::get('login', [loginController::class, 'index'])->name('login')->middlewar
 Route::post('login', [loginController::class, 'store']);
 Route::post('logout', [loginController::class, 'logout']);
 
-
-
+//EditProfile
+Route::get('edit', [editProfileController::class, 'edit'])->name('profile.edit');
+Route::put('update', [editProfileController::class, 'update'])->name('profile.update');
