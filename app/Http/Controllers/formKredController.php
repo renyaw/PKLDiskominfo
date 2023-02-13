@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\antreanKredModel;
+
 class formKredController extends Controller
 {
     /**
@@ -13,7 +15,7 @@ class formKredController extends Controller
      */
     public function index()
     {
-        //
+        return view('masyarakat/formKred');
     }
 
     /**
@@ -34,7 +36,43 @@ class formKredController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $sp_kel = $request->file('sp_kel_kred');
+            $ktp = $request->file('ktp_kred');
+            $kk = $request->file('kk_kred');
+            $lain = $request->file('lain_kred');
+            $nama_sp = $sp_kel->getClientOriginalName();
+            $nama_ktp = $ktp->getClientOriginalName();
+            $nama_kk = $kk->getClientOriginalName();
+            $nama_lain = $lain->getClientOriginalName();
+            $extension_sp = $sp_kel->getClientOriginalExtension();
+            $extension_ktp = $ktp->getClientOriginalExtension();
+            $extension_kk = $kk->getClientOriginalExtension();
+            $extension_lain = $lain->getClientOriginalExtension();
+            $newNama_sp = $nama_sp.'.'.$extension_sp;
+            $newNama_ktp = $nama_ktp.'.'.$extension_ktp;
+            $newNama_kk = $nama_kk.'.'.$extension_kk;
+            $newNama_lain = $nama_lain.'.'.$extension_lain;
+            $path_sp = Storage::putFileAs('sp_kel_kred', $request->file('sp_kel_kred'), $newNama_sp);
+            $path_ktp = Storage::putFileAs('ktp_kred', $request->file('ktp_kred'), $newNama_ktp);
+            $path_kk = Storage::putFileAs('kk_kred', $request->file('kk_kred'), $newNama_kk);
+            $path_lain = Storage::putFileAs('lain_kred', $request->file('lain_kred'), $newNama_lain);
+            $data = [
+                'sp_kel_kred' => $path_sp,
+                'ktp_kred' => $path_ktp,
+                'kk_kred' => $path_kk,
+                'lain_kred' => $path_lain,
+                'tgl_antre_kred' => '2023-02-01',
+                'fk_id_user' => 1,
+                'fk_status' =>1
+
+            ];
+
+            return antreanKredModel::create($data);
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+        return redirect('/dashMasy')->with('berhasil', 'Berkas Berhasil diinput! Silahkan Cek Melalui Riwayat');
     }
 
     /**

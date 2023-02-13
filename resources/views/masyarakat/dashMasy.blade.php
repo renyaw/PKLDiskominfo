@@ -15,6 +15,14 @@
    <!-- Context -->
    @section('container')
     <div class="container">
+        {{-- Alert --}}
+        @if(session()->has('berhasil'))
+            <div class="alert alert-success alert-dismissible fade show p-4" role="alert">
+                {{session('berhasil')}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+        {{-- Alert --}}
         <!-- Gambar -->
         <div class="gambar mt-4 d-flex justify-content-center">
             <img src="img/Gunung.jpg" alt="" class="rounded">
