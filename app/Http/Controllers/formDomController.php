@@ -8,6 +8,8 @@ use App\Models\antreanDomModel;
 
 use Illuminate\Support\Facades\Storage;
 
+use Illuminate\Support\Facades\Auth;
+
 class formDomController extends Controller
 {
     /**
@@ -65,8 +67,8 @@ class formDomController extends Controller
                 'kk_dom' => $path_kk,
                 'lain_dom' => $path_lain,
                 'tgl_antre_dom' => '2023-02-01',
-                'fk_id_user' => 1,
-                'fk_status' =>1
+                'fk_id_user' => Auth::user()->id,
+                'fk_status' => 1
 
             ];
 

@@ -52,7 +52,7 @@ return new class extends Migration
             $table->string('ktp_dom');
             $table->string('kk_dom');
             $table->string('lain_dom');
-            $table->date('tgl_antre_dom')->useCurrent();
+            // $table->date('tgl_antre_dom')->useCurrent();
             $table->unsignedBigInteger('fk_id_user');
             $table->unsignedBigInteger('fk_status');
             $table->timestamps();
@@ -63,7 +63,7 @@ return new class extends Migration
             $table->string('ktp_kred');
             $table->string('kk_kred');
             $table->string('lain_kred');
-            $table->date('tgl_antre_kred');
+            // $table->date('tgl_antre_kred');
             $table->unsignedBigInteger('fk_id_user');
             $table->unsignedBigInteger('fk_status');
             $table->timestamps();
@@ -76,7 +76,7 @@ return new class extends Migration
             $table->string('kk_sktm');
             $table->string('ktp_sktm');
             $table->string('tujuan');
-            $table->date('tgl_antre_sktm');
+            // $table->date('tgl_antre_sktm');
             $table->unsignedBigInteger('fk_id_user');
             $table->unsignedBigInteger('fk_status');
             $table->timestamps();
