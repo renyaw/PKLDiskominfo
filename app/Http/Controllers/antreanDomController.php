@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Models\antreanDomModel;
 
+use Illuminate\Support\Facades\Storage;
+
+use Illuminate\Support\Facades\Auth;
+
 class antreanDomController extends Controller
 {
     /**
@@ -49,7 +53,20 @@ class antreanDomController extends Controller
      */
     public function show($id)
     {
-        //
+        $path_sp = Storage::url('public/sp_kel_dom');
+        // return '<src=''>'
+        $path_ktp = Storage::url('public/ktp_dom');
+        $path_kk = Storage::url('public/kk_dom');
+        $path_lain = Storage::url('public/lain_dom');
+        $data = [
+            'sp_kel_dom' => $path_sp,
+            'ktp_dom' => $path_ktp,
+            'kk_dom' => $path_kk,
+            'lain_dom' => $path_lain,
+            'fk_id_user' => Auth::user()->id,
+            'fk_status' => 1
+
+        ];
     }
 
     /**
