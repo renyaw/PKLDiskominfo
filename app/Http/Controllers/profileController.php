@@ -77,7 +77,21 @@ class profileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return $request; 
+        //Validate
+         $validated = $request->validate([
+            'nik' => 'required|unique:users|max:16|min:16',
+            'nama' => 'required|max:255',
+            'tgl_lahir' => 'required|date',
+            'no_telp' => 'required',
+            'nama_ibu' => 'required|max:255',
+            'kecamatan' => 'required',
+            'kelurahan' => 'required',
+            'alamat' => 'required',
+        ]);
+
+        return redirect('/profile')->with('status', 'Profil anda berhasil diedit!');
+
     }
 
     /**
