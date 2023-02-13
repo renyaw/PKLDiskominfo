@@ -39,7 +39,7 @@
                         <a class="nav-link" href="profile">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="riwayat">Status</a>
+                        <a class="nav-link" href="riwayat">Riwayat</a>
                     </li>
                     <li class="nav-item">
                         <form action="/logout" method="post">

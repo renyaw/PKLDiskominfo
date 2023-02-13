@@ -70,11 +70,12 @@ class formDomController extends Controller
 
             ];
 
-            return antreanDomModel::create($data);
+            antreanDomModel::create($data);
+            return redirect('/dashMasy')->with('berhasil', 'Berkas Berhasil diinput! Silahkan Cek Melalui Riwayat');
         } catch (\Exception $e) {
             return $e->getMessage();
         }
-        return redirect('/dashMasy')->with('berhasil', 'Berkas Berhasil diinput! Silahkan Cek Melalui Riwayat');
+
     }
 
     /**
