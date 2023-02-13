@@ -18,8 +18,10 @@
             <h4 class="text-center mt-3">Perbarui Data Diri</h4>
         </div>
         <div class="konten">
-            <form action="/update" method="POST" autocomplete="on" name="form">
-                @method("put")
+            <form action="{{ route('profile.update', Auth::user()->id)}}" method="POST" autocomplete="on" name="form">
+            @csrf    
+            @method('put')
+                
                 <div class="row mt-4">
                      <!-- Left -->
                     <div class="col-6">
