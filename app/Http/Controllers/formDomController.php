@@ -66,7 +66,7 @@ class formDomController extends Controller
                 'ktp_dom' => $path_ktp,
                 'kk_dom' => $path_kk,
                 'lain_dom' => $path_lain,
-                'tgl_antre_dom' => '2023-02-01',
+                // 'tgl_antre_dom' => '2023-02-01',
                 'fk_id_user' => Auth::user()->id,
                 'fk_status' => 1
 
