@@ -57,10 +57,10 @@ class formDomController extends Controller
             $newNama_ktp = $nama_ktp.'.'.$extension_ktp;
             $newNama_kk = $nama_kk.'.'.$extension_kk;
             $newNama_lain = $nama_lain.'.'.$extension_lain;
-            $path_sp = Storage::putFileAs('sp_kel_dom', $request->file('sp_kel_dom'), $newNama_sp);
-            $path_ktp = Storage::putFileAs('ktp_dom', $request->file('ktp_dom'), $newNama_ktp);
-            $path_kk = Storage::putFileAs('kk_dom', $request->file('kk_dom'), $newNama_kk);
-            $path_lain = Storage::putFileAs('lain_dom', $request->file('lain_dom'), $newNama_lain);
+            $path_sp = Storage::putFileAs('public/sp_kel_dom', $request->file('sp_kel_dom'), $newNama_sp);
+            $path_ktp = Storage::putFileAs('public/ktp_dom', $request->file('ktp_dom'), $newNama_ktp);
+            $path_kk = Storage::putFileAs('public/kk_dom', $request->file('kk_dom'), $newNama_kk);
+            $path_lain = Storage::putFileAs('public/lain_dom', $request->file('lain_dom'), $newNama_lain);
             $data = [
                 'sp_kel_dom' => $path_sp,
                 'ktp_dom' => $path_ktp,
