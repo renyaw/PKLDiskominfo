@@ -53,10 +53,10 @@ class formKredController extends Controller
             $newNama_ktp = $nama_ktp.'.'.$extension_ktp;
             $newNama_kk = $nama_kk.'.'.$extension_kk;
             $newNama_lain = $nama_lain.'.'.$extension_lain;
-            $path_sp = Storage::putFileAs('sp_kel_kred', $request->file('sp_kel_kred'), $newNama_sp);
-            $path_ktp = Storage::putFileAs('ktp_kred', $request->file('ktp_kred'), $newNama_ktp);
-            $path_kk = Storage::putFileAs('kk_kred', $request->file('kk_kred'), $newNama_kk);
-            $path_lain = Storage::putFileAs('lain_kred', $request->file('lain_kred'), $newNama_lain);
+            $path_sp = Storage::putFileAs('public/sp_kel_kred', $request->file('sp_kel_kred'), $newNama_sp);
+            $path_ktp = Storage::putFileAs('public/ktp_kred', $request->file('ktp_kred'), $newNama_ktp);
+            $path_kk = Storage::putFileAs('public/kk_kred', $request->file('kk_kred'), $newNama_kk);
+            $path_lain = Storage::putFileAs('public/lain_kred', $request->file('lain_kred'), $newNama_lain);
             $data = [
                 'sp_kel_kred' => $path_sp,
                 'ktp_kred' => $path_ktp,
