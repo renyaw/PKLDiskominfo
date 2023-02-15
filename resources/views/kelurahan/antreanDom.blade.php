@@ -50,7 +50,6 @@
                     <td>{{$data->permohonan_dom->alamat}}</td>
                     <td>{{$data->permohonan_dom->no_telp}}</td>
                     <td>{{$data->antre_stat_dom->proses}}</td>
-                    <td></td>
                     </tr>
                     @endforeach
 
