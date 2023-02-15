@@ -15,7 +15,7 @@ class formSKTM2Controller extends Controller
      */
     public function index()
     {
-
+        return view('masyarakat/formSKTM2');
     }
 
     /**
@@ -53,10 +53,10 @@ class formSKTM2Controller extends Controller
             $newNama_ktp = $nama_ktp.'.'.$extension_ktp;
             $newNama_kk = $nama_kk.'.'.$extension_kk;
             $newNama_lain = $nama_lain.'.'.$extension_lain;
-            $path_sp = Storage::putFileAs('sp_kel_sktm', $request->file('sp_kel_sktm'), $newNama_sp);
-            $path_ktp = Storage::putFileAs('ktp_sktm', $request->file('ktp_sktm'), $newNama_ktp);
-            $path_kk = Storage::putFileAs('kk_sktm', $request->file('kk_sktm'), $newNama_kk);
-            $path_lain = Storage::putFileAs('lain_sktm', $request->file('lain_sktm'), $newNama_lain);
+            $path_sp = Storage::putFileAs('public/sp_kel_sktm', $request->file('sp_kel_sktm'), $newNama_sp);
+            $path_ktp = Storage::putFileAs('public/ktp_sktm', $request->file('ktp_sktm'), $newNama_ktp);
+            $path_kk = Storage::putFileAs('public/kk_sktm', $request->file('kk_sktm'), $newNama_kk);
+            $path_lain = Storage::putFileAs('public/lain_sktm', $request->file('lain_sktm'), $newNama_lain);
             $data = [
                 'sp_kel_sktm' => $path_sp,
                 'ktp_sktm' => $path_ktp,
