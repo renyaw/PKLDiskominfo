@@ -26,7 +26,7 @@
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="nama">Nama</label>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Default" >
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Default" value="{{$data->permohonan_dom->nama}}">
                         </div>
                         <br>
                         <div class="form-group">
@@ -60,13 +60,13 @@
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="nik">NIK</label>
-                            <input type="text" class="form-control" id="nik" name="nik" placeholder="Default" >
+                            <input type="text" class="form-control" id="nik" name="nik" placeholder="Default" value="{{$data->permohonan_dom->nik}}">
                         </div>
                         <br>
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="kelurahan">Kelurahan</label>
-                            <input type="text" class="form-control" id="kelurahan" name="kelurahan" placeholder="Default" >
+                            <input type="text" class="form-control" id="kelurahan" name="kelurahan" placeholder="Default">
                         </div>
                         <br>
                         <div class="form-group">
