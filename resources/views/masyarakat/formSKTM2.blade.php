@@ -25,13 +25,13 @@
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="nama">Nama</label>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Default" >
+                            <input type="text" class="form-control" id="nama" name="nama" value="{{$query->nama}}" disabled readonly >
                         </div>
                         <br>
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="kecamatan">Kecamatan</label>
-                            <input type="text" class="form-control" id="kecamatan" name="kecamatan" placeholder="Default" >
+                            <input type="text" class="form-control" id="kecamatan" name="kecamatan" value="{{$query->user_kec->nama_kec}}" disabled readonly >
                         </div>
                         <br>
                         <div class="form-group">
@@ -66,13 +66,13 @@
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="nik">NIK</label>
-                            <input type="text" class="form-control" id="nik" name="nik" placeholder="Default" >
+                            <input type="text" class="form-control" id="nik" name="nik" value="{{$query->nik}}" disabled readonly >
                         </div>
                         <br>
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="kelurahan">Kelurahan</label>
-                            <input type="text" class="form-control" id="kelurahan" name="kelurahan" placeholder="Default" >
+                            <input type="text" class="form-control" id="kelurahan" name="kelurahan" value="{{$query->user_kel->nama_kel}}" disabled readonly >
                         </div>
                         <br>
                         <div class="form-group">

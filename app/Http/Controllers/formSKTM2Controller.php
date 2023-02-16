@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\antreanSKTMModel;
 use App\Models\userModel;
+use Illuminate\Support\Facades\Storage;
 
+use Illuminate\Support\Facades\Auth;
 class formSKTM2Controller extends Controller
 {
     /**
@@ -15,7 +17,8 @@ class formSKTM2Controller extends Controller
      */
     public function index()
     {
-        return view('masyarakat/formSKTM2');
+        $query = userModel::find(Auth::user()->id);
+        return view('masyarakat/formSKTM2',compact('query'));
     }
 
     /**
@@ -41,27 +44,33 @@ class formSKTM2Controller extends Controller
             $ktp = $request->file('ktp_sktm');
             $kk = $request->file('kk_sktm');
             $lain = $request->file('lain_sktm');
+            $sp_tdkmampu = $request->file('sp_tdkmampu');
             $nama_sp = $sp_kel->getClientOriginalName();
             $nama_ktp = $ktp->getClientOriginalName();
             $nama_kk = $kk->getClientOriginalName();
             $nama_lain = $lain->getClientOriginalName();
+            $nama_sp_tdkmampu = $sp_tdkmampu->getClientOriginalName();
             $extension_sp = $sp_kel->getClientOriginalExtension();
             $extension_ktp = $ktp->getClientOriginalExtension();
             $extension_kk = $kk->getClientOriginalExtension();
             $extension_lain = $lain->getClientOriginalExtension();
+            $extension_sp_tdkmampu = $sp_tdkmampu->getClientOriginalExtension();
             $newNama_sp = $nama_sp.'.'.$extension_sp;
             $newNama_ktp = $nama_ktp.'.'.$extension_ktp;
             $newNama_kk = $nama_kk.'.'.$extension_kk;
             $newNama_lain = $nama_lain.'.'.$extension_lain;
+            $newNama_sp_tdkmampu = $nama_sp_tdkmampu.'.'.$extension_sp_tdkmampu;
             $path_sp = Storage::putFileAs('public/sp_kel_sktm', $request->file('sp_kel_sktm'), $newNama_sp);
             $path_ktp = Storage::putFileAs('public/ktp_sktm', $request->file('ktp_sktm'), $newNama_ktp);
             $path_kk = Storage::putFileAs('public/kk_sktm', $request->file('kk_sktm'), $newNama_kk);
             $path_lain = Storage::putFileAs('public/lain_sktm', $request->file('lain_sktm'), $newNama_lain);
+            $path_sp_tdkmampu = Storage::putFileAs('public/sp_tdkmampu', $request->file('sp_tdkmampu'), $newNama_sp_tdkmampu);
             $data = [
                 'sp_kel_sktm' => $path_sp,
                 'ktp_sktm' => $path_ktp,
                 'kk_sktm' => $path_kk,
                 'lain_sktm' => $path_lain,
+                'sp_tdkmampu' => $path_sp_tdkmampu,
                 'fk_id_user' => Auth::user()->id,
                 'fk_status' =>1
 
