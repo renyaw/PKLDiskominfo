@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Models\antreanKredModel;
 
+use Illuminate\Support\Facades\Storage;
+
+use Illuminate\Support\Facades\Auth;
+
 class formKredController extends Controller
 {
     /**

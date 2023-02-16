@@ -27,7 +27,7 @@
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="nama">Nama</label>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Default" >
+                            <input type="text" value="Disabled readonly input" class="form-control" id="nama" name="nama" disabled readonly>
                         </div>
                         <br>
                         <div class="form-group">
