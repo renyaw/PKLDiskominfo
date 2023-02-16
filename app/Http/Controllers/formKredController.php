@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\antreanKredModel;
+use App\Models\userModel;
 
 use Illuminate\Support\Facades\Storage;
 
@@ -19,7 +20,8 @@ class formKredController extends Controller
      */
     public function index()
     {
-        return view('masyarakat/formKred');
+        $query = userModel::find(Auth::user()->id);
+        return view('masyarakat/formKred',compact('query'));
     }
 
     /**
