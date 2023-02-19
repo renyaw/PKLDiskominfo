@@ -50,6 +50,9 @@
                     <td>{{$data->permohonan_dom->alamat}}</td>
                     <td>{{$data->permohonan_dom->no_telp}}</td>
                     <td>{{$data->antre_stat_dom->proses}}</td>
+                    <td>
+                    <a href='{{ url('kelurahan/'.$data->id_dom.'/verifDom') }}' class="btn btn-warning btn-sm">Lihat Berkas</a>
+                    </td>
                     </tr>
                     @endforeach
 
