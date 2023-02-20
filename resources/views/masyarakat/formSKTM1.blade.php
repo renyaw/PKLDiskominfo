@@ -14,7 +14,7 @@
     <!-- Context -->
     @section('container')
     <div class="container">
-        <h4 class="text-center mt-3">Surat Keterangan Tidak Mampu jhjkhj</h4>
+        <h4 class="text-center mt-3">Surat Keterangan Tidak Mampu</h4>
     </div>
 
     <div class="container mt-3">
