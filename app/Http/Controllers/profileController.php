@@ -80,8 +80,6 @@ class profileController extends Controller
         $path = kelurahanModel::all();
         // return $query;
 
-        //userModel::update($request);
-
         return view('masyarakat/editProfile',compact('query', 'data', 'path'));
     }
 
