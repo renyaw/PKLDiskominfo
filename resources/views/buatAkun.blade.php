@@ -177,12 +177,10 @@
                         <button type="submit" name="submit" value="submit" class="btn btn-info text-light">Daftar</button>
                     </div>
                 </form>
-
             </div>
             </div>
         </div>
     </div>
-
             </div>
             </div>
         </div>
