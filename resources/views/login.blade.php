@@ -95,7 +95,7 @@
                   </div>
                   <div class="d-grid gap-2 d-md-flex justify-content-md-center">
                   <a>Belum punya akun?</a>
-                  <a href="signup" >Daftar disini</a>
+                  <a href="daftar" >Daftar disini</a>
                   </div>
                 </form>
                 <br />
