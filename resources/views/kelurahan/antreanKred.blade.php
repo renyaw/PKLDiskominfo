@@ -41,7 +41,7 @@
                         <th>Action</th>
                     </tr>
 
-                    
+
                     @foreach($query as $data)
                     <tr>
                     <td>{{$data->id_kred}}</td>
@@ -51,7 +51,7 @@
                     <td>{{$data->permohonan_kred->no_telp}}</td>
                     <td>{{$data->antre_stat_kred->proses}}</td>
                     <td></td>
-                    </tr>               
+                    </tr>
                     @endforeach
 
                 </div>

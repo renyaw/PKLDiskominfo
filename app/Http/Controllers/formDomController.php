@@ -114,6 +114,7 @@ class formDomController extends Controller
      */
     public function update(Request $request, $id)
     {
+        return 'halo';
         $edit = antreanDomModel::findorfail($id);
         $awal = $edit->sp_kel_dom;
 

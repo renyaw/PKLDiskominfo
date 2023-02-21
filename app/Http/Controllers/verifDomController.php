@@ -100,4 +100,13 @@ class verifDomController extends Controller
     {
         //
     }
+
+    public function download($id)
+    {
+        try {
+            Storage::disk('local')->download('');
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+    }
 }

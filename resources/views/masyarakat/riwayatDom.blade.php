@@ -20,9 +20,9 @@
 
         @foreach($datas as $data)
             <div class="card p-2 mt-2">
-                <h4 class="card-header">Permohonan Surat Keterangan Domisili</h4>
+                <h4 class="card-header ">Permohonan Surat Keterangan Domisili</h4>
                 <div class="card-body">
-                    <h5 class="card-title">Diajukan Pada Tanggal {{$data->created_at}}</h5>
+                    <h5 class="card-title text-info">Diajukan Pada Tanggal {{$data->created_at}}</h5>
                 </div>
                 <div class="card-footer">
                     <div class="row">
