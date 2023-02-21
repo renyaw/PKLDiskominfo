@@ -20,7 +20,7 @@
             <div class="card p-2">
                 <h5 class="card-header">Permohonan Surat Keterangan Tidak Mampu</h5>
                 <div class="card-body">
-                    <h5 class="card-title">Diajukan Pada Tanggal {{$data->tgl_antre_sktm}}</h5>
+                    <h5 class="card-title text-info">Diajukan Pada Tanggal {{$data->tgl_antre_sktm}}</h5>
                 </div>
                 <div class="card-footer">
                     <div class="row">
