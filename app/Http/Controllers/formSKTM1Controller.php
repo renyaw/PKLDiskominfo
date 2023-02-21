@@ -13,7 +13,7 @@ class formSKTM1Controller extends Controller
      */
     public function index()
     {
-        //
+        return view('masyarakat/formSKTM1');
     }
 
     /**

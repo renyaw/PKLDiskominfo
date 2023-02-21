@@ -18,7 +18,7 @@
             <h4 class="text-center mt-3">Surat Pengantar Domisili</h4>
         </div>
         <div class="konten">
-            <form action="editDom" method="POST" autocomplete="on" name="form" enctype="multipart/form-data">
+            <form action="/editDom" method="POST" autocomplete="on" name="form" enctype="multipart/form-data">
                 @csrf
                 <div class="row mt-4">
                      <!-- Left -->
