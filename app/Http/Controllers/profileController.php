@@ -107,19 +107,19 @@ class profileController extends Controller
         //     'alamat' => 'required',
         // ]);
 
-        auth()->user()->update([
-            'nik' => $request->nik,
-            'nama' =>  $request->nama,
-            'tgl_lahir' =>  $request->tgl_lahir,
-            'no_telp' =>  $request->no_telp,
-            'nama_ibu' =>  $request->nama_ibu,
-            'kecamatan' =>  $request->kecamatan,
-            'kelurahan' =>  $request->kelurahan,
-            'alamat' =>  $request->alamat,
+        // auth()->user()->update([
+        //     'nik' => $request->nik,
+        //     'nama' =>  $request->nama,
+        //     'tgl_lahir' =>  $request->tgl_lahir,
+        //     'no_telp' =>  $request->no_telp,
+        //     'nama_ibu' =>  $request->nama_ibu,
+        //     'kecamatan' =>  $request->kecamatan,
+        //     'kelurahan' =>  $request->kelurahan,
+        //     'alamat' =>  $request->alamat,
 
-        ]);
+        // ]);
 
-        //userModel::update($request);
+        userModel::findorfail(auth()->user()->id)->update($request->all());
         return redirect('/profile')->with('status', 'Profil anda berhasil diedit!');
 
     }
