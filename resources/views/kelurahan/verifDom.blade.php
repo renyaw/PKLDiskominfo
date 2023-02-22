@@ -26,28 +26,30 @@
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="nama">Nama</label>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Default" value="{{$query->permohonan_dom->nama}}">
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Default">
+                            
                         </div>
                         <br>
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="kecamatan">Kecamatan</label>
-                            <input type="text" class="form-control" id="kecamatan" name="kecamatan" placeholder="Default" value="{{$query->permohonan_dom->user_kec->nama_kec}}">
+                            <input type="text" class="form-control" id="kecamatan" name="kecamatan" placeholder="Default">
+                            
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="pengantarKel">Surat Pengantar Kelurahan</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value="{{$data->$path_sp}}">
-                                <button class="btn btn-secondary" type="button" id="button-addon2">Unduh</button>
+                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value="{{$data->sp_kel_dom}}">
+                                <a href="{{ url('storage/ktp_dom/'.$data->ktp_dom) }}" class="btn btn-secondary" type="button" id="button-addon2">Unduh</a>
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="KTP">Kartu Tanda Penduduk</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value="{{$data->$path_ktp}}>
-                                <button class="btn btn-secondary" type="button" id="button-addon2">Unduh</button>
+                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value="{{$data->ktp_dom}}">
+                                <a href="{{ url('storage/ktp_dom/'.$data->ktp_dom) }}" class="btn btn-secondary" type="button" id="button-addon2">Unduh</a>
                             </div>
                         </div>
                         <br>
@@ -60,28 +62,30 @@
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="nik">NIK</label>
-                            <input type="text" class="form-control" id="nik" name="nik" placeholder="Default" value="{{$query->permohonan_dom->nik}}">
+                            <input type="text" class="form-control" id="nik" name="nik" placeholder="Default">
+                            
                         </div>
                         <br>
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="kelurahan">Kelurahan</label>
-                            <input type="text" class="form-control" id="kelurahan" name="kelurahan" placeholder="Default" value="{{$query->permohonan_dom->user_kel->nama_kel}}">
+                            <input type="text" class="form-control" id="kelurahan" name="kelurahan" placeholder="Default">
+                            
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="kk">Kartu Keluarga</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value="{{$data->$path_kk}}>
-                                <button class="btn btn-secondary" type="button" id="button-addon2">Unduh</button>
+                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value="{{$data->kk_dom}}">
+                                <a href="{{ url('storage/kk_dom/'.$data->kk_dom) }}" class="btn btn-secondary" type="button" id="button-addon2">Unduh</a>
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="lain">Berkas Lain</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value="{{$data->$path_lain}}>
-                                <button class="btn btn-secondary" type="button" id="button-addon2">Unduh</button>
+                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value="{{$data->lain_dom}}">
+                                <a href="{{ url('storage/lain_dom/'.$data->lain_dom) }}" class="btn btn-secondary" type="button" id="button-addon2">Unduh</a>
                             </div>
                         </div>
                         <br>
