@@ -35,7 +35,7 @@
 
     <!-- Context -->
     <section>
-    <div class="container mt-3">
+    <div class="container pt-4" style="background-image: url('img/backgroundv2.jpg') ;background-size: cover; background-attachment: fixed;">
       <div class="row d-flex justify-content-center h-100">
         <div class="col col-xl-10">
           <div class="card" style="border: none; ">
