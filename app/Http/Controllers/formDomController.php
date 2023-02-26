@@ -114,50 +114,19 @@ class formDomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return 'halo';
-        $edit = antreanDomModel::findorfail($id);
-        $awal = $edit->sp_kel_dom;
+       $edit = antreanDomModel::where('id_dom',$id)->first();
+       $ktp = $request->file('ktp_dom');
+       $nama_ktp = $ktp->getClientOriginalName();
+       $extension_ktp = $ktp->getClientOriginalExtension();
+       $newNama_ktp = $nama_ktp.'.'.$extension_ktp;
+       $path_ktp = Storage::putFileAs('public/ktp_dom', $request->file('ktp_dom'), $newNama_ktp);
+       $data = [
+        'ktp_dom' => $path_ktp
+       ];
 
-
-        try {
-            $sp_kel = $request->file('sp_kel_dom');
-            $ktp = $request->file('ktp_dom');
-            $kk = $request->file('kk_dom');
-            $lain = $request->file('lain_dom');
-            $nama_sp = $sp_kel->getClientOriginalName();
-            $nama_ktp = $ktp->getClientOriginalName();
-            $nama_kk = $kk->getClientOriginalName();
-            $nama_lain = $lain->getClientOriginalName();
-            $extension_sp = $sp_kel->getClientOriginalExtension();
-            $extension_ktp = $ktp->getClientOriginalExtension();
-            $extension_kk = $kk->getClientOriginalExtension();
-            $extension_lain = $lain->getClientOriginalExtension();
-            $newNama_sp = $nama_sp.'.'.$extension_sp;
-            $newNama_ktp = $nama_ktp.'.'.$extension_ktp;
-            $newNama_kk = $nama_kk.'.'.$extension_kk;
-            $newNama_lain = $nama_lain.'.'.$extension_lain;
-            $path_sp = Storage::putFileAs('public/sp_kel_dom', $request->file('sp_kel_dom'), $newNama_sp);
-            $path_ktp = Storage::putFileAs('public/ktp_dom', $request->file('ktp_dom'), $newNama_ktp);
-            $path_kk = Storage::putFileAs('public/kk_dom', $request->file('kk_dom'), $newNama_kk);
-            $path_lain = Storage::putFileAs('public/lain_dom', $request->file('lain_dom'), $newNama_lain);
-            $data = [
-                'sp_kel_dom' => $path_sp,
-                'ktp_dom' => $path_ktp,
-                'kk_dom' => $path_kk,
-                'lain_dom' => $path_lain,
-                'fk_id_user' => Auth::user()->id,
-                'fk_status' => 1
-
-            ];
-
-            antreanDomModel::update($data);
-            return redirect('/dashMasy')->with('berhasil', 'Berkas Berhasil diedit! Silahkan Cek Melalui Riwayat');
-        } catch (\Exception $e) {
-            return $e->getMessage();
-        }
-
-
-
+       antreanDomModel::where('id_dom', $id)->update($data);
+       return redirect('/dashMasy')->with('berhasil', 'Berkas Berhasil diedit! Silakan Cek Melalui Riwayat');
+       
     }
 
     /**

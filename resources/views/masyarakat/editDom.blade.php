@@ -18,8 +18,9 @@
             <h4 class="text-center mt-3">Surat Pengantar Domisili</h4>
         </div>
         <div class="konten">
-            <form action="/editDom" method="POST" autocomplete="on" name="form" enctype="multipart/form-data">
+            <form action="{{route('formDom.update', $query)}}" method="POST" autocomplete="on" name="form" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <div class="row mt-4">
                      <!-- Left -->
                     <div class="col-6">

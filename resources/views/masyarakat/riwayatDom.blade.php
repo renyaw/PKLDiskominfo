@@ -31,7 +31,7 @@
                         </div>
                         <div class="col-4 d-flex justify-content-end">
                             @if($data->antre_stat_dom->id_status == 1)
-                                <a href="formDom/{formDom}/edit" class="btn btn-outline-warning">Edit</a>
+                                <a href="{{url('formDom/'.$data->id_dom.'/edit')}}" class="btn btn-outline-warning">Edit</a>
                             @endif
                             @if($data->antre_stat_dom->id_status == 2)
                                 <a href="#" class="btn btn-outline-success">Download?</a>
