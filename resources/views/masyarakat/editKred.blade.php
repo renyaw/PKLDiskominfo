@@ -18,8 +18,9 @@
             <h4 class="text-center mt-3">Surat Pengantar Kredit</h4>
         </div>
         <div class="konten">
-            <form action="/formKred" method="POST" autocomplete="on" name="form" enctype="multipart/form-data">
+            <form action="{{route('formKred.update', $query)}}" method="POST" autocomplete="on" name="form" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <div class="row mt-4">
                      <!-- Left -->
                     <div class="col-6">
@@ -36,18 +37,18 @@
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="pengantarKel">Surat Pengantar Kelurahan <a href="">Unduh</a></label>
+                            <label for="sp_kel_kred">Surat Pengantar Kelurahan <a href="">Unduh</a></label>
                             <div class="input-group">
-                                <input type="file" class="form-control" id="pengantarKel" name="pengantarKel" placeholder="Input">
-                                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                <input type="file" class="form-control" id="sp_kel_kred" name="sp_kel_kred" placeholder="Input">
+                                <label class="input-group-text" for="sp_kel_kred">Upload</label>
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="KTP">Kartu Tanda Penduduk</label>
+                            <label for="ktp_kred">Kartu Tanda Penduduk</label>
                             <div class="input-group">
-                                <input type="file" class="form-control" id="ktp" name="KTP" placeholder="Input">
-                                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                <input type="file" class="form-control" id="ktp_kred" name="ktp_kred" placeholder="Input">
+                                <label class="input-group-text" for="ktp_kred">Upload</label>
                             </div>
                         </div>
                         <br>
@@ -70,18 +71,18 @@
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="kk">Kartu Keluarga</label>
+                            <label for="kk_kred">Kartu Keluarga</label>
                             <div class="input-group">
-                                <input type="file" class="form-control" id="kk" name="kk">
-                                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                <input type="file" class="form-control" id="kk_kred" name="kk_kred">
+                                <label class="input-group-text" for="kk_kred">Upload</label>
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="lain">Berkas Lain</label>
+                            <label for="lain_kred">Berkas lain</label>
                             <div class="input-group">
-                                <input type="file" class="form-control" id="lain" name="lain" placeholder="Input">
-                                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                <input type="file" class="form-control" id="lain_kred" name="lain_kred" placeholder="Input">
+                                <label class="input-group-text" for="lain_kred">Upload</label>
                             </div>
                         </div>
                         <br>

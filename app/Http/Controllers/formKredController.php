@@ -99,7 +99,8 @@ class formKredController extends Controller
      */
     public function edit($id)
     {
-        //
+        $query = userModel::find(Auth::user()->id);
+        return view('masyarakat/editKred',compact('query'));
     }
 
     /**
@@ -111,7 +112,49 @@ class formKredController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $edit = antreanKredModel::where('id_kred',$id)->first();
+
+        $sp_kel = $request->file('sp_kel_kred');
+        $ktp = $request->file('ktp_kred');
+        $kk = $request->file('kk_kred');
+        $lain = $request->file('lain_kred');
+
+        // nama
+        $nama_sp = $sp_kel->getClientOriginalName();
+        $nama_ktp = $ktp->getClientOriginalName();
+        $nama_kk = $kk->getClientOriginalName();
+        $nama_lain = $lain->getClientOriginalName();
+
+        // extension
+        $extension_sp = $sp_kel->getClientOriginalExtension();
+        $extension_ktp = $ktp->getClientOriginalExtension();
+        $extension_kk = $kk->getClientOriginalExtension();
+        $extension_lain = $lain->getClientOriginalExtension();
+
+        // new nama
+        $newNama_sp = $nama_sp.'.'.$extension_sp;
+        $newNama_ktp = $nama_ktp.'.'.$extension_ktp;
+        $newNama_kk = $nama_kk.'.'.$extension_kk;
+        $newNama_lain = $nama_lain.'.'.$extension_lain;
+
+        // path
+        $path_sp = Storage::putFileAs('public/sp_kel_kred', $request->file('sp_kel_kred'), $newNama_sp);
+        $path_ktp = Storage::putFileAs('public/ktp_kred', $request->file('ktp_kred'), $newNama_ktp);
+        $path_kk = Storage::putFileAs('public/kk_kred', $request->file('kk_kred'), $newNama_kk);
+        $path_lain = Storage::putFileAs('public/lain_kred', $request->file('lain_kred'), $newNama_lain);
+        $data = [
+            'sp_kel_kred' => $path_sp,
+            'ktp_kred' => $path_ktp,
+            'kk_kred' => $path_kk,
+            'lain_kred' => $path_lain,
+            'fk_id_user' => Auth::user()->id,
+            'fk_status' =>1
+
+        ];
+
+        antreanKredModel::where('id_kred', $id)->update($data);
+        return redirect('/dashMasy')->with('berhasil', 'Berkas Berhasil diedit! Silakan Cek Melalui Riwayat');
+
     }
 
     /**

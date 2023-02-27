@@ -20,7 +20,7 @@
             <div class="card p-2">
                 <h5 class="card-header">Permohonan Surat Pengantar Kredit</h5>
                 <div class="card-body">
-                    <h5 class="card-title text-info">Diajukan Pada Tanggal {{$data->tgl_antre_kred}}</h5>
+                    <h5 class="card-title text-info">Diajukan Pada Tanggal {{$data->created_at}}</h5>
                 </div>
                 <div class="card-footer">
                     <div class="row">
@@ -29,7 +29,7 @@
                         </div>
                         <div class="col-4 d-flex justify-content-end">
                             @if($data->antre_stat_kred->id_status == 1)
-                                <a href="formDom" class="btn btn-outline-warning">Edit</a>
+                                <a href="{{url('formKred/'.$data->id_kred.'/edit')}}" class="btn btn-outline-warning">Edit</a>
                             @endif
                             @if($data->antre_stat_kred->id_status == 2)
                                 <a href="#" class="btn btn-outline-success">Download?</a>
