@@ -32,7 +32,7 @@
     <!-- Navbar End -->
 
     <!-- Context -->
-    <div class="container h-100 pt-4" style="background-image: url('img/backgroundv2.jpg'); background-size: cover; ">
+    <div class="container h-100 pt-4" style="background-image: url('img/backgroundv2.jpg'); background-size: cover; background-attachment: fixed; max-width:unset;">
         {{-- Alert from register --}}
         @if(session()->has('status'))
             <div class="alert alert-success alert-dismissible fade show p-4" role="alert">
