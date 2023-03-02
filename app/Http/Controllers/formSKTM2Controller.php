@@ -65,18 +65,26 @@ class formSKTM2Controller extends Controller
             $path_kk = Storage::putFileAs('public/kk_sktm', $request->file('kk_sktm'), $newNama_kk);
             $path_lain = Storage::putFileAs('public/lain_sktm', $request->file('lain_sktm'), $newNama_lain);
             $path_sp_tdkmampu = Storage::putFileAs('public/sp_tdkmampu', $request->file('sp_tdkmampu'), $newNama_sp_tdkmampu);
+            $this->validate($request,[
+                'tujuan' => 'required'
+            ]);
+            
             $data = [
                 'sp_kel_sktm' => $path_sp,
                 'ktp_sktm' => $path_ktp,
                 'kk_sktm' => $path_kk,
                 'lain_sktm' => $path_lain,
                 'sp_tdkmampu' => $path_sp_tdkmampu,
+                'tujuan' => $request->tujuan,
                 'fk_id_user' => Auth::user()->id,
                 'fk_status' =>1
 
             ];
 
+
+
             antreanSKTMModel::create($data);
+
             return redirect('/dashMasy')->with('berhasil', 'Berkas Berhasil diinput! Silahkan Cek Melalui Riwayat');
         } catch (\Exception $e) {
             return $e->getMessage();

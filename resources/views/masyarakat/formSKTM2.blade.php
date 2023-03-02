@@ -18,7 +18,8 @@
             <h4 class="text-center mt-3">Surat Keterangan Tidak Mampu</h4>
         </div>
         <div class="konten">
-            <form action="" method="POST" autocomplete="on" name="form">
+            <form action="/formSKTM2" method="POST" autocomplete="on" name="form" enctype="multipart/form-data">
+                @csrf
                 <div class="row mt-4">
                      <!-- Left -->
                     <div class="col-6">
@@ -35,26 +36,26 @@
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="pengantarKel">Surat Pengantar Kelurahan <a href="">Unduh</a></label>
+                            <label for="sp_kel_sktm">Surat Pengantar Kelurahan <a href="">Unduh</a></label>
                             <div class="input-group">
-                                <input type="file" class="form-control" id="inputGroupFile02" name="pengantarKel" placeholder="Input">
-                                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                <input type="file" class="form-control" id="sp_kel_sktm" name="sp_kel_sktm" placeholder="Input">
+                                <label class="input-group-text" for="sp_kel_sktm">Upload</label>
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="KTP">Kartu Tanda Penduduk</label>
+                            <label for="ktp_sktm">Kartu Tanda Penduduk</label>
                             <div class="input-group">
-                                <input type="file" class="form-control" id="inputGroupFile02" name="KTP" placeholder="Input">
-                                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                <input type="file" class="form-control" id="ktp_sktm" name="ktp_sktm" placeholder="Input">
+                                <label class="input-group-text" for="ktp_sktm">Upload</label>
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="Berkas Lain">Berkas Lainnya</label>
                             <div class="input-group">
-                                <input type="file" class="form-control" id="inputGroupFile02" name="berkaslain" placeholder="Input">
-                                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                <input type="file" class="form-control" id="lain_sktm" name="lain_sktm" placeholder="Input">
+                                <label class="input-group-text" for="lain_sktm">Upload</label>
                             </div>
                         </div>
                         <br>
@@ -78,23 +79,23 @@
                         <div class="form-group">
                             <label for="tdkmampu">Surat Pernyataan Tidak Mampu</label>
                             <div class="input-group">
-                                <input type="file" class="form-control" id="inputGroupFile02" name="tdkmampu">
-                                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                <input type="file" class="form-control" id="sp_tdkmampu" name="sp_tdkmampu">
+                                <label class="input-group-text" for="sp_tdkmampu">Upload</label>
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="kk">Kartu Keluarga</label>
                             <div class="input-group">
-                                <input type="file" class="form-control" id="inputGroupFile02" name="kk">
-                                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                                <input type="file" class="form-control" id="kk_sktm" name="kk_sktm">
+                                <label class="input-group-text" for="kk_sktm">Upload</label>
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="kk">Tujuan Pembuatan SKTM</label>
+                            <label for="tujuan">Tujuan Pembuatan SKTM</label>
                             <div class="input-group">
-                            <textarea class="form-control" aria-label="With textarea"></textarea>
+                                <textarea class="form-control" id ="tujuan" name="tujuan" aria-label="With textarea"></textarea>
                             </div>
                         </div>
                         <br>
