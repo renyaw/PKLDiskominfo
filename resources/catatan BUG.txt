@@ -1,5 +1,4 @@
 CATATAN BUG (nada)
 1. Bikin pilihan di SKTM 1
-2. Edit File
-3. Input Tujuan (SKTM2)
+2. Edit File di SKTM
 
