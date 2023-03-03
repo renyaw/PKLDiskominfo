@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Storage;
+
+use Illuminate\Support\Facades\Auth;
+
+use App\Models\antreanSKTMModel;
+
 class verifSKTMController extends Controller
 {
     /**
@@ -13,7 +19,9 @@ class verifSKTMController extends Controller
      */
     public function index()
     {
-        //
+        $query = antreanSKTMModel::all();
+
+        return view('kelurahan/verifSKTM',compact('query'));
     }
 
     /**
@@ -45,7 +53,8 @@ class verifSKTMController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = antreanSKTMModel::where('id_sktm',$id)->first();
+        return view('kelurahan/verifSKTM', compact('data'));
     }
 
     /**
@@ -80,5 +89,14 @@ class verifSKTMController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function download($id)
+    {
+        try {
+            Storage::disk('local')->download('');
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 }

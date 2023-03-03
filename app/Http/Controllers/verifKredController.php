@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Storage;
+
+use Illuminate\Support\Facades\Auth;
+
+use App\Models\antreanKredModel;
+
 class verifKredController extends Controller
 {
     /**
@@ -13,7 +19,9 @@ class verifKredController extends Controller
      */
     public function index()
     {
-        //
+        $query = antreanKredModel::all();
+
+        return view('kelurahan/verifKred',compact('query'));
     }
 
     /**
@@ -45,7 +53,8 @@ class verifKredController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = antreanKredModel::where('id_kred',$id)->first();
+        return view('kelurahan/verifKred', compact('data'));
     }
 
     /**
@@ -81,4 +90,14 @@ class verifKredController extends Controller
     {
         //
     }
+    
+    public function download($id)
+    {
+        try {
+            Storage::disk('local')->download('');
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
 }
