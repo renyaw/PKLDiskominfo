@@ -95,7 +95,9 @@
                         <br>
                         <div class="form-group">
                             <label for="tujuan">Tujuan Pembuatan SKTM</label>
-                            <input type="text" class="form-control" id="tujuan" value="{{old('tujuan', )}}">
+                            <div class="input-group">
+                                <textarea class="form-control" id ="tujuan" name="tujuan" aria-label="With textarea"></textarea>
+                            </div>
                         </div>
                         <br>
                     </div>

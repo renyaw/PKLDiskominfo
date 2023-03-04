@@ -1,4 +1,10 @@
 CATATAN BUG (nada)
 1. Bikin pilihan di SKTM 1
 2. Edit File di SKTM
+3. Old value edit file
+4. {{old('tujuan', $query->antrean_sktm->tujuan)}} ini kodingan old
+                        <div class="form-group">
+                            <label for="tujuan">Tujuan Pembuatan SKTM</label>
+                            <input type="text" class="form-control" id="tujuan">
+                        </div>
 

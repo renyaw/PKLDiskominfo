@@ -18,7 +18,8 @@ class formSKTM2Controller extends Controller
     public function index()
     {
         $query = userModel::find(Auth::user()->id);
-        return view('masyarakat/formSKTM2',compact('query'));
+        $pack = antreanSKTMModel::all();
+        return view('masyarakat/formSKTM2',compact('query','pack'));
     }
 
     /**
@@ -111,7 +112,8 @@ class formSKTM2Controller extends Controller
     public function edit($id)
     {
         $query = userModel::find(Auth::user()->id);
-        return view('masyarakat/editSKTM',compact('query'));
+        $pack = antreanSKTMModel::all();
+        return view('masyarakat/editSKTM',compact('query','pack'));
     }
 
     /**

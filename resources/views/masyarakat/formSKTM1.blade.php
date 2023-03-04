@@ -20,17 +20,20 @@
     <div class="container mt-3">
         <div class="form-group">
             <div class="tulisan">
-                <p class="text">Keperluan (Silahkan Pilih Salah Satu Layanan untuk Melihat Persyaratan)</p>
+                <h5 class="text">Keperluan (Silahkan Pilih Salah Satu Layanan untuk Melihat Persyaratan)</h5>
             </div>
             <br>
 
             <div class="form-group col-8">
-                <select class="form-control" name="keperluan" id="keperluan">
-                    <option value="0">-- Pilih Keperluan (Layanan) --</option>
-                    <option value="1">Keperluan A</option>
-                    <option value="2">Keperluan B</option>
+                <p class="mt-2">Silahkan Pilih Keperluan Anda Terlebih Dahulu!</p>
+                <select class="form-control">
+                    <option value="ihiw">Keperluan D</option>
+                    <option value="iwha">Keperluan A</option>
+                    <option value="ajdisajsndjasn">Keperluan B</option>
                     <option value="3">Keperluan C</option>
                 </select>
+
+                <button class="btn btn-outline-warning mt-5">Cek Syarat</button>
             </div>
             <br>
 
@@ -42,13 +45,11 @@
     <!-- Field Berkas End -->
 
     <div class="col-auto d-flex justify-content-end">
-        <button type="submit" name="submit" value="submit" href="sktm2" class="btn btn-outline-success">Next</button>
+        <button href="formSKTM2" class="btn btn-outline-success">Next</button>
     </div>
     @endsection
     <!-- Context End -->
-    <script type="text/javascript">
-        document.getElementsByName('keperluan')[1].options[1].innerHTML = "1. asajkjaksjas";
-    </script>
+        <script src="scriptSKTM1.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     </body>
 </html>
