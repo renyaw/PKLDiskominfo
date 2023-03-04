@@ -26,14 +26,14 @@
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="nama">Nama</label>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Default">
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Default" value="{{$data->permohonan_dom->nama}}" disabled readonly>
                             
                         </div>
                         <br>
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="kecamatan">Kecamatan</label>
-                            <input type="text" class="form-control" id="kecamatan" name="kecamatan" placeholder="Default">
+                            <input type="text" class="form-control" id="kecamatan" name="kecamatan" placeholder="Default" value="{{$data->permohonan_dom->user_kec->nama_kec}}" disabled readonly>
                             
                         </div>
                         <br>
@@ -41,7 +41,7 @@
                             <label for="pengantarKel">Surat Pengantar Kelurahan</label>
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value="{{$data->sp_kel_dom}}">
-                                <a href="{{ url('storage/ktp_dom/'.$data->ktp_dom) }}" class="btn btn-secondary" type="button" id="button-addon2">Unduh</a>
+                                <a href="{{ url('storage/sp_kel_dom/'.$data->sp_kel_dom) }}" class="btn btn-secondary" type="button" id="button-addon2">Unduh</a>
                             </div>
                         </div>
                         <br>
@@ -62,14 +62,14 @@
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="nik">NIK</label>
-                            <input type="text" class="form-control" id="nik" name="nik" placeholder="Default">
+                            <input type="text" class="form-control" id="nik" name="nik" placeholder="Default" value="{{$data->permohonan_dom->nik}}" disabled readonly>
                             
                         </div>
                         <br>
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="kelurahan">Kelurahan</label>
-                            <input type="text" class="form-control" id="kelurahan" name="kelurahan" placeholder="Default">
+                            <input type="text" class="form-control" id="kelurahan" name="kelurahan" placeholder="Default" value="{{$data->permohonan_dom->user_kel->nama_kel}}" disabled readonly>
                             
                         </div>
                         <br>
