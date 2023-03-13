@@ -18,11 +18,11 @@
             <h4 class="text-center mt-3">Kumpulan Berkas yang Dapat diunduh</h4>
         </div>
         <div class="konten mt-5">
-            <ol>
+            <ul>
                 <li><a href="" class="text-decoration-none">Surat Pengantar dari Kelurahan</a></li>
                 <li><a href="" class="text-decoration-none">Surat Pengantar dari Kecamatan</a></li>
                 <li><a href="" class="text-decoration-none">Surat Penyataan Mempunyai Usaha</a></li>
-            </ol>
+            </ul>
 
 
 
