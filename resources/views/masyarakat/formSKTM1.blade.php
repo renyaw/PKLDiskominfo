@@ -18,27 +18,32 @@
     </div>
 
     <div class="container mt-3">
-        <div class="form-group">
-            <div class="tulisan">
-                <h5 class="text">Keperluan (Silahkan Pilih Salah Satu Layanan untuk Melihat Persyaratan)</h5>
-            </div>
-            <br>
+        <form action="">
+            <div class="form-group">
+                <div class="tulisan">
+                    <h5 class="text">Keperluan (Silahkan Pilih Salah Satu Layanan untuk Melihat Persyaratan)</h5>
+                </div>
+                <br>
+                    <label class="mt-2">Silahkan Pilih Keperluan Anda Terlebih Dahulu! <br> Persyaratan ini yang perlukan untuk diinput dalam Berkas Lain <br><br></label>
+                    <select class="form-control" id="sell">
+                        <option value="Pilih Keperluan">-- Silahkan Pilih Keperluan --</option>
+                        <option value="KTP Orang Tua, Akta Kelahiran Anak, KKS atau Kartu Perlindungan Sosial Lainnya ">Keperluan Pendidikan</option>
+                        <option value="Surat Rujukan atau SK Rawat Inap, Kartu KIS atau BPJS Keluarga Lain, KKS (jika ada)">Keperluan Keringanan Biaya Inap</option>
+                        <option value="KTP Suami dan Istri, SK Lahir dari Penolong, Surat Rujukan atau SK Rawat inap, KIS atay BPJS Keluarga Lain, KKS (jika ada)">Keperluan Jampersal</option>
+                        <option value="KIS/Kartu BPJS yang hendak dinonaktifkan, Surat Pernyataan dari Dinas Sosial tentang Penonaktifan PBI">Keperluan Penonaktifan Kepersertaan BPJS/JKN-KIS Pemerintah</option>
+                        <option value="KIS/Kartu BPJS, Bukti Pelunasan pembayaran premi JKN-KIS Mandiri">Penonaktifan Kepesertaan BPJS Kesehatan/JKN-KIS Mandiri Kelas III</option>
+                        <option value="Tidak Membutuhkan Berkas Lain">Keperluan Di luar Pendidikan dan Kesehatan</option>
+                    </select>
+                    <br>
+                    <div class="well" id="weli">
+                        <p>Persyaratan yang dibutuhkan adalah : <br></p>
+                    </div>
+                </div>
+        </form>
 
-            <div class="form-group col-8">
-                <p class="mt-2">Silahkan Pilih Keperluan Anda Terlebih Dahulu!</p>
-                <select class="form-control">
-                    <option value="ihiw">Keperluan D</option>
-                    <option value="iwha">Keperluan A</option>
-                    <option value="ajdisajsndjasn">Keperluan B</option>
-                    <option value="3">Keperluan C</option>
-                </select>
-
-                <button class="btn btn-outline-warning mt-5">Cek Syarat</button>
-            </div>
             <br>
 
         </div>
-    </div>
 
     <!-- Field Berkas -->
 
@@ -49,7 +54,15 @@
     </div>
     @endsection
     <!-- Context End -->
-        <script src="scriptSKTM1.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#sell").change(function(){
+                    var nilai = $(this).val();
+                });
+
+                $("p").html("Persyaratan yang dibutuhkan adalah :" + nilai);
+            });
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     </body>
 </html>
