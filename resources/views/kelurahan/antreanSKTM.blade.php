@@ -50,7 +50,9 @@
                     <td>{{$data->permohonan_sktm->alamat}}</td>
                     <td>{{$data->permohonan_sktm->no_telp}}</td>
                     <td>{{$data->antre_stat_sktm->proses}}</td>
-                    <td></td>
+                    <td>
+                    <a href="{{ url('verifSKTM/'.$data->id_sktm) }}" class="btn btn-warning btn-sm">Lihat Berkas</a>
+                    </td>
                     </tr>
                     @endforeach
 

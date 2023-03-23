@@ -50,7 +50,9 @@
                     <td>{{$data->permohonan_kred->alamat}}</td>
                     <td>{{$data->permohonan_kred->no_telp}}</td>
                     <td>{{$data->antre_stat_kred->proses}}</td>
-                    <td></td>
+                    <td>
+                    <a href="{{ url('verifKred/'.$data->id_kred) }}" class="btn btn-warning btn-sm">Lihat Berkas</a> 
+                    </td>
                     </tr>
                     @endforeach
 

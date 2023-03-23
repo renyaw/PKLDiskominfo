@@ -26,31 +26,34 @@
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="nama">Nama</label>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Default" >
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Default" value="{{$data->permohonan_kred->nama}}" disabled readonly>
+                            
                         </div>
                         <br>
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="kecamatan">Kecamatan</label>
-                            <input type="text" class="form-control" id="kecamatan" name="kecamatan" placeholder="Default" >
+                            <input type="text" class="form-control" id="kecamatan" name="kecamatan" placeholder="Default" value="{{$data->permohonan_kred->user_kec->nama_kec}}" disabled readonly>
+                            
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="pengantarKel">Surat Pengantar Kelurahan</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2">
-                                <button class="btn btn-secondary" type="button" id="button-addon2">Unduh</button>
+                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value="{{$data->sp_kel_kred}}">
+                                <a href="{{ url('storage/sp_kel_kred/'.$data->sp_kel_kred) }}" class="btn btn-secondary" type="button" id="button-addon2">Unduh</a>
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="KTP">Kartu Tanda Penduduk</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2">
-                                <button class="btn btn-secondary" type="button" id="button-addon2">Unduh</button>
+                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value="{{$data->ktp_kred}}">
+                                <a href="{{ url('storage/ktp_kred/'.$data->ktp_kred) }}" class="btn btn-secondary" type="button" id="button-addon2">Unduh</a>
                             </div>
                         </div>
                         <br>
+
                     </div>
                     <!-- End Left -->
 
@@ -59,44 +62,49 @@
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="nik">NIK</label>
-                            <input type="text" class="form-control" id="nik" name="nik" placeholder="Default" >
+                            <input type="text" class="form-control" id="nik" name="nik" placeholder="Default" value="{{$data->permohonan_kred->nik}}" disabled readonly>
+                            
                         </div>
                         <br>
                         <div class="form-group">
                             <!-- Default diambil dari daftar -->
                             <label for="kelurahan">Kelurahan</label>
-                            <input type="text" class="form-control" id="kelurahan" name="kelurahan" placeholder="Default" >
+                            <input type="text" class="form-control" id="kelurahan" name="kelurahan" placeholder="Default" value="{{$data->permohonan_kred->user_kel->nama_kel}}" disabled readonly>
+                            
                         </div>
+                        <br>
                         <div class="form-group">
                             <label for="kk">Kartu Keluarga</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2">
-                                <button class="btn btn-secondary" type="button" id="button-addon2">Unduh</button>
+                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value="{{$data->kk_kred}}">
+                                <a href="{{ url('storage/kk_kred/'.$data->kk_kred) }}" class="btn btn-secondary" type="button" id="button-addon2">Unduh</a>
                             </div>
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="Berkas Lain">Berkas Lainnya</label>
+                            <label for="lain">Berkas Lain</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2">
-                                <button class="btn btn-secondary" type="button" id="button-addon2">Unduh</button>
+                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value="{{$data->lain_kred}}">
+                                <a href="{{ url('storage/lain_kred/'.$data->lain_kred) }}" class="btn btn-secondary" type="button" id="button-addon2">Unduh</a>
                             </div>
                         </div>
                         <br>
                     </div>
 
                 </div>
+
                 <div class="col-auto d-grid gap-2 d-flex justify-content-end">
                         <button type="submit" name="submit" value="submit" class="btn btn-outline-success">Terima</button>
                         <button type="submit" name="submit" value="submit" class="btn btn-outline-danger">Tolak</button>
                         <button type="submit" name="submit" value="submit" class="btn btn-outline-primary">Kembali</button>
                 </div>
+
                 <!-- End Right -->
             </form>
         </div>
 
     </div>
-    @end section
+    @endsection
     <!-- Context End -->
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
