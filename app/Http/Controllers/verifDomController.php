@@ -113,3 +113,19 @@ class verifDomController extends Controller
         }
     }
 }
+
+    // public function diterima($id)
+    // {
+    //     $id_dom = antreanDomModel::find($id);
+    //     $dom->fk_status = '2';
+    //     $dom->save();
+    // }
+    
+//     function diterima ($id)
+//     {
+//     $data = [
+//         'fk_status' => 2
+//     ];
+//    antreanDomModel::where('id_dom', $id)->update($data);
+//    return redirect('/verifDom')->with('berhasil', 'Berkas Disetujui');
+//     }

@@ -138,10 +138,10 @@ class formDomController extends Controller
         $extension_lain = $lain->getClientOriginalExtension();
 
         // new nama
-        $newNama_sp = $nama_sp.'.'.$extension_sp;
-        $newNama_ktp = $nama_ktp.'.'.$extension_ktp;
-        $newNama_kk = $nama_kk.'.'.$extension_kk;
-        $newNama_lain = $nama_lain.'.'.$extension_lain;
+        $newNama_sp = "SP_KEL-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_sp;
+        $newNama_ktp = "KTP-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_ktp;
+        $newNama_kk = "KK-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_kk;
+        $newNama_lain = "Lain-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_lain;
 
         // path
         $path_sp = Storage::putFileAs('public/sp_kel_dom', $request->file('sp_kel_dom'), $newNama_sp);
@@ -150,10 +150,11 @@ class formDomController extends Controller
         $path_lain = Storage::putFileAs('public/lain_dom', $request->file('lain_dom'), $newNama_lain);
 
         $data = [
-            'sp_kel_dom' => $path_sp,
-            'ktp_dom' => $path_ktp,
-            'kk_dom' => $path_kk,
-            'lain_dom' => $path_lain,
+            'sp_kel_dom' => $newNama_sp,
+            'ktp_dom' => $newNama_ktp,
+            'kk_dom' => $newNama_kk,
+            'lain_dom' => $newNama_lain,
+            // 'tgl_antre_dom' => '2023-02-01',
             'fk_id_user' => Auth::user()->id,
             'fk_status' => 1
 

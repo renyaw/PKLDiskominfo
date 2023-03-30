@@ -94,7 +94,7 @@
                 </div>
 
                 <div class="col-auto d-grid gap-2 d-flex justify-content-end">
-                        <button type="submit" name="submit" value="submit" class="btn btn-outline-success">Terima</button>
+                        <a href="{{ url('verifDom/diterima/'.$data->id) }}" class="btn btn-outline-success">Terima</a>
                         <button type="submit" name="submit" value="submit" class="btn btn-outline-danger">Tolak</button>
                         <button type="submit" name="submit" value="submit" class="btn btn-outline-primary">Kembali</button>
                 </div>

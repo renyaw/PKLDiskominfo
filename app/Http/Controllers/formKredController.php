@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Carbon\Carbon;
 use App\Models\antreanKredModel;
 use App\Models\userModel;
 
@@ -55,14 +56,17 @@ class formKredController extends Controller
             $extension_ktp = $ktp->getClientOriginalExtension();
             $extension_kk = $kk->getClientOriginalExtension();
             $extension_lain = $lain->getClientOriginalExtension();
-            $newNama_sp = $nama_sp.'.'.$extension_sp;
-            $newNama_ktp = $nama_ktp.'.'.$extension_ktp;
-            $newNama_kk = $nama_kk.'.'.$extension_kk;
-            $newNama_lain = $nama_lain.'.'.$extension_lain;
+            // penamaan file
+            $newNama_sp = "SP_KEL-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_sp;
+            $newNama_ktp = "KTP-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_ktp;
+            $newNama_kk = "KK-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_kk;
+            $newNama_lain = "Lain-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_lain;
+            //simpan file storage
             $path_sp = Storage::putFileAs('public/sp_kel_kred', $request->file('sp_kel_kred'), $newNama_sp);
             $path_ktp = Storage::putFileAs('public/ktp_kred', $request->file('ktp_kred'), $newNama_ktp);
             $path_kk = Storage::putFileAs('public/kk_kred', $request->file('kk_kred'), $newNama_kk);
             $path_lain = Storage::putFileAs('public/lain_kred', $request->file('lain_kred'), $newNama_lain);
+            //simpan file db
             $data = [
                 'sp_kel_kred' => $path_sp,
                 'ktp_kred' => $path_ktp,
@@ -132,10 +136,10 @@ class formKredController extends Controller
         $extension_lain = $lain->getClientOriginalExtension();
 
         // new nama
-        $newNama_sp = $nama_sp.'.'.$extension_sp;
-        $newNama_ktp = $nama_ktp.'.'.$extension_ktp;
-        $newNama_kk = $nama_kk.'.'.$extension_kk;
-        $newNama_lain = $nama_lain.'.'.$extension_lain;
+        $newNama_sp = "SP_KEL-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_sp;
+        $newNama_ktp = "KTP-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_ktp;
+        $newNama_kk = "KK-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_kk;
+        $newNama_lain = "Lain-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_lain;
 
         // path
         $path_sp = Storage::putFileAs('public/sp_kel_kred', $request->file('sp_kel_kred'), $newNama_sp);
@@ -143,10 +147,10 @@ class formKredController extends Controller
         $path_kk = Storage::putFileAs('public/kk_kred', $request->file('kk_kred'), $newNama_kk);
         $path_lain = Storage::putFileAs('public/lain_kred', $request->file('lain_kred'), $newNama_lain);
         $data = [
-            'sp_kel_kred' => $path_sp,
-            'ktp_kred' => $path_ktp,
-            'kk_kred' => $path_kk,
-            'lain_kred' => $path_lain,
+            'sp_kel_kred' => $newNama_sp,
+            'ktp_kred' => $newNama_ktp,
+            'kk_kred' => $newNama_kk,
+            'lain_kred' => $newNama_lain,
             'fk_id_user' => Auth::user()->id,
             'fk_status' =>1
 

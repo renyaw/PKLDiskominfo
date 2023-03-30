@@ -53,6 +53,8 @@ Route::resource('antreanKred', antreanKredController::class)->middleware(['auth'
 Route::resource('antreanSKTM', antreanSKTMController::class)->middleware(['auth', 'IsKelurahan']);
 Route::resource('dashKel', dashKelController::class)->middleware(['auth', 'IsKelurahan']);
 Route::resource('verifDom', verifDomController::class)->middleware(['auth', 'IsKelurahan']);
+Route::get('verifDom/diterima/{id}', [verifDomController::class, 'diterima'])->middleware(['auth', 'IsKelurahan']);
+
 Route::resource('verifKred', verifKredController::class)->middleware(['auth', 'IsKelurahan']);
 Route::resource('verifSKTM', verifSKTMController::class)->middleware(['auth', 'IsKelurahan']);
 
