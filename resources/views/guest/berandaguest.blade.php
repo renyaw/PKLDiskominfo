@@ -44,7 +44,7 @@
           <li class="nav-item dropdown dropdown-hover mx-2 ms-lg-6">
             <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuPages8" href="/">
               <i class="material-icons opacity-6 me-2 text-md">dashboard</i>
-              Dashboard
+              Beranda
             </a>
           </li>
 
@@ -131,9 +131,9 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center mx-auto my-auto">
-            <h1 class="text-success">Sistem Informasi Pelayanan Masyarakat</h1>
+            <h1 class="" style="color:#87CEFA;">Sistem Informasi Pelayanan Masyarakat</h1>
             <p class="lead mb-4 text-white">Salatiga Hati Beriman</p>
-            <a href="daftar"><button type="submit" class="btn bg-info text-white">Buat Akun</button></a>
+            <a href="daftar" class="btn btn bg-info text-white">Buat Akun</a>
           </div>
         </div>
       </div>
