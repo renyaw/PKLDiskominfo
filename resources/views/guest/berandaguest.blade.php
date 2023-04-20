@@ -1,105 +1,318 @@
-<!-- Bug : navbar bagian layanan gakeluar dropdownnya -->
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Beranda</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <script src="https://unpkg.com/feather-icons"></script>
-    </head>
-    <body>
-    <!-- Navbar -->
-    @extends('navbar.navbarguest')
-    <!-- Navbar End -->
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
 
-    <!-- Context -->
-    @section('container')
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <title>
+    SIPMAS
+  </title>
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+  <!-- Nucleo Icons -->
+  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <!-- CSS Files -->
+  <link id="pagestyle" href="../assets/css/material-kit.css?v=3.0.4" rel="stylesheet" />
+</head>
+
+<body class="about-us bg-gray-200">
+  <!-- Navbar Transparent -->
+  <nav class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3  navbar-transparent ">
     <div class="container">
-        <!-- Gambar -->
-        <div class="gambar mt-4 d-flex justify-content-center">
-            <img src="img/Gunung.jpg" alt="" class="rounded">
+      <a class="navbar-brand  text-white " rel="tooltip" data-placement="bottom" target="_blank">
+        <img src="img/Logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">Kota Salatiga
+      </a>
+      <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon mt-2">
+          <span class="navbar-toggler-bar bar1"></span>
+          <span class="navbar-toggler-bar bar2"></span>
+          <span class="navbar-toggler-bar bar3"></span>
+        </span>
+      </button>
 
-        </div>
-        <div class="text-center mt-2">
-            <h5>Salatiga Hati Beriman</h5>
-        </div>
-        <!-- Gambar End -->
+      <div class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0 ms-lg-12 ps-lg-5" id="navigation">
 
-        <!-- Box Layanan -->
+        <ul class="navbar-nav navbar-nav-hover ms-auto">
 
-        <div class="row mt-5 d-flex justify-content-center">
-        <div class="col-3">
-        <a href="login" class="text-decoration-none text-dark">
-            <div class="logos d-flex justify-content-center z-0">
-            <svg xmlns="http://www.w3.org/2000/svg" width="70px" height="70px" fill="#87CEFA" class="bi bi-currency-dollar border rounded d-flex justify-content-center p-2" viewBox="0 2 16 14">
-                <path d="M15 .5a.5.5 0 0 0-.724-.447l-8 4A.5.5 0 0 0 6 4.5v3.14L.342 9.526A.5.5 0 0 0 0 10v5.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V14h1v1.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5V.5ZM2 11h1v1H2v-1Zm2 0h1v1H4v-1Zm-1 2v1H2v-1h1Zm1 0h1v1H4v-1Zm9-10v1h-1V3h1ZM8 5h1v1H8V5Zm1 2v1H8V7h1ZM8 9h1v1H8V9Zm2 0h1v1h-1V9Zm-1 2v1H8v-1h1Zm1 0h1v1h-1v-1Zm3-2v1h-1V9h1Zm-1 2h1v1h-1v-1Zm-2-4h1v1h-1V7Zm3 0v1h-1V7h1Zm-2-2v1h-1V5h1Zm1 0h1v1h-1V5Z"/>
-            </svg>
-            </div>
-
-
-                    <div class="card z-1" style="">
-                    <div class="card-body text-center ">
-                        <p class="card-text">Surat Keterangan</p>
-                        <p class="card-text fw-bold">Domisili</p>
-                    </div>
-                    </div>
-                    </a>
-                </div>
-
-            <div class="col-3 ps-4">
-            <a href="login" class="text-decoration-none text-dark">
-            <div class="logos d-flex justify-content-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="70px" height="70px" fill="#87CEFA" class="bi bi-currency-dollar border rounded d-flex justify-content-center p-2" viewBox="0 2 16 14">
-                <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z"/>
-                </svg>
-            </div>
-
-                <div class="card" style="">
-                <div class="card-body text-center">
-                    <p class="card-text">Surat Pengantar </p>
-                    <p class="card-text fw-bold">Kredit</p>
-                </div>
-                </div>
-                </a>
-            </div>
-
-
-            <div class="col-3">
-            <a href="login" class="text-decoration-none text-dark">
-            <div class="logos d-flex justify-content-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="70px" height="70px" fill="#87CEFA" class="bi bi-currency-dollar border rounded d-flex justify-content-center p-2" viewBox="0 2 16 14">
-                <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM5 4h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm0 2h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1z"/>
-                </svg>
-            </div>
-                <div class="card" style="">
-                <div class="card-body text-center">
-                    <p class="card-text">Surat Keterangan</p>
-                    <p class="card-text fw-bold">Tidak Mampu</p>
-                </div>
-                </div>
-                </a>
-            </div>
-            <div class="col-3">
-            <a href="login" class="text-decoration-none text-dark">
-            <div class="logos d-flex justify-content-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="70px" height="70px" fill="#87CEFA" class="bi bi-currency-dollar border rounded d-flex justify-content-center p-2" viewBox="0 2 16 14">
-                    <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm-1 4v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 11.293V7.5a.5.5 0 0 1 1 0z"/>
-                </svg>
-            </div>
-            <div class="card" style="">
-                <div class="card-body text-center">
-                    <p class="card-text">Kumpulan Berkas</p>
-                    <p class="card-text fw-bold">Unduh</p>
-                </div>
-                </div>
-            </div>
+          <li class="nav-item dropdown dropdown-hover mx-2 ms-lg-6">
+            <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuPages8" href="/">
+              <i class="material-icons opacity-6 me-2 text-md">dashboard</i>
+              Dashboard
             </a>
-        </div>
-        <!-- Box Layanan End -->
+          </li>
+
+          <li class="nav-item dropdown dropdown-hover mx-2">
+            <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="material-icons opacity-6 me-2 text-md">view_day</i>
+              Layanan
+              <img src="../assets/img/down-arrow-white.svg" alt="down-arrow" class="arrow ms-2 d-lg-block d-none">
+              <img src="../assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-2 d-lg-none d-block">
+            </a>
+            <ul class="dropdown-menu dropdown-menu-animation dropdown-menu-end dropdown-md dropdown-md-responsive p-3 border-radius-lg mt-0 mt-lg-3" aria-labelledby="dropdownMenuBlocks">
+              <div class="d-none d-lg-block">
+                <a href="login" class="dropdown-item border-radius-md">
+                    <span>Surat Keterangan Tidak Mampu</span>
+                  </a>
+                  <a href="login" class="dropdown-item border-radius-md">
+                    <span>Surat Keterangan Domisili</span>
+                  </a>
+                  <a href="login" class="dropdown-item border-radius-md">
+                    <span>Surat Pengantar Kredit</span>
+                  </a>
+                  <a href="login" class="dropdown-item border-radius-md">
+                    <span>Kumpulan Berkas</span>
+                  </a>
+              </div>
+              <div class="row d-lg-none">
+                <div class="col-md-12">
+                  <div class="d-flex mb-2">
+                    <div class="icon h-10 me-3 d-flex mt-1">
+                      <i class="ni ni-single-copy-04 text-gradient text-primary"></i>
+                    </div>
+                  </div>
+                  <div class="d-flex mb-2 mt-3">
+                    <div class="icon h-10 me-3 d-flex mt-1">
+                      <i class="ni ni-laptop text-gradient text-primary"></i>
+                    </div>
+                  </div>
+                  <div class="d-flex mb-2 mt-3">
+                    <div class="icon h-10 me-3 d-flex mt-1">
+                      <i class="ni ni-badge text-gradient text-primary"></i>
+                    </div>
+                  </div>
+                  <div class="d-flex mb-2 mt-3">
+                    <div class="icon h-10 me-3 d-flex mt-1">
+                      <i class="ni ni-notification-70 text-gradient text-primary"></i>
+                    </div>
+                  </div>
+                  <div class="d-flex mb-2 mt-3">
+                    <div class="icon h-10 me-3 d-flex mt-1">
+                      <i class="ni ni-app text-gradient text-primary"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ul>
+          </li>
+          <li class="nav-item dropdown dropdown-hover mx-2">
+            <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="material-icons opacity-6 me-2 text-md">article</i>
+              Akun
+              <img src="../assets/img/down-arrow-white.svg" alt="down-arrow" class="arrow ms-2 d-lg-block d-none">
+              <img src="../assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-2 d-lg-none d-block">
+            </a>
+            <ul class="dropdown-menu dropdown-menu-animation dropdown-menu-end dropdown-md dropdown-md-responsive mt-0 mt-lg-3 p-3 border-radius-lg" aria-labelledby="dropdownMenuDocs">
+                <div class="d-none d-lg-block">
+                    <a href="login" class="dropdown-item border-radius-md">
+                        <span>Masuk</span>
+                      </a>
+                      <a href="daftar" class="dropdown-item border-radius-md">
+                        <span>Daftar</span>
+                      </a>
+                  </div>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
-    @endsection
-    <!-- Context End -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    </body>
+  </nav>
+  <!-- End Navbar -->
+  <!-- -------- START HEADER 7 w/ text and video ------- -->
+  <header class="bg-gradient-dark">
+    <div class="page-header min-vh-75" style="background-image: url('img/backgroundv2.jpg');">
+      <span class="mask bg-gradient-dark opacity-6"></span>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center mx-auto my-auto">
+            <h1 class="text-success">Sistem Informasi Pelayanan Masyarakat</h1>
+            <p class="lead mb-4 text-white">Salatiga Hati Beriman</p>
+            <a href="daftar"><button type="submit" class="btn bg-info text-white">Buat Akun</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- -------- END HEADER 7 w/ text and video ------- -->
+  <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
+    <!-- Section with four info areas left & one card right with image and waves -->
+    <section class="py-7">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="row justify-content-start">
+              <div class="col-md-6">
+                <a href="login">
+                    <div class="info">
+                        <i class="material-icons text-3xl text-gradient text-info mb-3">mail</i>
+                        <h5>Surat Keterangan Tidak Mampu</h5>
+                        <p>Login untuk Pengajuan Surat Keterangan Tidak Mampu</p>
+                    </div>
+                </a>
+
+              </div>
+              <div class="col-md-6">
+                <a href="login">
+                    <div class="info">
+                        <i class="material-icons text-3xl text-gradient text-info mb-3">apartment</i>
+                        <h5>Surat Keterangan Domisili</h5>
+                        <p>Login untuk Melakukan Pengajuan Surat Keterangan Domisili</p>
+                    </div>
+                </a>
+              </div>
+            </div>
+            <div class="row justify-content-start mt-4">
+              <div class="col-md-6">
+                <a href="login">
+                    <div class="info">
+                        <i class="material-icons text-3xl text-gradient text-info mb-3">home</i>
+                        <h5>Surat Pengantar Kredit</h5>
+                        <p>Login untuk Melakukan Pengajuan Surat Pengantar Kredit</p>
+                    </div>
+                </a>
+
+              </div>
+              <div class="col-md-6">
+                <a href="kumpulanBerkas"></a>
+                <div class="info">
+                  <i class="material-icons text-3xl text-gradient text-info mb-3">download</i>
+                  <h5>Kumpulan Berkas</h5>
+                  <p>Kumpulan Berkas yang Bisa didownload</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 ms-auto mt-lg-0 mt-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5 class="font-weight-normal">
+                  <a href="login">Login untuk Melakukan Pengajuan</a>
+                </h5>
+                <p class="mb-0">
+                  Anda Harus Memiliki Akun untuk Login Menggunakan Ussername
+                </p>
+                <a href="login"><button type="button" class="btn bg-gradient-info btn-sm mb-0 mt-3">Login</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END Section with four info areas left & one card right with image and waves -->
+
+
+
+    <!-- -------- END PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
+  </div>
+  <footer class="footer pt-5 mt-5">
+    <div class="container">
+
+      </div>
+    </div>
+  </footer>
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="../assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <!--  Plugin for TypedJS, full documentation here: https://github.com/inorganik/CountUp.js -->
+  <script src="../assets/js/plugins/countup.min.js"></script>
+  <!--  Plugin for Parallax, full documentation here: https://github.com/wagerfield/parallax  -->
+  <script src="../assets/js/plugins/parallax.min.js"></script>
+  <!-- Control Center for Material UI Kit: parallax effects, scripts for the example pages etc -->
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
+  <script src="../assets/js/material-kit.min.js?v=3.0.4" type="text/javascript"></script>
+  <script>
+    // get the element to animate
+    var element = document.getElementById('count-stats');
+    var elementHeight = element.clientHeight;
+
+    // listen for scroll event and call animate function
+
+    document.addEventListener('scroll', animate);
+
+    // check if element is in view
+    function inView() {
+      // get window height
+      var windowHeight = window.innerHeight;
+      // get number of pixels that the document is scrolled
+      var scrollY = window.scrollY || window.pageYOffset;
+      // get current scroll position (distance from the top of the page to the bottom of the current viewport)
+      var scrollPosition = scrollY + windowHeight;
+      // get element position (distance from the top of the page to the bottom of the element)
+      var elementPosition = element.getBoundingClientRect().top + scrollY + elementHeight;
+
+      // is scroll position greater than element position? (is element in view?)
+      if (scrollPosition > elementPosition) {
+        return true;
+      }
+
+      return false;
+    }
+
+    var animateComplete = true;
+    // animate element when it is in view
+    function animate() {
+
+      // is element in view?
+      if (inView()) {
+        if (animateComplete) {
+          if (document.getElementById('state1')) {
+            const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
+            if (!countUp.error) {
+              countUp.start();
+            } else {
+              console.error(countUp.error);
+            }
+          }
+          if (document.getElementById('state2')) {
+            const countUp1 = new CountUp('state2', document.getElementById("state2").getAttribute("countTo"));
+            if (!countUp1.error) {
+              countUp1.start();
+            } else {
+              console.error(countUp1.error);
+            }
+          }
+          if (document.getElementById('state3')) {
+            const countUp2 = new CountUp('state3', document.getElementById("state3").getAttribute("countTo"));
+            if (!countUp2.error) {
+              countUp2.start();
+            } else {
+              console.error(countUp2.error);
+            };
+          }
+          animateComplete = false;
+        }
+      }
+    }
+
+    if (document.getElementById('typed')) {
+      var typed = new Typed("#typed", {
+        stringsElement: '#typed-strings',
+        typeSpeed: 90,
+        backSpeed: 90,
+        backDelay: 200,
+        startDelay: 500,
+        loop: true
+      });
+    }
+  </script>
+  <script>
+    if (document.getElementsByClassName('page-header')) {
+      window.onscroll = debounce(function() {
+        var scrollPosition = window.pageYOffset;
+        var bgParallax = document.querySelector('.page-header');
+        var oVal = (window.scrollY / 3);
+        bgParallax.style.transform = 'translate3d(0,' + oVal + 'px,0)';
+      }, 6);
+    }
+  </script>
+</body>
+
 </html>

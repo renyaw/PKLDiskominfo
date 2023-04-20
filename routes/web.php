@@ -6,6 +6,7 @@ use App\Http\Controllers\buatAkunController;
 use App\Http\Controllers\loginController;
 //guest
 use App\Http\Controllers\berandaGuestController;
+use App\Http\Controllers\berandaGuest2Controller;
 //Masyarakat
 use App\Http\Controllers\profileController;
 use App\Http\Controllers\editProfileController;
@@ -42,6 +43,7 @@ Route::resource('daftar', buatAkunController::class);
 // Route::resource('login', loginController::class)->name('login')->middleware('guest');
 //Guest
 Route::resource('/', berandaGuestController::class)->middleware('guest');
+Route::resource('/guestCoba', berandaGuest2Controller::class)->middleware('guest');
 
 //Kecamatan
 Route::resource('dashKec', dashKecController::class)->middleware(['auth', 'IsKecamatan']);
