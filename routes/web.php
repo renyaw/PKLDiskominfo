@@ -6,11 +6,11 @@ use App\Http\Controllers\buatAkunController;
 use App\Http\Controllers\loginController;
 //guest
 use App\Http\Controllers\berandaGuestController;
-use App\Http\Controllers\berandaGuest2Controller;
 //Masyarakat
 use App\Http\Controllers\profileController;
 use App\Http\Controllers\editProfileController;
 use App\Http\Controllers\dashMasyController;
+use App\Http\Controllers\dashMasy2Controller;
 use App\Http\Controllers\formDomController;
 use App\Http\Controllers\formKredController;
 use App\Http\Controllers\formSKTM1Controller;
@@ -43,7 +43,6 @@ Route::resource('daftar', buatAkunController::class);
 // Route::resource('login', loginController::class)->name('login')->middleware('guest');
 //Guest
 Route::resource('/', berandaGuestController::class)->middleware('guest');
-Route::resource('/guestCoba', berandaGuest2Controller::class)->middleware('guest');
 
 //Kecamatan
 Route::resource('dashKec', dashKecController::class)->middleware(['auth', 'IsKecamatan']);
@@ -62,6 +61,7 @@ Route::resource('verifSKTM', verifSKTMController::class)->middleware(['auth', 'I
 
 //Masyarakat
 Route::resource('dashMasy', dashMasyController::class)->middleware(['auth', 'IsMasyarakat']);
+Route::resource('dashMasy2', dashMasy2Controller::class)->middleware(['auth', 'IsMasyarakat']);
 Route::resource('editProfile', editProfileController::class)->middleware(['auth', 'IsMasyarakat']);
 Route::resource('formDom', formDomController::class)->middleware(['auth', 'IsMasyarakat']);
 Route::resource('formKred', formKredController::class)->middleware(['auth', 'IsMasyarakat']);
