@@ -10,7 +10,6 @@ use App\Http\Controllers\berandaGuestController;
 use App\Http\Controllers\profileController;
 use App\Http\Controllers\editProfileController;
 use App\Http\Controllers\dashMasyController;
-use App\Http\Controllers\dashMasy2Controller;
 use App\Http\Controllers\formDomController;
 use App\Http\Controllers\formKredController;
 use App\Http\Controllers\formSKTM1Controller;
@@ -61,7 +60,6 @@ Route::resource('verifSKTM', verifSKTMController::class)->middleware(['auth', 'I
 
 //Masyarakat
 Route::resource('dashMasy', dashMasyController::class)->middleware(['auth', 'IsMasyarakat']);
-Route::resource('dashMasy2', dashMasy2Controller::class)->middleware(['auth', 'IsMasyarakat']);
 Route::resource('editProfile', editProfileController::class)->middleware(['auth', 'IsMasyarakat']);
 Route::resource('formDom', formDomController::class)->middleware(['auth', 'IsMasyarakat']);
 Route::resource('formKred', formKredController::class)->middleware(['auth', 'IsMasyarakat']);

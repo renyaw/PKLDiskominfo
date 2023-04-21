@@ -43,7 +43,7 @@
         <ul class="navbar-nav navbar-nav-hover ms-auto">
 
           <li class="nav-item dropdown dropdown-hover mx-2 ms-lg-6">
-            <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuPages8" href="dashMasy2">
+            <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center" id="dropdownMenuPages8" href="dashMasy">
               <i class="material-icons opacity-6 me-2 text-md">dashboard</i>
               Beranda
             </a>
@@ -113,11 +113,14 @@
                 <div class="d-none d-lg-block">
                     <a href="profile" class="dropdown-item border-radius-md">
                         <span>Profil</span>
-                      </a>
-                        <form action="/logout" method="post">
-                            @csrf
-                            <button type="submit" class="dropdown-item border-radius-md"> <i class="bi bi-box-arrow-right"></i>Keluar </button>
-                        </form>
+                    </a>
+                    <a href="riwayat" class="dropdown-item border-radius-md">
+                        <span>Riwayat</span>
+                    </a>
+                    <form action="/logout" method="post">
+                        @csrf
+                        <button type="submit" class="dropdown-item border-radius-md"> <i class="bi bi-box-arrow-right"></i>Keluar </button>
+                    </form>
 
                   </div>
             </ul>
