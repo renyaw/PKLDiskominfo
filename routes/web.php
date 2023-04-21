@@ -9,6 +9,7 @@ use App\Http\Controllers\berandaGuestController;
 //Masyarakat
 use App\Http\Controllers\profileController;
 use App\Http\Controllers\editProfileController;
+use App\Http\Controllers\editProfile2Controller;
 use App\Http\Controllers\dashMasyController;
 use App\Http\Controllers\formDomController;
 use App\Http\Controllers\formKredController;
@@ -61,6 +62,7 @@ Route::resource('verifSKTM', verifSKTMController::class)->middleware(['auth', 'I
 //Masyarakat
 Route::resource('dashMasy', dashMasyController::class)->middleware(['auth', 'IsMasyarakat']);
 Route::resource('editProfile', editProfileController::class)->middleware(['auth', 'IsMasyarakat']);
+Route::resource('editProfile2', editProfile2Controller::class)->middleware(['auth', 'IsMasyarakat']);
 Route::resource('formDom', formDomController::class)->middleware(['auth', 'IsMasyarakat']);
 Route::resource('formKred', formKredController::class)->middleware(['auth', 'IsMasyarakat']);
 Route::resource('formSKTM1', formSKTM1Controller::class)->middleware(['auth', 'IsMasyarakat']);
@@ -74,6 +76,7 @@ Route::resource('riwayatKred', riwayatKredController::class)->middleware(['auth'
 
 // Ajax
 Route::post('/getKelurahan', [buatAkunController::class, 'getKelurahan'])->name('getKelurahan');
+
 
 
 //Input From User
