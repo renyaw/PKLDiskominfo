@@ -269,7 +269,7 @@
 
                 $.ajax({
                     type: 'POST',
-                    url : "{{route('getKelurahan')}}",
+                    url : "{{route('getKelurahan1')}}",
                     data : {id_kec:id_kec},
                     cache : false,
 

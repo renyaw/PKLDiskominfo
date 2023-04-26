@@ -34,6 +34,15 @@ class buatAkunController extends Controller
             echo "<option value='$kel->id_kel'>$kel->nama_kel</option>";
         }
     }
+    public function getKelurahan1(request $request){
+        $id_kec = $request->id_kec;
+
+        $kelurahans = kelurahanModel::where('fk_id_kec', $id_kec)->get();
+
+        foreach ($kelurahans as $kel){
+            echo "<option value='$kel->id_kel'>$kel->nama_kel</option>";
+        }
+    }
 
     /**
      * Show the form for creating a new resource.

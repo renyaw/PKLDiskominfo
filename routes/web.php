@@ -17,6 +17,7 @@ use App\Http\Controllers\formSKTM1Controller;
 use App\Http\Controllers\formSKTM2Controller;
 use App\Http\Controllers\kumpulanBerkasController;
 use App\Http\Controllers\riwayatController;
+use App\Http\Controllers\riwayat2Controller;
 use App\Http\Controllers\riwayatDomController;
 use App\Http\Controllers\riwayatKredController;
 use App\Http\Controllers\riwayatSKTMController;
@@ -70,12 +71,14 @@ Route::resource('formSKTM2', formSKTM2Controller::class)->middleware(['auth', 'I
 Route::resource('kumpulanBerkas', kumpulanBerkasController::class);
 Route::resource('profile', profileController::class)->middleware('auth');
 Route::resource('riwayat', riwayatController::class)->middleware(['auth', 'IsMasyarakat']);
+Route::resource('riwayat2', riwayat2Controller::class)->middleware(['auth', 'IsMasyarakat']);
 Route::resource('riwayatSKTM', riwayatSKTMController::class)->middleware(['auth', 'IsMasyarakat']);
 Route::resource('riwayatDom', riwayatDomController::class)->middleware(['auth', 'IsMasyarakat']);
 Route::resource('riwayatKred', riwayatKredController::class)->middleware(['auth', 'IsMasyarakat']);
 
 // Ajax
 Route::post('/getKelurahan', [buatAkunController::class, 'getKelurahan'])->name('getKelurahan');
+Route::post('/getKelurahan1', [buatAkunController::class, 'getKelurahan1'])->name('getKelurahan1');
 
 
 
