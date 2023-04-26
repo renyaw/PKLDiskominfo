@@ -9,8 +9,7 @@
     </head>
     <body>
     <!-- Navbar -->
-
-    <nav class="navbar navbar-expand-lg" style="background-color:#87CEFA;">
+    <nav class="navbar navbar-expand-lg blur border rounded top-0 z-index-3 shadow my-3 py-2 start-0 end-0 mx-4" style="background-color:#87CEFA;">
         <div class="container">
             <a class="navbar-brand" style="">
                 <img src="img/Logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">Kota Salatiga
@@ -106,10 +105,11 @@
         </div>
 
     </nav>
+
     <!-- Navbar End -->
 
     <!-- Konten -->
-    <div class="container mt-4">
+    <div class="container mt-3">
         @yield('container')
     </div>
     <!-- Konten End -->
