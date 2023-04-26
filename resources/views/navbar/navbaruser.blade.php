@@ -20,34 +20,87 @@
             </button>
             Selamat Datang, {{Auth::user()->nama}}!
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav navbar-nav-hover ms-auto">
 
-                    <li class="nav-item">
+                    <li class="nav-item dropdown dropdown-hover mx-2">
                         <a class="nav-link" href="dashMasy">Dashboard</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown dropdown-hover mx-2">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Layanan
                         </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="domisili">Surat Keterangan Domisili Usaha</a></li>
-                        <li><a class="dropdown-item" href="kredit">Surat Pengantar Kredit</a></li>
-                        <li><a class="dropdown-item" href="sktm1">Surat Keterangan Tidak Mampu</a></li>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive p-3 border-radius-lg mt-0 mt-lg-3">
+                        <div class="d-none d-lg-block">
+                            <a href="formSKTM1" class="dropdown-item border-radius-md">
+                                <span>Surat Keterangan Tidak Mampu</span>
+                              </a>
+                              <a href="formDom" class="dropdown-item border-radius-md">
+                                <span>Surat Keterangan Domisili</span>
+                              </a>
+                              <a href="formKred" class="dropdown-item border-radius-md">
+                                <span>Surat Pengantar Kredit</span>
+                              </a>
+                              <a href="kumpulanBerkas" class="dropdown-item border-radius-md">
+                                <span>Kumpulan Berkas</span>
+                              </a>
+                        </div>
+                        <div class="row d-lg-none">
+                          <div class="col-md-12">
+                            <div class="d-flex mb-2">
+                              <div class="icon h-10 me-3 d-flex mt-1">
+                                <i class="ni ni-single-copy-04 text-gradient text-primary"></i>
+                              </div>
+                            </div>
+
+
+                            <div class="d-flex mb-2 mt-3">
+                              <div class="icon h-10 me-3 d-flex mt-1">
+                                <i class="ni ni-laptop text-gradient text-primary"></i>
+                              </div>
+                            </div>
+
+                            <div class="d-flex mb-2 mt-3">
+                              <div class="icon h-10 me-3 d-flex mt-1">
+                                <i class="ni ni-badge text-gradient text-primary"></i>
+                              </div>
+                            </div>
+
+                            <div class="d-flex mb-2 mt-3">
+                              <div class="icon h-10 me-3 d-flex mt-1">
+                                <i class="ni ni-notification-70 text-gradient text-primary"></i>
+                              </div>
+                            </div>
+
+                            <div class="d-flex mb-2 mt-3">
+                              <div class="icon h-10 me-3 d-flex mt-1">
+                                <i class="ni ni-app text-gradient text-primary"></i>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
                     </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="profile">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="riwayat">Riwayat</a>
-                    </li>
-                    <li class="nav-item">
-                        <form action="/logout" method="post">
-                            @csrf
-                            <button type="submit" class="dropdown-item mt-2"> <i class="bi bi-box-arrow-right"></i>Keluar </button>
-                        </form>
-
-                    </li>
+                    <li class="nav-item dropdown dropdown-hover mx-2">
+                        <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
+                          Akun
+                          <img src="../assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive mt-0 mt-lg-3 p-3 border-radius-lg" aria-labelledby="dropdownMenuDocs">
+                          <div class="d-none d-lg-block">
+                              <a href="profile" class="dropdown-item border-radius-md">
+                                  <span>Profil</span>
+                              </a>
+                              <a href="riwayat" class="dropdown-item border-radius-md">
+                                  <span>Riwayat</span>
+                              </a>
+                              <form action="/logout" method="post">
+                                  @csrf
+                                  <button type="submit" class="dropdown-item border-radius-md"> <i class="bi bi-box-arrow-right"></i>Keluar </button>
+                              </form>
+                          </div>
+                        </ul>
+                      </li>
                 </ul>
             </div>
         </div>
@@ -60,7 +113,15 @@
         @yield('container')
     </div>
     <!-- Konten End -->
-
+    <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
+    <script src="../assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <!--  Plugin for Parallax, full documentation here: https://github.com/wagerfield/parallax  -->
+    <script src="../assets/js/plugins/parallax.min.js"></script>
+    <!-- Control Center for Material UI Kit: parallax effects, scripts for the example pages etc -->
+    <!--  Google Maps Plugin    -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
+    <script src="../assets/js/material-kit.min.js?v=3.0.4" type="text/javascript"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     </body>
 </html>

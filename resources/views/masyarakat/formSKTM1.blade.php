@@ -13,7 +13,7 @@
 
     <!-- Context -->
     @section('container')
-    <div class="container">
+    <div class="container mt-5" >
         <h4 class="text-center mt-3 fw-bold">Surat Keterangan Tidak Mampu</h4>
         <h5 class="text-center mt-1">Persyaratan Pelayanan</h5>
     </div>
