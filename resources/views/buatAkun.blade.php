@@ -6,7 +6,8 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Daftar</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        </head>
+        <link rel="icon" type="image/png" sizes="76x80" href="img/Logo.png">
+    </head>
     <body>
     <!-- Navbar -->
 

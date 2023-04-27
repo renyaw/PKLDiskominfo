@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\antreanKredModel;
-
+use Illuminate\Support\Facades\Auth;
 class riwayatKredController extends Controller
 {
     /**
@@ -15,7 +15,7 @@ class riwayatKredController extends Controller
      */
     public function index()
     {
-        $query = antreanKredModel::all();
+        $query = antreanKredModel::where('fk_id_user', Auth::user()->id)->get();
         return view('masyarakat/riwayatKred',compact('query'));
     }
 

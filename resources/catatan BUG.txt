@@ -1,7 +1,10 @@
 CATATAN BUG (nada)
-1. Bagian riwayat bocor
-2. php office
-3. Dashboard kecamatan belum samsek
+3. Bagian edit form navbarnya kenapa gabisa load gambar ask
+4. Bagian kelurahan ask (enaknya dibikin gmn)
+5. Bagian kecamatan (ini blm samsek hadehh) ask
+6. Navbar kecamatan kelurahan (nanti)
+7. Tampilkan berdasarkan (Kelurahan) ask
+
 
 
 

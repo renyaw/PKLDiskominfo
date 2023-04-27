@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" sizes="76x80" href="img/Logo.png">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>
     Profile
   </title>
@@ -173,7 +174,7 @@
                                     <div class="form-group">
                                         <label for="kecamatan">Kecamatan</label>
                                         <select class="form-select ms-1" name="kecamatan" id="kecamatan">
-                                            <option value="0">-- Pilih Kecamatan --</option>
+                                            <option value="{{ old('id_kec', Auth::user()->id_kec) }}">-- Pilih Kecamatan --</option>
                                             @foreach ($data as $kecamatan)
                                                 <option value="{{$kecamatan->id_kec}}">{{$kecamatan->nama_kec}}</option>
                                             @endforeach
@@ -206,7 +207,7 @@
                                     <div class="form-group">
                                         <label for="kelurahan">Kelurahan</label>
                                         <select class="form-control ms-1" name="kelurahan" id="kelurahan">
-                                            <option value="0">-- Pilih Kelurahan --</option>
+                                            <option value="{{ old('id_kel', Auth::user()->id_kel) }}">-- Pilih Kelurahan --</option>
                                         </select>
                                     </div>
 
@@ -255,6 +256,7 @@
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
   <script src="../assets/js/material-kit.min.js?v=3.0.4" type="text/javascript"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>
     $(function (){
         $.ajaxSetup({
@@ -269,7 +271,7 @@
 
                 $.ajax({
                     type: 'POST',
-                    url : "{{route('getKelurahan1')}}",
+                    url : "{{route('getKelurahan')}}",
                     data : {id_kec:id_kec},
                     cache : false,
 

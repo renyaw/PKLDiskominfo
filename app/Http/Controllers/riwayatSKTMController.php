@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\antreanSKTMModel;
-
+use Illuminate\Support\Facades\Auth;
 class riwayatSKTMController extends Controller
 {
     /**
@@ -15,7 +15,7 @@ class riwayatSKTMController extends Controller
      */
     public function index()
     {
-        $query = antreanSKTMModel::all();
+        $query = antreanSKTMModel::where('fk_id_user', Auth::user()->id)->get();
         // return $query;
 
         return view('masyarakat/riwayatSKTM',compact('query'));
