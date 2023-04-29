@@ -10,30 +10,39 @@
     <body>
     <!-- Navbar -->
 
-    <nav class="navbar navbar-expand-lg" style="background-color:#87CEFA;">
+    <nav class="navbar navbar-expand-lg blur border rounded top-0 z-index-3 shadow my-3 py-2 start-0 end-0 mx-4" style="background-color:#87CEFA;">
         <div class="container">
-            <a class="navbar-brand" href="#" style="">
-                <img src="img/Logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">Kota Salatiga
+            <a class="navbar-brand" style="">
+                <img src="{{asset('img/Logo.png')}}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">Kota Salatiga
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav navbar-nav-hover ms-auto">
 
-                    <li class="nav-item">
+                    <li class="nav-item dropdown dropdown-hover mx-2">
                         <a class="nav-link" href="dashKec">Dashboard</a>
                     </li>
+                    <li class="nav-item dropdown dropdown-hover mx-2">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Akun
+                        </a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive p-3 border-radius-lg mt-0 mt-lg-3">
+                        <div class="d-none d-lg-block">
+                              <form action="/logout" method="post">
+                                @csrf
+                                <button type="submit" class="dropdown-item border-radius-md"> <i class="bi bi-box-arrow-right"></i>Keluar </button>
+                            </form>
+                        </div>
 
-                    <li class="nav-item">
-                        <form action="/logout" method="post">
-                            @csrf
-                            <button type="submit" class="dropdown-item mt-2"> <i class="bi bi-box-arrow-right"></i>Keluar </button>
-                        </form>
+                    </ul>
                     </li>
+
                 </ul>
             </div>
         </div>
+
     </nav>
     <!-- Navbar End -->
 
