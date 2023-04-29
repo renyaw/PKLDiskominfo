@@ -1,5 +1,5 @@
 CATATAN BUG (nada)
-3. Bagian edit form navbarnya kenapa gabisa load gambar ask
+3. Form Form, fk id kecamatan sama kelurahan
 4. Bagian kelurahan ask (enaknya dibikin gmn)
 5. Bagian kecamatan (ini blm samsek hadehh) ask
 6. Navbar kecamatan kelurahan (nanti)

@@ -79,7 +79,8 @@ class formSKTM2Controller extends Controller
                 'tujuan' => $request->tujuan,
                 'fk_id_user' => Auth::user()->id,
                 'fk_status' =>1
-
+                // 'fk_id_kec' => Auth::
+                // 'fk_id_kel' =>
             ];
 
 

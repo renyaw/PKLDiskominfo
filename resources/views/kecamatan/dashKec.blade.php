@@ -15,7 +15,7 @@
     @section('container')
     <div class="container mt-3">
         <div class= "container">
-            <p class="fs-3 fw-bold">Selamat datang di Dashboard Kecamatan xx</p>
+            <p class="fs-3 fw-bold"></p>
             <p class="fs-5 fw-bold">Silakan pilih kelurahan </p>
         </div>
         <div class="form-group col-8">

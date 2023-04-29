@@ -24,19 +24,11 @@
                     <li class="nav-item dropdown dropdown-hover mx-2">
                         <a class="nav-link" href="dashKec">Dashboard</a>
                     </li>
-                    <li class="nav-item dropdown dropdown-hover mx-2">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Akun
-                        </a>
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive p-3 border-radius-lg mt-0 mt-lg-3">
-                        <div class="d-none d-lg-block">
-                              <form action="/logout" method="post">
-                                @csrf
-                                <button type="submit" class="dropdown-item border-radius-md"> <i class="bi bi-box-arrow-right"></i>Keluar </button>
-                            </form>
-                        </div>
-
-                    </ul>
+                    <li class="nav-item dropdown dropdown-hover mx-2 mt-2">
+                        <form action="/logout" method="post">
+                            @csrf
+                            <button type="submit" class="dropdown-item border-radius-md"> <i class="bi bi-box-arrow-right"></i>Keluar </button>
+                        </form>
                     </li>
 
                 </ul>
