@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+use App\Models\userModel;
+use App\Models\kecamatanModel;
+use App\Models\kelurahanModel;
 
 class dashKecController extends Controller
 {
@@ -13,8 +18,22 @@ class dashKecController extends Controller
      */
     public function index()
     {
-        return view('/kecamatan/dashKec');
+        $query = userModel::find(Auth::user()->id);
+        $data = kecamatanModel::all();
+        $path = kelurahanModel::all();
+        return view('/kecamatan/dashKec',compact('query', 'data', 'path'));
     }
+
+    public function getKelurahan(request $request){
+        $id_kec = $request->id_kec;
+
+        $kelurahans = kelurahanModel::where('fk_id_kec', $id_kec)->get();
+
+        foreach ($kelurahans as $kel){
+            echo "<option value='$kel->id_kel'>$kel->nama_kel</option>";
+        }
+    }
+
 
     /**
      * Show the form for creating a new resource.
