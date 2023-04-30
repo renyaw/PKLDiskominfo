@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,7 +13,7 @@
 
     <!-- Context -->
     @section('container')
-        <div class="container text-center">
+        <div class="container h-100 pt-2" style="background-image: url('img/backgroundv2.jpg') ; background-size: cover; background-attachment: fixed; max-width:unset; height:200vh;">
             <div class="row" style="margin-top:90px; margin-bottom:90px; ">
                 <div class="col">
                     <div class="container position-relative" style="width: 19rem; height: 19rem; background-color:#87CEFA; border-radius: 1rem;">  
