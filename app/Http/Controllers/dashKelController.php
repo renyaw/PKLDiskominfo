@@ -12,6 +12,7 @@ use App\Models\antreanKredModel;
 
 use DB;
 
+use Illuminate\Support\Facades\Auth;
 class dashKelController extends Controller
 {
     /**
@@ -25,7 +26,7 @@ class dashKelController extends Controller
         ->select([
             \DB::raw('count(*) as jumlahdom')
         ])
-
+        ->where('fk_id_kel', Auth::user()->kelurahan)
         ->get()
         ;
 
@@ -33,7 +34,7 @@ class dashKelController extends Controller
         ->select([
             \DB::raw('count(*) as jumlahkred')
         ])
-
+        ->where('fk_id_kel', Auth::user()->kelurahan)
         ->get()
         ;
 
@@ -41,7 +42,7 @@ class dashKelController extends Controller
         ->select([
             \DB::raw('count(*) as jumlahsktm')
         ])
-
+        ->where('fk_id_kel', Auth::user()->kelurahan)
         ->get()
 
         ;
