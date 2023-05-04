@@ -8,15 +8,86 @@
         </head>
     <body>
     <!-- Navbar -->
-    @extends('navbar.navbaradmin')
+    <nav class="navbar navbar-expand-lg navbar-transparent blur border rounded top-0  shadow start-0 end-0 " style="background-color:#87CEFA;">
+        <div class="container">
+            <a class="navbar-brand" style="">
+                <img src="{{asset('img/Logo.png')}}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">Kota Salatiga
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav navbar-nav-hover ms-auto">
+
+                    <li class="nav-item dropdown dropdown-hover mx-2">
+                        <a class="nav-link" href="dashKel">Dashboard</a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-hover mx-2">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Verifikasi
+                        </a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive p-3 border-radius-lg mt-0 mt-lg-3">
+                        <div class="d-none d-lg-block">
+                            <a href="verifSKTM" class="dropdown-item border-radius-md">
+                                <span>Surat Keterangan Tidak Mampu</span>
+                              </a>
+                              <a href="verifDom" class="dropdown-item border-radius-md">
+                                <span>Surat Keterangan Domisili</span>
+                              </a>
+                              <a href="verifKred" class="dropdown-item border-radius-md">
+                                <span>Surat Pengantar Kredit</span>
+                              </a>
+                        </div>
+                        <div class="row d-lg-none">
+                          <div class="col-md-12">
+                            <div class="d-flex mb-2">
+                              <div class="icon h-10 me-3 d-flex mt-1">
+                                <i class="ni ni-single-copy-04 text-gradient text-primary"></i>
+                              </div>
+                            </div>
+
+
+                            <div class="d-flex mb-2 mt-3">
+                              <div class="icon h-10 me-3 d-flex mt-1">
+                                <i class="ni ni-laptop text-gradient text-primary"></i>
+                              </div>
+                            </div>
+
+                            <div class="d-flex mb-2 mt-3">
+                              <div class="icon h-10 me-3 d-flex mt-1">
+                                <i class="ni ni-badge text-gradient text-primary"></i>
+                              </div>
+                            </div>
+
+                            <div class="d-flex mb-2 mt-3">
+                              <div class="icon h-10 me-3 d-flex mt-1">
+                                <i class="ni ni-notification-70 text-gradient text-primary"></i>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                    </ul>
+                    </li>
+                    <li class="nav-item dropdown dropdown-hover mx-2 mt-2">
+                              <form action="/logout" method="post">
+                                  @csrf
+                                  <button type="submit" class="dropdown-item border-radius-md"> <i class="bi bi-box-arrow-right"></i>Keluar </button>
+                              </form>
+                      </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
     <!-- Navbar End -->
 
     <!-- Context -->
-    @section('container')
-        <div class="container h-100 pt-2" style="background-image: url('img/backgroundv2.jpg') ; background-size: cover; background-attachment: fixed; max-width:unset; height:200vh;">
+
+        <div class="container pt-4" style="background-image: url('img/backgroundv2.jpg') ; background-size: cover; background-attachment: fixed; max-width:unset; height:100vh;">
             <div class="row" style="margin-top:90px; margin-bottom:90px; ">
                 <div class="col">
-                    <div class="container position-relative" style="width: 19rem; height: 19rem; background-color:#87CEFA; border-radius: 1rem;">  
+                    <div class="container position-relative" style="width: 19rem; height: 19rem; background-color:#87CEFA; border-radius: 1rem;">
                         <div class="position-absolute top-50 start-50 translate-middle">
                             <p class="fs-1 fw-bold text-light" >
                                 @foreach($querydom as $data)
@@ -27,7 +98,7 @@
                         </div>
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-5">
-                        <a href="antreanDom" type="button" class="btn btn-outline-success">Lihat Detail</a>
+                        <a href="antreanDom" type="button" class="btn btn-warning">Lihat Detail</a>
                     </div>
                 </div>
                 <div class="col">
@@ -39,12 +110,12 @@
                                 @endforeach
                             </p>
                             <p class="text-light" >Surat Pengantar Kredit</p>
-                        </div>    
+                        </div>
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-5">
-                        <a href="antreanKred" type="button" class="btn btn-outline-success">Lihat Detail</a>
+                        <a href="antreanKred" type="button" class="btn btn-warning">Lihat Detail</a>
                     </div>
-                </div>   
+                </div>
                 <div class="col">
                     <div class="container position-relative" style="width: 19rem; height:19rem; background-color:#87CEFA; border-radius: 1rem;">
                         <div class="position-absolute top-50 start-50 translate-middle">
@@ -57,12 +128,12 @@
                         </div>
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-5">
-                        <a href="antreanSKTM" type="button" class="btn btn-outline-success">Lihat Detail</a>
+                        <a href="antreanSKTM" type="button" class="btn btn-warning">Lihat Detail</a>
                     </div>
                 </div>
             </div>
         </div>
-    @endsection
+
     <!-- Context -->
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
