@@ -74,7 +74,9 @@ class formDomController extends Controller
                 'lain_dom' => $newNama_lain,
                 // 'tgl_antre_dom' => '2023-02-01',
                 'fk_id_user' => Auth::user()->id,
-                'fk_status' => 1
+                'fk_status' => 1,
+                'fk_id_kec' => Auth::user()->kecamatan,
+                'fk_id_kel' => Auth::user()->kelurahan
 
             ];
 

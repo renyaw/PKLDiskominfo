@@ -152,7 +152,9 @@ class formKredController extends Controller
             'kk_kred' => $newNama_kk,
             'lain_kred' => $newNama_lain,
             'fk_id_user' => Auth::user()->id,
-            'fk_status' =>1
+            'fk_status' =>1,
+            'fk_id_kec' => Auth::user()->kecamatan,
+            'fk_id_kel' => Auth::user()->kelurahan
 
         ];
 
