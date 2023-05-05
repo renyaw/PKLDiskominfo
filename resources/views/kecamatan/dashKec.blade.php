@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Dashboard</title>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         </head>
     <body>
@@ -33,39 +34,32 @@
     <!-- End Context -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    
+
         <script>
-            $(function (){
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }});
-
-                $(function (){
-                    $('#kecamatan').on('change',function(){
-                        let id_kec = $('#kecamatan').val();
-                        console.log(id_kec);
-
-                        $.ajax({
-                            type: 'POST',
-                            url : "{{route('getKelurahan')}}",
-                            data : {id_kec:id_kec},
-                            cache : false,
-
-                            success : function(msg) {
-                                $('#kelurahan').html(msg);
-                            },
-                            error : function(data) {
-                                console.log('error', data);
-                            },
-
-                        })
-                    })
-                })
+            $(document).ready(function(){
+            $('#kecamatan').on('change', function(){
+                var kecamatan_id = $(this).val();
+                if(kecamatan_id){
+                    $.ajax({
+                        url: 'getKelurahan'+kecamatan_id,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data){
+                            $('#kelurahan').empty();
+                            $.each(data, function(key, value){
+                                $('#kelurahan').append('<option value="'+key+'">'+value+'</option>');
+                            });
+                        }
+                    });
+                }else{
+                    $('#kelurahan').empty();
+                    $('#kelurahan').append('<option value="0">-- Pilih Kelurahan --</option>');
+                }
             });
+        });
 
         </script>
-    
+
 
     </body>
 </html>

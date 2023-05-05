@@ -1,8 +1,7 @@
 CATATAN BUG (nada)
-3. Form Form, fk id kecamatan sama kelurahan
-4. Bagian kelurahan ask (enaknya dibikin gmn)
-5. Bagian kecamatan (ini blm samsek hadehh) ask
-6. Navbar kecamatan kelurahan (nanti)
+3. edit profil error di bagian kecamatan kelurahan
+4. Seeder database
+5. Bagian kecamatan
 7. Tampilkan berdasarkan (Kelurahan) ask
 
 

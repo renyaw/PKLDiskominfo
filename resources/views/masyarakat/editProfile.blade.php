@@ -173,12 +173,7 @@
                                     <br>
                                     <div class="form-group">
                                         <label for="kecamatan">Kecamatan</label>
-                                        <select class="form-select ms-1" name="kecamatan" id="kecamatan">
-                                            <option value="{{ old('id_kec', Auth::user()->id_kec) }}">-- Pilih Kecamatan --</option>
-                                            @foreach ($data as $kecamatan)
-                                                <option value="{{$kecamatan->id_kec}}">{{$kecamatan->nama_kec}}</option>
-                                            @endforeach
-                                        </select>
+                                        <input type="text" class="form-control" id="kecamatan" name="kecamatan" value="{{$query->user_kec->nama_kec}}" disabled readonly >
                                     </div>
                                     <br>
                                     <div class="form-group">
@@ -206,9 +201,7 @@
                                     <br>
                                     <div class="form-group">
                                         <label for="kelurahan">Kelurahan</label>
-                                        <select class="form-control ms-1" name="kelurahan" id="kelurahan">
-                                            <option value="{{ old('id_kel', Auth::user()->id_kel) }}">-- Pilih Kelurahan --</option>
-                                        </select>
+                                        <input type="text" class="form-control" id="kecamatan" name="kecamatan" value="{{$query->user_kel->nama_kel}}" disabled readonly >
                                     </div>
 
                                     <br>
