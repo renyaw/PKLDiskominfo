@@ -25,7 +25,7 @@ class dashKec2Controller extends Controller
         ->select([
             \DB::raw('count(*) as jumlahdom')
         ])
-
+        ->where('fk_id_kel', Auth::user()->kelurahan)
         ->get()
         ;
 
@@ -33,7 +33,7 @@ class dashKec2Controller extends Controller
         ->select([
             \DB::raw('count(*) as jumlahkred')
         ])
-
+        ->where('fk_id_kel', Auth::user()->kelurahan)
         ->get()
         ;
 
@@ -41,7 +41,7 @@ class dashKec2Controller extends Controller
         ->select([
             \DB::raw('count(*) as jumlahsktm')
         ])
-
+        ->where('fk_id_kel', Auth::user()->kelurahan)
         ->get()
 
         ;

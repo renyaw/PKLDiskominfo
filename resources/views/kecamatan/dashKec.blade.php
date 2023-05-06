@@ -21,6 +21,19 @@
             <p class="fs-5 fw-bold">Silakan pilih kelurahan </p>
         </div>
         <div class="form-group col-8">
+            <label for="kecamatan">Kecamatan</label>
+            <select class="form-control @error('kecamatan') is-invalid @enderror" name="kecamatan" id="kecamatan" value="">
+                <option value="0">-- Pilih Kecamatan --</option>
+                @foreach ($query as $kec)
+                    <option value="{{$kec->kecamatan}}">{{$kec->nama_kec}}</option>
+                @endforeach
+            </select>
+            @error('kecamatan')
+                <div class="invalid-feedback">{{$message}}</div>
+            @enderror
+        </div>
+        <br>
+        <div class="form-group col-8">
             <select class="form-select" name="kelurahan" id="kelurahan">
                 <option value="0">-- Pilih Kelurahan --</option>
             </select>
