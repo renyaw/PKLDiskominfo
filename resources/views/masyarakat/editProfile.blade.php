@@ -164,13 +164,13 @@
                                         <label for="nama">Nama</label>
                                         <input type="text" class="form-control ms-1" id="nama" name="nama" value="{{ old('nama', Auth::user()->nama) }}">
                                     </div>
-                                    <br>
+                                    <hr class="border opacity-10">
                                     <div class="form-group">
                                         <!-- Default diambil dari daftar -->
                                         <label for="ibu">Nama Ibu</label>
                                         <input type="text" class="form-control ms-1" id="ibu" name="ibu" value="{{ old('nama_ibu', Auth::user()->nama_ibu) }}">
                                     </div>
-                                    <br>
+                                    <hr class="border opacity-10">
                                     <div class="form-group">
                                         <label for="kecamatan">Kecamatan</label>
                                         <input type="text" class="form-control" id="kecamatan" name="kecamatan" value="{{$query->user_kec->nama_kec}}" disabled readonly >
@@ -181,7 +181,7 @@
                                         <label for="alamat">Alamat Lengkap</label>
                                         <input type="text" class="form-control ms-1" id="alamat" name="alamat" value="{{ old('alamat', Auth::user()->alamat) }}" >
                                     </div>
-                                    <br>
+                                    <hr class="border opacity-10">
                                 </div>
                                 <!-- End Left -->
 
@@ -192,26 +192,24 @@
                                         <label for="nik">NIK</label>
                                         <input type="text" class="form-control ms-1" id="nik" name="nik" value="{{ old('nik', Auth::user()->nik) }}">
                                     </div>
-                                    <br>
+                                    <hr class="border opacity-10">
                                     <div class="form-group">
                                         <!-- Default diambil dari daftar -->
                                         <label for="tgl">Tanggal Lahir</label>
                                         <input type="date" class="form-control ms-1" id="tgl" name="tgl" value="{{ old('tgl_lahir', Auth::user()->tgl_lahir) }}">
                                     </div>
-                                    <br>
+                                    <hr class="border opacity-10">
                                     <div class="form-group">
                                         <label for="kelurahan">Kelurahan</label>
                                         <input type="text" class="form-control" id="kecamatan" name="kecamatan" value="{{$query->user_kel->nama_kel}}" disabled readonly >
                                     </div>
-
                                     <br>
-
                                     <div class="form-group">
                                         <!-- Default diambil dari daftar -->
                                         <label for="notelp">Nomor Telepon (WA)</label>
                                         <input type="text" class="form-control ms-1" id="nama" name="notelp" value="{{ old('no_telp', Auth::user()->no_telp) }}" >
                                     </div>
-                                    <br>
+                                    <hr class="border opacity-10">
                                 </div>
 
                             </div>
