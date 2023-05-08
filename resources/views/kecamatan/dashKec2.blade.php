@@ -19,46 +19,40 @@
                 <div class="container position-relative" style="width: 19rem; height: 19rem; background-color:#87CEFA; border-radius: 1rem;">
                     <div class="position-absolute top-50 start-50 translate-middle">
                         <p class="fs-1 fw-bold text-light" >
-                            @foreach($querydom as $data)
+                            @foreach($querydom1 as $data)
                             {{$data->jumlahdom}}
                             @endforeach
                         </p>
                         <p class="text-light" >Surat Keterangan Domisili</p>
                     </div>
                 </div>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-5">
-                    <a href="antreanDom" type="button" class="btn btn-outline-success">Lihat Detail</a>
-                </div>
+
             </div>
             <div class="col">
                 <div class="container position-relative" style="width: 19rem; height:19rem; background-color:#87CEFA; border-radius: 1rem;">
                     <div class="position-absolute top-50 start-50 translate-middle">
                         <p class="fs-1 fw-bold text-light ">
-                            @foreach($querykred as $data)
+                            @foreach($querykred1 as $data)
                             {{$data->jumlahkred}}
                             @endforeach
                         </p>
                         <p class="text-light" >Surat Pengantar Kredit</p>
                     </div>
                 </div>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-5">
-                    <a href="antreanKred" type="button" class="btn btn-outline-success">Lihat Detail</a>
-                </div>
+
             </div>
             <div class="col">
                 <div class="container position-relative" style="width: 19rem; height:19rem; background-color:#87CEFA; border-radius: 1rem;">
                     <div class="position-absolute top-50 start-50 translate-middle">
                         <p class="fs-1 fw-bold text-light">
-                            @foreach($querysktm as $data)
+                            @foreach($querysktm1 as $data)
                             {{$data->jumlahsktm}}
                             @endforeach
                             </p>
                         <p class="text-light" >Surat Keterangan Tidak Mampu</p>
                     </div>
                 </div>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-5">
-                    <a href="antreanSKTM" type="button" class="btn btn-outline-success">Lihat Detail</a>
-                </div>
+
             </div>
         </div>
     </div>

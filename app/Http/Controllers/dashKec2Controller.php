@@ -10,6 +10,8 @@ use App\Models\antreanSKTMModel;
 
 use App\Models\antreanKredModel;
 
+use Illuminate\Support\Facades\Auth;
+
 use DB;
 
 class dashKec2Controller extends Controller
@@ -21,7 +23,7 @@ class dashKec2Controller extends Controller
      */
     public function index()
     {
-        $querydom = \DB::table('antrean_dom')
+        $querydom1 = \DB::table('antrean_dom')
         ->select([
             \DB::raw('count(*) as jumlahdom')
         ])
@@ -29,7 +31,7 @@ class dashKec2Controller extends Controller
         ->get()
         ;
 
-        $querykred = \DB::table('antrean_kred')
+        $querykred1 = \DB::table('antrean_kred')
         ->select([
             \DB::raw('count(*) as jumlahkred')
         ])
@@ -37,7 +39,7 @@ class dashKec2Controller extends Controller
         ->get()
         ;
 
-        $querysktm = \DB::table('antrean_sktm')
+        $querysktm1 = \DB::table('antrean_sktm')
         ->select([
             \DB::raw('count(*) as jumlahsktm')
         ])
@@ -46,7 +48,7 @@ class dashKec2Controller extends Controller
 
         ;
 
-        return view('/kelurahan/dashKel', compact('querydom','querykred','querysktm'));
+        return view('/kecamatan/dashKec2', compact('querydom1','querykred1','querysktm1'));
 
     }
 

@@ -53,7 +53,7 @@ class dashKecController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return redirect('/dashKec2');
     }
 
     /**

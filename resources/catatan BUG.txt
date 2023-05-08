@@ -1,5 +1,4 @@
 CATATAN BUG (nada)
-3. edit profil error di bagian kecamatan kelurahan
 4. Seeder database
 5. Bagian kecamatan
 7. Tampilkan berdasarkan (Kelurahan) ask
