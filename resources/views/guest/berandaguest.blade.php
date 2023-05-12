@@ -133,14 +133,14 @@
           <div class="col-lg-8 text-center mx-auto my-auto">
             <h1 class="" style="color:#87CEFA;">Sistem Informasi Pelayanan Masyarakat</h1>
             <p class="lead mb-4 text-white">Salatiga Hati Beriman</p>
-            <a href="daftar" class="btn btn bg-info text-white">Buat Akun</a>
+            <!-- <a href="daftar" class="btn btn bg-info text-white">Buat Akun</a> -->
           </div>
         </div>
       </div>
     </div>
   </header>
   <!-- -------- END HEADER 7 w/ text and video ------- -->
-  <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
+  <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n7">
     <!-- Section with four info areas left & one card right with image and waves -->
     <section class="py-7">
       <div class="container">
@@ -194,10 +194,20 @@
                 <h5 class="font-weight-normal">
                   <a href="login">Login untuk Melakukan Pengajuan</a>
                 </h5>
-                <p class="mb-0">
+                <!-- <p class="mb-0">
                   Anda Harus Memiliki Akun untuk Login Menggunakan Ussername
-                </p>
+                </p> -->
                 <a href="login"><button type="button" class="btn bg-gradient-info btn-sm mb-0 mt-3">Login</button></a>
+                <p class="mb-0">
+                  atau
+                </p>
+                <h5 class="font-weight-normal">
+                  <a href="daftar">Buat Akun Baru</a>
+                </h5>
+                <p class="mb-0">
+                  Jika Anda Belum Memiliki Akun
+                </p>
+                <a href="daftar"><button type="button" class="btn bg-gradient-info btn-sm mb-0 mt-3">Buat Akun</button></a>
               </div>
             </div>
           </div>
