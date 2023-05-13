@@ -73,8 +73,9 @@ class formKredController extends Controller
                 'kk_kred' => $path_kk,
                 'lain_kred' => $path_lain,
                 'fk_id_user' => Auth::user()->id,
-                'fk_status' =>1
-
+                'fk_status' =>1,
+                'fk_id_kec' => Auth::user()->kecamatan,
+                'fk_id_kel' => Auth::user()->kelurahan
             ];
 
             antreanKredModel::create($data);
