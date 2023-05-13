@@ -145,6 +145,9 @@
                           is-invalid @enderror" id="nik" name="nik" placeholder="Masukkan NIK" value="{{old('nik')}}" >
                           @error('nik')
                             <div class="invalid-feedback">{{$message}}</div>
+                            <div class="invalid-feedback alert alert-danger" role="alert">
+                                Hubungi Kelurahan Anda jika NIK sudah terdaftar
+                              </div>
                           @enderror
                     </div>
                     <br>
