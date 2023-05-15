@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\antreanDomModel;
 
+use App\Models\layananDomModel;
+
+use Carbon\Carbon;
+
 class verifDomController extends Controller
 {
     /**
@@ -51,7 +55,7 @@ class verifDomController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
         $data = antreanDomModel::where('id_dom',$id)->first();
         // return $query;
@@ -67,6 +71,12 @@ class verifDomController extends Controller
         //     'fk_id_user' => Auth::user()->id,
         //     'fk_status' => 1
         // ];
+        // dd($data);
+        // $id = $data->permohonan_dom->id;
+        // // dd($id);
+        // if ($request->terima){
+        //     $data->fk_status = '2';
+        // }
         return view('kelurahan/verifDom', compact('data'));
     }
 
@@ -112,20 +122,45 @@ class verifDomController extends Controller
             return $e->getMessage();
         }
     }
+
+
+    public function diterima($id)
+    {
+        $id_dom = antreanDomModel::where('id_dom',$id)->first();
+        // dd($id);
+        // $id_dom = antreanDomModel::find($id);
+        // $id_dom->fk_status = 2;
+        // $id_dom->save();
+        dd($id_dom);
+
+        $fk_id_dom = $id_dom->id_dom;
+        $layananDom = new layananDomModel;
+        $layananDom->fk_id_dom = $fk_id_dom;
+        $layananDom->tgl_dom = Carbon::now();
+        $layananDom->save();
+        // dd($sp_kel_dom);
+        // return $id_dom;
+        $id_dom->fk_status = 2;
+        $id_dom->save();
+        return view('kelurahan.antreanDom');
+
+    }
+
+    public function ditolak($id)
+    {
+        $id_dom = antreanDomModel::where('id_dom',$id)->first();
+        dd($id_dom);
+        $id_dom->fk_status = 3;
+        $id_dom->save();
+    }
 }
 
-    // public function diterima($id)
-    // {
-    //     $id_dom = antreanDomModel::find($id);
-    //     $dom->fk_status = '2';
-    //     $dom->save();
-    // }
     
-//     function diterima ($id)
-//     {
-//     $data = [
-//         'fk_status' => 2
-//     ];
-//    antreanDomModel::where('id_dom', $id)->update($data);
-//    return redirect('/verifDom')->with('berhasil', 'Berkas Disetujui');
-//     }
+// <!-- //     function diterima ($id)
+// //     {
+// //     $data = [
+// //         'fk_status' => 2
+// //     ];
+// //    antreanDomModel::where('id_dom', $id)->update($data);
+// //    return redirect('/verifDom')->with('berhasil', 'Berkas Disetujui');
+// //     } -->
