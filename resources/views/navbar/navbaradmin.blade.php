@@ -29,13 +29,13 @@
                         </a>
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive p-3 border-radius-lg mt-0 mt-lg-3">
                         <div class="d-none d-lg-block">
-                            <a href="verifSKTM" class="dropdown-item border-radius-md">
+                            <a href="antreanSKTM" class="dropdown-item border-radius-md">
                                 <span>Surat Keterangan Tidak Mampu</span>
                               </a>
-                              <a href="verifDom" class="dropdown-item border-radius-md">
+                              <a href="antreanDom" class="dropdown-item border-radius-md">
                                 <span>Surat Keterangan Domisili</span>
                               </a>
-                              <a href="verifKred" class="dropdown-item border-radius-md">
+                              <a href="antreanKred" class="dropdown-item border-radius-md">
                                 <span>Surat Pengantar Kredit</span>
                               </a>
                         </div>

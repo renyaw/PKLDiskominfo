@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Support\Facades\Auth;
@@ -127,31 +129,48 @@ class verifDomController extends Controller
     public function diterima($id)
     {
         $id_dom = antreanDomModel::where('id_dom',$id)->first();
+        $update = DB::table('antrean_dom')
+                    ->where('id_dom', $id)
+                    ->update(['fk_status' => 2]);
         // dd($id);
         // $id_dom = antreanDomModel::find($id);
         // $id_dom->fk_status = 2;
         // $id_dom->save();
-        dd($id_dom);
+        // dd($id_dom);
 
+        //pindah ke tabel domisili
         $fk_id_dom = $id_dom->id_dom;
         $layananDom = new layananDomModel;
         $layananDom->fk_id_dom = $fk_id_dom;
         $layananDom->tgl_dom = Carbon::now();
         $layananDom->save();
+
         // dd($sp_kel_dom);
         // return $id_dom;
-        $id_dom->fk_status = 2;
-        $id_dom->save();
-        return view('kelurahan.antreanDom');
+        // $id_dom->fk_status = 2;
+        // $id_dom->save();
+        return redirect('/antreanDom');
 
     }
 
     public function ditolak($id)
     {
         $id_dom = antreanDomModel::where('id_dom',$id)->first();
-        dd($id_dom);
-        $id_dom->fk_status = 3;
-        $id_dom->save();
+        $update = DB::table('antrean_dom')
+                    ->where('id_dom', $id)
+                    ->update(['fk_status' => 3]);
+        // $id_dom = antreanDomModel::where('id_dom',$id)->first();
+        // dd($id_dom);
+        // $id_dom->fk_status = 3;
+        // $id_dom->save();
+
+        return redirect('/antreanDom');
+    }
+
+    public function kembali($id)
+    {
+        $id_dom = antreanDomModel::where('id_dom',$id)->first();
+        return redirect('/antreanDom');
     }
 }
 

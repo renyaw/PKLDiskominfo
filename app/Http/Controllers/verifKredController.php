@@ -4,11 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\antreanKredModel;
+
+use App\Models\layananKredModel;
+
+use Carbon\Carbon;
 
 class verifKredController extends Controller
 {
@@ -100,4 +106,39 @@ class verifKredController extends Controller
         }
     }
 
+    public function diterima($id)
+    {
+        $id_kred = antreanKredModel::where('id_kred',$id)->first();
+        $update = DB::table('antrean_kred')
+                    ->where('id_kred', $id)
+                    ->update(['fk_status' => 2]);
+
+        //pindah ke tabel kredit
+        $fk_id_kred = $id_kred->id_kred;
+        $layananKred = new layananKredModel;
+        $layananKred->fk_id_kred = $fk_id_kred;
+        $layananKred->tgl_kred = Carbon::now();
+        $layananKred->save();
+
+        return redirect('/antreanKred');
+
+    }
+
+    public function ditolak($id)
+    {
+        $id_kred = antreanKredModel::where('id_kred',$id)->first();
+        $update = DB::table('antrean_kred')
+                    ->where('id_kred', $id)
+                    ->update(['fk_status' => 3]);
+
+        return redirect('/antreanKred');
+    }
+
+    public function kembali($id)
+    {
+        $id_kred = antreanKredModel::where('id_kred',$id)->first();
+        return redirect('/antreanKred');
+    }
+
 }
+

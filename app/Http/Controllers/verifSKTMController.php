@@ -4,11 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\antreanSKTMModel;
+
+use App\Models\layananSKTMModel;
+
+use Carbon\Carbon;
 
 class verifSKTMController extends Controller
 {
@@ -99,4 +105,38 @@ class verifSKTMController extends Controller
             return $e->getMessage();
         }
     }
+
+    public function diterima($id)
+    {
+        $id_sktm = antreanSKTMModel::where('id_sktm',$id)->first();
+        $update = DB::table('antrean_sktm')
+                    ->where('id_sktm', $id)
+                    ->update(['fk_status' => 2]);
+
+        //pindah ke tabel sktm
+        $fk_id_sktm = $id_sktm->id_sktm;
+        $layananSKTM = new layananSKTMModel;
+        $layananSKTM->fk_id_sktm = $fk_id_sktm; 
+        $layananSKTM->tgl_sktm = Carbon::now();
+        $layananSKTM->save();
+
+        return redirect('/antreanSKTM');
+    }
+
+    public function ditolak($id)
+    {
+        $id_sktm = antreanSKTMModel::where('id_sktm',$id)->first();
+        $update = DB::table('antrean_sktm')
+                    ->where('id_sktm', $id)
+                    ->update(['fk_status' => 3]);
+
+        return redirect('/antreanSKTM');
+    }
+
+    public function kembali($id)
+    {
+        $id_sktm = antreanSKTMModel::where('id_sktm',$id)->first();
+        return redirect('/antreanSKTM');
+    }
+
 }

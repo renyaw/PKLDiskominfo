@@ -94,12 +94,10 @@
                 </div>
 
                 <div class="col-auto d-grid gap-2 d-flex justify-content-end">
-                <a href="{{ url('verifDom/diterima/'.$data->id.') }}" class="btn btn-outline-success">Terima</a>
-                <button type="submit" name="submit" value="submit" class="btn btn-outline-danger">Tolak</button>
-                        <!-- <a href="{{ url(verifDom/diterima/'.$data->id) }}" name="terima" class="btn btn-outline-success">Terima</a> -->
-                        <!-- <a href="{{ url('antreanDom') }}" name="terima" class="btn btn-outline-dangers">Tolak</a> -->
-                        <!-- <button type="submit" name="submit" value="submit" class="btn btn-outline-danger">Tolak</button> -->
-                        <button type="submit" name="submit" value="submit" class="btn btn-outline-primary">Kembali</button>
+                <a href="{{ url('verifDom/diterima/'.$data->id_dom) }}" class="btn btn-outline-success">Terima</a>
+                <a href="{{ url('verifDom/ditolak/'.$data->id_dom) }}" class="btn btn-outline-danger">Tolak</a>
+                <a href="{{ url('verifDom/kembali/'.$data->id_dom) }}" class="btn btn-outline-primary">Kembali</a>
+
                 </div>
 
                 <!-- End Right -->

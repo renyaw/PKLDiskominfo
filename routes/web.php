@@ -54,11 +54,24 @@ Route::resource('antreanDom', antreanDomController::class)->middleware(['auth', 
 Route::resource('antreanKred', antreanKredController::class)->middleware(['auth', 'IsKelurahan']);
 Route::resource('antreanSKTM', antreanSKTMController::class)->middleware(['auth', 'IsKelurahan']);
 Route::resource('dashKel', dashKelController::class)->middleware(['auth', 'IsKelurahan']);
+
+//DOMISILI
 Route::resource('verifDom', verifDomController::class)->middleware(['auth', 'IsKelurahan']);
 Route::get('verifDom/diterima/{id}', [verifDomController::class, 'diterima'])->middleware(['auth', 'IsKelurahan']);
+Route::get('verifDom/ditolak/{id}', [verifDomController::class, 'ditolak'])->middleware(['auth', 'IsKelurahan']);
+Route::get('verifDom/kembali/{id}', [verifDomController::class, 'kembali'])->middleware(['auth', 'IsKelurahan']);
 
+//KREDIT
 Route::resource('verifKred', verifKredController::class)->middleware(['auth', 'IsKelurahan']);
+Route::get('verifKred/diterima/{id}', [verifKredController::class, 'diterima'])->middleware(['auth', 'IsKelurahan']);
+Route::get('verifKred/ditolak/{id}', [verifKredController::class, 'ditolak'])->middleware(['auth', 'IsKelurahan']);
+Route::get('verifKred/kembali/{id}', [verifKredController::class, 'kembali'])->middleware(['auth', 'IsKelurahan']);
+
+//SKTM
 Route::resource('verifSKTM', verifSKTMController::class)->middleware(['auth', 'IsKelurahan']);
+Route::get('verifSKTM/diterima/{id}', [verifSKTMController::class, 'diterima'])->middleware(['auth', 'IsKelurahan']);
+Route::get('verifSKTM/ditolak/{id}', [verifSKTMontroller::class, 'ditolak'])->middleware(['auth', 'IsKelurahan']);
+Route::get('verifSKTM/kembali/{id}', [verifSKTMController::class, 'kembali'])->middleware(['auth', 'IsKelurahan']);
 
 //Masyarakat
 Route::resource('dashMasy', dashMasyController::class)->middleware(['auth', 'IsMasyarakat']);

@@ -94,9 +94,9 @@
                 </div>
 
                 <div class="col-auto d-grid gap-2 d-flex justify-content-end">
-                        <button type="submit" name="submit" value="submit" class="btn btn-outline-success">Terima</button>
-                        <button type="submit" name="submit" value="submit" class="btn btn-outline-danger">Tolak</button>
-                        <button type="submit" name="submit" value="submit" class="btn btn-outline-primary">Kembali</button>
+                <a href="{{ url('verifKred/diterima/'.$data->id_kred) }}" class="btn btn-outline-success">Terima</a>
+                <a href="{{ url('verifKred/ditolak/'.$data->id_kred) }}" class="btn btn-outline-danger">Tolak</a>
+                <a href="{{ url('verifKred/kembali/'.$data->id_kred) }}" class="btn btn-outline-primary">Kembali</a>
                 </div>
 
                 <!-- End Right -->
