@@ -12,28 +12,85 @@
     @extends('navbar.navbarkec')
     <!-- Navbar End -->
 
+
+
+
     <!-- Context -->
     @section('container')
-    <div class="container mt-3">
+    <div class="container">
+    <div class="">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center mx-auto my-auto">
+            <h1 class="" style="color:#87CEFA;">Sistem Informasi Pelayanan Masyarakat</h1>
+            <h4 class="mb-6 text-dark">Salatiga Hati Beriman</h4>
+            <h5 class="mb-4 bold text-success">Selamat Datang Di Beranda Kecamatan {{$query->user_kec->nama_kec}} !</h5>
+          </div>
+        </div>
+      </div>
+
+        <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
         <div class= "container">
-            <p class="fs-3 fw-bold"></p>
-            <p class="fs-5 fw-bold">Selamat Datang di Dashboard Kecamatan {{$query->user_kec->nama_kec}} </p>
-            <p class="fs-5 fw-bold">Silakan pilih kelurahan </p>
+            <p class="fs-5 fw-bold">Permohonan Surat Keterangan Tidak Mampu </p>
+            <div class="col">
+                <table class="table table-hover table-striped table-info table-bordered">
+                    <tr>
+                        <th>Kelurahan</th>
+                        <th>Jumlah Pengajuan</th>
+                    </tr>
+
+                    @foreach($jumlahsktm as $data)
+                    <tr>
+                        <td>{{$data->nama_kel}}</td>
+                        <td>{{$data->jumlah}}</td>
+                    </tr>
+                    @endforeach
+
+                </table>
+            </div>
         </div>
-        <form method="POST" autocomplete="on" name="form" onsubmit="" action="/dashKec">
-        @csrf
-        <div class="form-group col-8">
-            <select class="form-select" name="kelurahan" id="kelurahan">
-                <option value="0">-- Pilih Kelurahan --</option>
-            </select>
+
+        <div class= "container">
+            <p class="fs-5 fw-bold">Permohonan Surat Keterangan Domisili </p>
+            <div class="col">
+                <table class="table table-hover table-striped table-info table-bordered">
+                    <tr>
+                        <th>Kelurahan</th>
+                        <th>Jumlah Pengajuan</th>
+                    </tr>
+
+                    @foreach($jumlahdom as $data)
+                    <tr>
+                        <td>{{$data->nama_kel}}</td>
+                        <td>{{$data->jumlah}}</td>
+                    </tr>
+                    @endforeach
+
+                </table>
+            </div>
         </div>
-        <div class="form-group col-8" hidden>
-            <input type="text" name="kecamatan" id="kecamatan" value="{{Auth::user()->kecamatan}}">
+
+        <div class= "container">
+            <p class="fs-5 fw-bold">Permohonan Surat Pengantar Kredit </p>
+            <div class="col">
+                <table class="table table-hover table-striped table-info table-bordered">
+                    <tr>
+                        <th>Kelurahan</th>
+                        <th>Jumlah Pengajuan</th>
+                    </tr>
+
+                    @foreach($jumlahkred as $data)
+                    <tr>
+                        <td>{{$data->nama_kel}}</td>
+                        <td>{{$data->jumlah}}</td>
+                    </tr>
+                    @endforeach
+
+                </table>
+            </div>
         </div>
-        <div class="col-auto d-grid gap-2 d-flex justify-content-end">
-            <button type="submit" name="submit" value="submit" class="btn btn-outline-success">Lihat permintaan</button>
         </div>
-        </form>
+
+
     </div>
     @endsection
 

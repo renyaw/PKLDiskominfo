@@ -9,6 +9,12 @@ use App\Models\userModel;
 use App\Models\kecamatanModel;
 use App\Models\kelurahanModel;
 
+use App\Models\antreanDomModel;
+
+use App\Models\antreanSKTMModel;
+
+use App\Models\antreanKredModel;
+
 class dashKecController extends Controller
 {
     /**
@@ -21,19 +27,35 @@ class dashKecController extends Controller
         $query = userModel::find(Auth::user()->id);
         $data = kecamatanModel::all();
         $path = kelurahanModel::all();
-        return view('/kecamatan/dashKec',compact('query', 'data', 'path'));
+
+        $jumlahsktm = \DB::table('kelurahan')
+                    ->leftJoin('antrean_sktm', 'kelurahan.id_kel', '=', 'antrean_sktm.fk_id_kel')
+                    ->select('kelurahan.nama_kel', \DB::raw('count(antrean_sktm.id_sktm) as jumlah'))
+                    ->where('antrean_sktm.fk_id_kec', Auth::user()->kecamatan)
+                    ->groupBy('kelurahan.nama_kel')
+                    ->get()
+                    ;
+
+        $jumlahdom = \DB::table('kelurahan')
+                    ->leftJoin('antrean_dom', 'kelurahan.id_kel', '=', 'antrean_dom.fk_id_kel')
+                    ->select('kelurahan.nama_kel', \DB::raw('count(antrean_dom.id_dom) as jumlah'))
+                    ->where('antrean_dom.fk_id_kec', Auth::user()->kecamatan)
+                    ->groupBy('kelurahan.nama_kel')
+                    ->get()
+                    ;
+
+        $jumlahkred = \DB::table('kelurahan')
+                    ->leftJoin('antrean_kred', 'kelurahan.id_kel', '=', 'antrean_kred.fk_id_kel')
+                    ->select('kelurahan.nama_kel', \DB::raw('count(antrean_kred.id_kred) as jumlah'))
+                    ->where('antrean_kred.fk_id_kec', Auth::user()->kecamatan)
+                    ->groupBy('kelurahan.nama_kel')
+                    ->get()
+                    ;
+
+        return view('/kecamatan/dashKec',compact('query', 'data', 'path', 'jumlahsktm', 'jumlahdom', 'jumlahkred'));
     }
 
-    public function getKelurahan(request $request){
-        $id_kec = $request->id_kec;
-
-        $kelurahans = kelurahanModel::where('fk_id_kec', $id_kec)->get();
-
-        foreach ($kelurahans as $kel){
-            echo "<option value='$kel->id_kel'>$kel->nama_kel</option>";
-        }
-    }
-
+   
 
     /**
      * Show the form for creating a new resource.
