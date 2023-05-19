@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Dashboard</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <!-- <script src="https://unpkg.com/feather-icons"></script> -->
+        <script src="https://unpkg.com/feather-icons"></script>
     </head>
     <body>
     <!-- Navbar -->
@@ -21,7 +21,7 @@
                 <ul class="navbar-nav navbar-nav-hover ms-auto">
 
                     <li class="nav-item dropdown dropdown-hover mx-2">
-                        <a class="nav-link" href="dashKel">Dashboard</a>
+                        <a class="nav-link" href="dashMasy">Dashboard</a>
                     </li>
                     <li class="nav-item dropdown dropdown-hover mx-2">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -70,11 +70,14 @@
                         </div>
                     </ul>
                     </li>
-                    <li class="nav-item dropdown dropdown-hover mx-2 mt-2">
-                              <form action="/logout" method="post">
-                                  @csrf
-                                  <button type="submit" class="dropdown-item border-radius-md"> <i class="bi bi-box-arrow-right"></i>Keluar </button>
-                              </form>
+                    <li class="nav-item dropdown dropdown-hover mx-2">
+                      <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuPages" href="dashKel">
+                        <form action="/logout" method="post">
+                                @csrf
+                                <button type="submit" class="dropdown-item border-radius-md"> <i class="bi bi-box-arrow-right"></i>Keluar </button>
+                        </form>
+                      </a>
+                    </li>
                       </li>
                 </ul>
             </div>
@@ -89,17 +92,15 @@
         @yield('container')
     </div>
     <!-- Konten End -->
-
-    <!-- <script src="{{asset('../assets/js/core/popper.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('../assets/js/core/popper.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('../assets/js/core/bootstrap.min.js')}}" type="text/javascript"></script>
-    <script src="{{asset('../assets/js/plugins/perfect-scrollbar.min.js')}}"></script> -->
-
+    <script src="{{asset('../assets/js/plugins/perfect-scrollbar.min.js')}}"></script>
     <!--  Plugin for Parallax, full documentation here: https://github.com/wagerfield/parallax  -->
     <script src="{{asset('../assets/js/plugins/parallax.min.js')}}"></script>
-
     <!-- Control Center for Material UI Kit: parallax effects, scripts for the example pages etc -->
-    <!-- <script src="{{asset('../assets/js/material-kit.min.js?v=3.0.4')}}" type="text/javascript"></script> -->
-    
+    <!--  Google Maps Plugin    -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
+    <script src="{{asset('../assets/js/material-kit.min.js?v=3.0.4')}}" type="text/javascript"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     </body>
 </html>

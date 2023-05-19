@@ -112,6 +112,27 @@
                         </form>
                       </a>
                     </li>
+                    <li class="nav-item dropdown dropdown-hover mx-2">
+                      <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="material-icons opacity-6 me-2 text-md">article</i>
+                        Akun
+                        <img src="../assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive mt-0 mt-lg-3 p-3 border-radius-lg" aria-labelledby="dropdownMenuDocs">
+                        <div class="d-none d-lg-block">
+                            <a href="profile" class="dropdown-item border-radius-md">
+                                <span>Profil</span>
+                            </a>
+                            <a href="riwayat" class="dropdown-item border-radius-md">
+                                <span>Riwayat</span>
+                            </a>
+                            <form action="/logout" method="post">
+                                @csrf
+                                <button type="submit" class="dropdown-item border-radius-md"> <i class="bi bi-box-arrow-right"></i>Keluar </button>
+                            </form>
+                        </div>
+                      </ul>
+                    </li>
                   </ul>
                 </div>
               </div>
