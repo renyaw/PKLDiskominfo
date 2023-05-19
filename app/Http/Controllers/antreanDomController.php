@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\antreanDomModel;
-
+use App\Models\userModel;
 use Illuminate\Support\Facades\Storage;
-
+use App\Models\kelurahanModel;
 use Illuminate\Support\Facades\Auth;
 
 class antreanDomController extends Controller
@@ -19,7 +19,7 @@ class antreanDomController extends Controller
      */
     public function index()
     {
-        $query = antreanDomModel::find(Auth::user()->kelurahan);
+        $query = antreanDomModel::where('fk_id_kel',Auth::user()->kelurahan);
 
         return view('kelurahan/antreanDom',compact('query'));
     }
