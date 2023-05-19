@@ -61,21 +61,23 @@ class formKredController extends Controller
             $newNama_ktp = "KTP-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_ktp;
             $newNama_kk = "KK-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_kk;
             $newNama_lain = "Lain-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_lain;
-            //simpan file storage
+            // untuk simpan filenya di storage
             $path_sp = Storage::putFileAs('public/sp_kel_kred', $request->file('sp_kel_kred'), $newNama_sp);
             $path_ktp = Storage::putFileAs('public/ktp_kred', $request->file('ktp_kred'), $newNama_ktp);
             $path_kk = Storage::putFileAs('public/kk_kred', $request->file('kk_kred'), $newNama_kk);
             $path_lain = Storage::putFileAs('public/lain_kred', $request->file('lain_kred'), $newNama_lain);
-            //simpan file db
+            // simpan nama fike di db
             $data = [
-                'sp_kel_kred' => $path_sp,
-                'ktp_kred' => $path_ktp,
-                'kk_kred' => $path_kk,
-                'lain_kred' => $path_lain,
+                'sp_kel_kred' => $newNama_sp,
+                'ktp_kred' => $newNama_ktp,
+                'kk_kred' => $newNama_kk,
+                'lain_kred' => $newNama_lain,
+                // 'tgl_antre_dom' => '2023-02-01',
                 'fk_id_user' => Auth::user()->id,
-                'fk_status' =>1,
+                'fk_status' => 1,
                 'fk_id_kec' => Auth::user()->kecamatan,
                 'fk_id_kel' => Auth::user()->kelurahan
+
             ];
 
             antreanKredModel::create($data);
@@ -83,6 +85,7 @@ class formKredController extends Controller
         } catch (\Exception $e) {
             return $e->getMessage();
         }
+
     }
 
     /**
@@ -102,7 +105,7 @@ class formKredController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
         $query = userModel::find(Auth::user()->id);
         return view('masyarakat/editKred',compact('query'));
@@ -118,17 +121,17 @@ class formKredController extends Controller
     public function update(Request $request, $id)
     {
         $edit = antreanKredModel::where('id_kred',$id)->first();
-
-        $sp_kel = $request->file('sp_kel_kred');
         $ktp = $request->file('ktp_kred');
+        $sp_kel = $request->file('sp_kel_kred');
         $kk = $request->file('kk_kred');
         $lain = $request->file('lain_kred');
 
-        // nama
+        //    name
         $nama_sp = $sp_kel->getClientOriginalName();
         $nama_ktp = $ktp->getClientOriginalName();
         $nama_kk = $kk->getClientOriginalName();
         $nama_lain = $lain->getClientOriginalName();
+
 
         // extension
         $extension_sp = $sp_kel->getClientOriginalExtension();
@@ -143,24 +146,24 @@ class formKredController extends Controller
         $newNama_lain = "Lain-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_lain;
 
         // path
-        $path_sp = Storage::putFileAs('public/sp_kel_kred', $request->file('sp_kel_kred'), $newNama_sp);
-        $path_ktp = Storage::putFileAs('public/ktp_kred', $request->file('ktp_kred'), $newNama_ktp);
-        $path_kk = Storage::putFileAs('public/kk_kred', $request->file('kk_kred'), $newNama_kk);
-        $path_lain = Storage::putFileAs('public/lain_kred', $request->file('lain_kred'), $newNama_lain);
+        $path_sp = Storage::putFileAs('public/sp_kel_dom', $request->file('sp_kel_kred'), $newNama_sp);
+        $path_ktp = Storage::putFileAs('public/ktp_dom', $request->file('ktp_kred'), $newNama_ktp);
+        $path_kk = Storage::putFileAs('public/kk_dom', $request->file('kk_kred'), $newNama_kk);
+        $path_lain = Storage::putFileAs('public/lain_dom', $request->file('lain_kred'), $newNama_lain);
+
         $data = [
             'sp_kel_kred' => $newNama_sp,
             'ktp_kred' => $newNama_ktp,
             'kk_kred' => $newNama_kk,
             'lain_kred' => $newNama_lain,
+            // 'tgl_antre_dom' => '2023-02-01',
             'fk_id_user' => Auth::user()->id,
-            'fk_status' =>1,
-            'fk_id_kec' => Auth::user()->kecamatan,
-            'fk_id_kel' => Auth::user()->kelurahan
+            'fk_status' => 1
 
         ];
 
-        antreanKredModel::where('id_kred', $id)->update($data);
-        return redirect('/dashMasy')->with('berhasil', 'Berkas Berhasil diedit! Silakan Cek Melalui Riwayat');
+       antreanKredModel::where('id_kred', $id)->update($data);
+       return redirect('/dashMasy')->with('berhasil', 'Berkas Berhasil diedit! Silakan Cek Melalui Riwayat');
 
     }
 

@@ -70,7 +70,7 @@ Route::get('verifKred/kembali/{id}', [verifKredController::class, 'kembali'])->m
 //SKTM
 Route::resource('verifSKTM', verifSKTMController::class)->middleware(['auth', 'IsKelurahan']);
 Route::get('verifSKTM/diterima/{id}', [verifSKTMController::class, 'diterima'])->middleware(['auth', 'IsKelurahan']);
-Route::get('verifSKTM/ditolak/{id}', [verifSKTMontroller::class, 'ditolak'])->middleware(['auth', 'IsKelurahan']);
+Route::get('verifSKTM/ditolak/{id}', [verifSKTMController::class, 'ditolak'])->middleware(['auth', 'IsKelurahan']);
 Route::get('verifSKTM/kembali/{id}', [verifSKTMController::class, 'kembali'])->middleware(['auth', 'IsKelurahan']);
 
 //Masyarakat

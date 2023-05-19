@@ -53,6 +53,14 @@
                             </div>
                         </div>
                         <br>
+                        <div class="form-group">
+                            <label for="lain">Berkas Lain</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value="{{$data->lain_sktm}}">
+                                <a href="{{ url('storage/lain_sktm/'.$data->lain_sktm) }}" class="btn btn-secondary" type="button" id="button-addon2">Unduh</a>
+                            </div>
+                        </div>
+                        <br>
 
                     </div>
                     <!-- End Left -->
@@ -74,6 +82,14 @@
                         </div>
                         <br>
                         <div class="form-group">
+                            <label for="lain">Surat Pernyataan Tidak Mampu</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value="{{$data->sp_tdkmampu}}">
+                                <a href="{{ url('storage/sp_tdkmampu/'.$data->sp_tdkmampu) }}" class="btn btn-secondary" type="button" id="button-addon2">Unduh</a>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
                             <label for="kk">Kartu Keluarga</label>
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value="{{$data->kk_sktm}}">
@@ -82,11 +98,8 @@
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="lain">Berkas Lain</label>
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2" value="{{$data->lain_sktm}}">
-                                <a href="{{ url('storage/lain_sktm/'.$data->lain_sktm) }}" class="btn btn-secondary" type="button" id="button-addon2">Unduh</a>
-                            </div>
+                            <label for="tujuan">Tujuan Pembuatan SKTM</label>
+                            <input type="text" class="form-control" id="nama" name="nama" value="{{$data->tujuan}}" disabled readonly >
                         </div>
                         <br>
                     </div>
@@ -94,9 +107,9 @@
                 </div>
 
                 <div class="col-auto d-grid gap-2 d-flex justify-content-end">
-                        <button type="submit" name="submit" value="submit" class="btn btn-outline-success">Terima</button>
-                        <button type="submit" name="submit" value="submit" class="btn btn-outline-danger">Tolak</button>
-                        <button type="submit" name="submit" value="submit" class="btn btn-outline-primary">Kembali</button>
+                <a href="{{ url('verifSKTM/diterima/'.$data->id_sktm) }}" class="btn btn-outline-success">Terima</a>
+                <a href="{{ url('verifSKTM/ditolak/'.$data->id_sktm) }}" class="btn btn-outline-danger">Tolak</a>
+                <a href="{{ url('verifSKTM/kembali/'.$data->id_sktm) }}" class="btn btn-outline-primary">Kembali</a>
                 </div>
 
                 <!-- End Right -->

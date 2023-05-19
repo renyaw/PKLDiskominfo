@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use Carbon\Carbon;
 use App\Models\antreanSKTMModel;
 use App\Models\userModel;
+
 use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Support\Facades\Auth;
+
 class formSKTM2Controller extends Controller
 {
     /**
@@ -56,11 +60,13 @@ class formSKTM2Controller extends Controller
             $extension_kk = $kk->getClientOriginalExtension();
             $extension_lain = $lain->getClientOriginalExtension();
             $extension_sp_tdkmampu = $sp_tdkmampu->getClientOriginalExtension();
-            $newNama_sp = $nama_sp.'.'.$extension_sp;
-            $newNama_ktp = $nama_ktp.'.'.$extension_ktp;
-            $newNama_kk = $nama_kk.'.'.$extension_kk;
-            $newNama_lain = $nama_lain.'.'.$extension_lain;
-            $newNama_sp_tdkmampu = $nama_sp_tdkmampu.'.'.$extension_sp_tdkmampu;
+            //penamaan file
+            $newNama_sp = "SP_KEL-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_sp;
+            $newNama_ktp = "KTP-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_ktp;
+            $newNama_kk = "KK-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_kk;
+            $newNama_lain = "Lain-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_lain;
+            $newNama_sp_tdkmampu = "SP_TDKMAMPU-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_sp_tdkmampu;
+            //penyimpanan file pada storage
             $path_sp = Storage::putFileAs('public/sp_kel_sktm', $request->file('sp_kel_sktm'), $newNama_sp);
             $path_ktp = Storage::putFileAs('public/ktp_sktm', $request->file('ktp_sktm'), $newNama_ktp);
             $path_kk = Storage::putFileAs('public/kk_sktm', $request->file('kk_sktm'), $newNama_kk);
@@ -69,13 +75,13 @@ class formSKTM2Controller extends Controller
             $this->validate($request,[
                 'tujuan' => 'required'
             ]);
-
+            //penyimpanan file ke db
             $data = [
-                'sp_kel_sktm' => $path_sp,
-                'ktp_sktm' => $path_ktp,
-                'kk_sktm' => $path_kk,
-                'lain_sktm' => $path_lain,
-                'sp_tdkmampu' => $path_sp_tdkmampu,
+                'sp_kel_sktm' => $newNama_sp,
+                'ktp_sktm' => $newNama_ktp,
+                'kk_sktm' => $newNama_kk,
+                'lain_sktm' => $newNama_lain,
+                'sp_tdkmampu' => $newNama_sp_tdkmampu,
                 'tujuan' => $request->tujuan,
                 'fk_id_user' => Auth::user()->id,
                 'fk_status' =>1,
@@ -83,10 +89,7 @@ class formSKTM2Controller extends Controller
                 'fk_id_kel' => Auth::user()->kelurahan
             ];
 
-
-
             antreanSKTMModel::create($data);
-
             return redirect('/dashMasy')->with('berhasil', 'Berkas Berhasil diinput! Silahkan Cek Melalui Riwayat');
         } catch (\Exception $e) {
             return $e->getMessage();
@@ -150,11 +153,17 @@ class formSKTM2Controller extends Controller
         $extension_sp_tdkmampu = $sp_tdkmampu->getClientOriginalExtension();
 
         // New Nama
-        $newNama_sp = $nama_sp.'.'.$extension_sp;
-        $newNama_ktp = $nama_ktp.'.'.$extension_ktp;
-        $newNama_kk = $nama_kk.'.'.$extension_kk;
-        $newNama_lain = $nama_lain.'.'.$extension_lain;
-        $newNama_sp_tdkmampu = $nama_sp_tdkmampu.'.'.$extension_sp_tdkmampu;
+        $newNama_sp = "SP_KEL-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_sp;
+        $newNama_ktp = "KTP-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_ktp;
+        $newNama_kk = "KK-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_kk;
+        $newNama_lain = "Lain-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_lain;
+        $newNama_sp_tdkmampu = "SP_TDKMAMPU-".Auth::user()->nama.'-'.Carbon::now()->formatLocalized("%d%m%Y_%H%M%S").'-.'.$extension_sp_tdkmampu;
+
+        // $newNama_sp = $nama_sp.'.'.$extension_sp;
+        // $newNama_ktp = $nama_ktp.'.'.$extension_ktp;
+        // $newNama_kk = $nama_kk.'.'.$extension_kk;
+        // $newNama_lain = $nama_lain.'.'.$extension_lain;
+        // $newNama_sp_tdkmampu = $nama_sp_tdkmampu.'.'.$extension_sp_tdkmampu;
 
         // Path
         $path_sp = Storage::putFileAs('public/sp_kel_sktm', $request->file('sp_kel_sktm'), $newNama_sp);
@@ -169,11 +178,11 @@ class formSKTM2Controller extends Controller
         ]);
 
         $data = [
-            'sp_kel_sktm' => $path_sp,
-            'ktp_sktm' => $path_ktp,
-            'kk_sktm' => $path_kk,
-            'lain_sktm' => $path_lain,
-            'sp_tdkmampu' => $path_sp_tdkmampu,
+            'sp_kel_sktm' => $newNama_sp,
+            'ktp_sktm' => $newNama_ktp,
+            'kk_sktm' => $newNama_kk,
+            'lain_sktm' => $newNama_lain,
+            'sp_tdkmampu' => $newNama_sp_tdkmampu,
             'tujuan' => $request->tujuan,
             'fk_id_user' => Auth::user()->id,
             'fk_status' =>1
