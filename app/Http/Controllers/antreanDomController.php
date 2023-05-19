@@ -19,7 +19,7 @@ class antreanDomController extends Controller
      */
     public function index()
     {
-        $query = antreanDomModel::Auth::user()->kelurahan;
+        $query = antreanDomModel::find(Auth::user()->kelurahan);
 
         return view('kelurahan/antreanDom',compact('query'));
     }
