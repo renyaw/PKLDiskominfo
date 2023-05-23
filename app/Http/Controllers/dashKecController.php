@@ -12,7 +12,6 @@ use App\Models\kelurahanModel;
 use App\Models\antreanDomModel;
 
 use App\Models\antreanSKTMModel;
-
 use App\Models\antreanKredModel;
 
 class dashKecController extends Controller
@@ -55,7 +54,7 @@ class dashKecController extends Controller
         return view('/kecamatan/dashKec',compact('query', 'data', 'path', 'jumlahsktm', 'jumlahdom', 'jumlahkred'));
     }
 
-   
+
 
     /**
      * Show the form for creating a new resource.
